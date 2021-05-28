@@ -196,7 +196,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-6 offset-md-3 ">
-                  <form class="main_form" action="https://docs.google.com/forms/d/e/1FAIpQLSdNAgFoTwrcnzr3xHu_TWgu3B7UMD39-h9yCclwhoWV4sR2kw/formResponse?embedded=true" method="POST" onsubmit="return emptycart()">
+                  <form class="main_form" action="https://docs.google.com/forms/d/e/1FAIpQLSdNAgFoTwrcnzr3xHu_TWgu3B7UMD39-h9yCclwhoWV4sR2kw/formResponse?embedded=true" method="POST">
                      <div class="row">
                         <div class="col-sm-12">
                            <input class="contactus" placeholder="Tên"  type="text" name="entry.2146135344" required>
@@ -218,7 +218,7 @@
                         </div>
                      </div>
                   </form>
-                  <iframe id="hidden_iframe" name="hidden_iframe" onload="if(submitted){}" style="display: none;"></iframe>
+                  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {alert('thông tin đã được gửi! chúng tôi sẽ liên hệ bạn sớm! cảm ơn đã ghé thăm!');window.location='http://veoveo.github.io';}"></iframe>
                </div>
             </div>
          </div>
@@ -249,11 +249,6 @@
       <script src="js/custom.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
       <script type="text/javascript">
-
-    function emptycart() {
-        alert("thông tin đã được gửi! chúng tôi sẽ liên hệ bạn sớm! cảm ơn đã ghé thăm!");
-        window.location.href = 'http://veoveo.github.io';
-    }
 </script>
    </body>
 </html>
