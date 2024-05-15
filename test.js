@@ -1,3 +1,4 @@
+document.cookie = "shopee_token=5ua+rMs3LouJnKAyBfo06npJuhwfiHGuUudFFbJbFE1BA7m4XRW+C5saW2z6ntzm; path=/"
 function fetchData(ss_id) {
   if (document.getElementById(ss_id) != null) {
       let coin_id = 0
@@ -144,8 +145,9 @@ function end_element(ssid) {
     document.getElementById(ssid).id = "none"
 }
 
-function add() {
-    ss = new URL(document.getElementById("userInput").value).searchParams.get("session");
+async function add() {
+    const response = await fetch('https://python-min.vercel.app/api?url='+document.getElementById("userInput").value);
+    const ss = await response.text();
     add_element(ss);
     //fetchData(ss);
     document.getElementById("userInput").value = "";
