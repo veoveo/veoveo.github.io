@@ -95,6 +95,7 @@ function claim(coin_id, ss_id) {
           var responseData = JSON.parse(xhr.responseText);
     
           console.log("Nhận thành công! ", coin_id);
+	  document.getElementById(ss_id).getElementsByClassName("m-LiveList-CardTips-card-tag m-LiveList-CardTips-card-live-icon")[0].textContent = 0;
           fetchData(ss_id)
         } else {
           console.log("(claim) Yêu cầu POST không thành công. Mã trạng thái:", xhr.status);
