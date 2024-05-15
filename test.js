@@ -1,4 +1,1 @@
-async function saveVoucherCode() {
-    alert("hello");
-}
-saveVoucherCode();
+alert("hello")
