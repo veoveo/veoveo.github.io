@@ -1,4 +1,3 @@
-document.cookie = "shopee_token=5ua+rMs3LouJnKAyBfo06npJuhwfiHGuUudFFbJbFE1BA7m4XRW+C5saW2z6ntzm; path=/"
 function fetchData(ss_id) {
   if (document.getElementById(ss_id) != null) {
       let coin_id = 0
