@@ -6,7 +6,7 @@ function fetchData(ss_id) {
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           var response = JSON.parse(xhr.responseText);
-          if (response.data && response.data.remain_locks !== 0 && response.data.coins_per_claim !== 100) {
+          if (response.data && response.data.remain_locks !== 0 && response.data.coins_per_claim < 500) {
             console.log("Số xu đang nhận:", response.data.coins_per_claim);
             coin_id = response.data.coin_id
             lock_coin(response.data.coin_id, ss_id, response.data.coins_per_claim);
