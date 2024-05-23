@@ -1967,7 +1967,7 @@ html, body {
   border-radius: 50%; }
 
 
-/*# styles.e0fed77b.chunk.css.map*/</style></head><body><div id="__next">    <div>
+/*# styles.e0fed77b.chunk.css.map*/</style></head><body style="background-color: rgb(0, 0, 0);"><div id="__next">    <div>
         <label for="userInput">Link:</label>
         <input type="text" id="userInput" name="userInput" placeholder="Dán link vào đây">
         <input type="submit" value="Submit" onclick="add()">
