@@ -135,7 +135,7 @@
                <div class="col-md-12">
                   <div class="web_hosting">
                      
-                     <a href="#">Read more</a>
+                     <a onclick="myFunction()">Read more</a>
                   </div>
                </div>
             </div>
@@ -259,6 +259,14 @@
 .catch(error => {
     alert("lỗi rồi")
 });
+};
+            function sumclick() {
+    text = document.getElementById("w3review").value;
+    if (text == "") {
+        alert("nhập chữ vô")
+    } else {
+        console.log(text)
+    }
 }
       </script>
 
