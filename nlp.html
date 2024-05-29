@@ -262,7 +262,7 @@
     return response.json();
 })
 .then(data => {
-    console.log(data);
+    document.getElementById("out_sum").textContent = data.summary;
 })
 .catch(error => {
     alert("lỗi rồi")
@@ -273,7 +273,7 @@
     if (text == "") {
         alert("nhập chữ vô")
     } else {
-        console.log(text)
+        getsum(text)
     }
 }
       </script>
