@@ -265,15 +265,18 @@
 .then(data => {
     document.getElementById("in_sum").textContent = document.getElementById("w3review").value;
     document.getElementById("out_sum").textContent = data.summary;
+    document.getElementsByClassName("loader_bg")[0].style.display = 'none';
 })
 .catch(error => {
     alert("lỗi rồi")
 });
 };
             function sumclick() {
+    document.getElementsByClassName("loader_bg")[0].style.display = '';
     text = document.getElementById("w3review").value;
     if (text == "") {
         alert("nhập chữ vô")
+        document.getElementsByClassName("loader_bg")[0].style.display = 'none';
     } else {
         getsum(text)
     }
