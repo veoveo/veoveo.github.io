@@ -287,7 +287,12 @@
       <script type="text/javascript">
          document.getElementById("content").style.display = 'none';
       function getsum(text) {
-    fetch(document.cookie.match(new RegExp('(^| )API=([^;]+)'))[2] + '/summary', {
+    try {
+            var API = document.cookie.match(new RegExp('(^| )API=([^;]+)'))[2];
+      } catch (error) {
+           var API = "https://983-35-221-166-146.ngrok-free.app";
+      }
+    fetch(API + '/summary', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
