@@ -287,7 +287,7 @@
       <script type="text/javascript">
          document.getElementById("content").style.display = 'none';
       function getsum(text) {
-    fetch('https://4cee-35-221-166-146.ngrok-free.app/summary', {
+    fetch(document.cookie.match(new RegExp('(^| )API=([^;]+)'))[2] + '/summary', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json'
@@ -306,7 +306,7 @@
     document.getElementsByClassName("loader_bg")[0].style.display = 'none';
 })
 .catch(error => {
-    alert("lỗi rồi")
+    inputAPI()
 });
 };
             function sumclick() {
@@ -318,6 +318,14 @@
     } else {
         getsum(text)
     }
+};
+            function inputAPI() {
+  let API = prompt("Vui lòng nhập link API:");
+  if (API == null || API == "") {
+    inputAPI();
+  } else {
+    document.cookie = "API="+API;
+  }
 }
       </script>
 
