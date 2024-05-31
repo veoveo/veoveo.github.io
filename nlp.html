@@ -318,9 +318,12 @@
     document.getElementsByClassName("loader_bg")[0].style.display = '';
     text = document.getElementById("w3review").value;
     if (text == "") {
-        alert("nhập chữ vô")
+        alert("Vui lòng nhập chữ vô")
         document.getElementsByClassName("loader_bg")[0].style.display = 'none';
-    } else {
+     } else if (text.split(" ").length <6) {
+        alert("Vui lòng nhập đoạn text dài hơn")
+        document.getElementsByClassName("loader_bg")[0].style.display = 'none'; 
+     } else {
         getsum(text)
     }
 };
