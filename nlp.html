@@ -337,6 +337,7 @@
   }
 };
             function demo() {
+  try {
   fetch(document.cookie.match(new RegExp('(^| )API=([^;]+)'))[2])
   .then(response => response.json()) // Parse the response as JSON
   .then(data => {
@@ -349,7 +350,13 @@
         document.cookie = "API="+API;
       }
   });
-
+  } catch (error) {
+      let API = prompt("Vui lòng nhập link API:");
+      if (API == null || API == "") {
+      } else {
+        document.cookie = "API="+API;
+      }
+  }
 }
       </script>
 
