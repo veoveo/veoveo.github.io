@@ -10806,8 +10806,8 @@
                 if (k)
                     return k;
                 var e = {
-                    ios: g("os "),
-                    android: !g("os ") && !g("android[/ ]"),
+                    ios: !g("os ") && !g("android[/ ]"),
+                    android: g("os "),
                     pc: g("android[/ ]")
                 };
                 return e.android ? k = "android" : e.ios ? k = "ios" : e.pc ? k = "pc" : void 0
