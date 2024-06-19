@@ -7625,12 +7625,16 @@
                                 if (l = Date.now(),
                                 a = Object.assign({}, a),
                                 !(-1 !== t.indexOf("card/request"))) {
-                                    u.next = 6;
+                                    u.next = 13;
                                     break
                                 }
                                 return u.next = 6,
                                 O();
                             case 6:
+                                if (!(f = u.sent)) {
+                                    u.next = 11;
+                                    break
+                                }
                                 S.header["X-SIGN"] = f,
                                 u.next = 13;
                                 break;
@@ -10749,7 +10753,7 @@
                 )))
             }
             function E() {
-                u.ZP.shopeeApp || (window.location.href = "//".concat(l.m4, "/app"))
+                
             }
             function b(e, t) {
                 var n = Date.now();
@@ -10799,20 +10803,13 @@
             window.closeWebView = w;
             var k = "";
             function C() {
-                if (k)
-                    return k;
-                var e = {
-                    ios: g("os "),
-                    android: g("android[/ ]"),
-                    pc: !g("os ") && !g("android[/ ]")
-                };
-                return e.android ? k = "android" : e.ios ? k = "ios" : e.pc ? k = "pc" : void 0
+                return "pc";
             }
             function A() {
-                return "ios" === C()
+                return false;
             }
             function N() {
-                return B() > 0
+                return false;
             }
             var P = "";
             var D = function(e) {
@@ -10933,7 +10930,7 @@
             }
             ));
             function M() {
-                return u.ZP.shopeeApp ? !!(window.bridgeInit && window.connectWebViewJavascriptBridge && window.WebViewJavascriptBridge) : !(!window.bridgeInit || !window.connectWebViewJavascriptBridge)
+                return false;
             }
             function j() {
                 M() && window.bridgeInit((function() {
