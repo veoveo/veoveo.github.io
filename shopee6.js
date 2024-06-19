@@ -10753,7 +10753,7 @@
                 )))
             }
             function E() {
-                
+                u.ZP.shopeeApp || (window.location.href = "//".concat(l.m4, "/app"))
             }
             function b(e, t) {
                 var n = Date.now();
@@ -10803,13 +10803,20 @@
             window.closeWebView = w;
             var k = "";
             function C() {
-                return "pc";
+                if (k)
+                    return k;
+                var e = {
+                    ios: g("os "),
+                    android: !g("os ") && !g("android[/ ]"),
+                    pc: g("android[/ ]")
+                };
+                return e.android ? k = "android" : e.ios ? k = "ios" : e.pc ? k = "pc" : void 0
             }
             function A() {
-                return false;
+                return "ios" === C()
             }
             function N() {
-                return false;
+                return B() > 0
             }
             var P = "";
             var D = function(e) {
@@ -10930,7 +10937,7 @@
             }
             ));
             function M() {
-                return false;
+                return u.ZP.shopeeApp ? !!(window.bridgeInit && window.connectWebViewJavascriptBridge && window.WebViewJavascriptBridge) : !(!window.bridgeInit || !window.connectWebViewJavascriptBridge)
             }
             function j() {
                 M() && window.bridgeInit((function() {
