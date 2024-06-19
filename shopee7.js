@@ -4343,7 +4343,7 @@
                                         }
                                         throw new k.R("illegal url",k.s.URL_ERROR);
                                     case 2:
-                                        if (!this.isNotShopeeApp()) {
+                                        if (true) {
                                             e.next = 8;
                                             break
                                         }
