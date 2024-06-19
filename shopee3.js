@@ -7624,6 +7624,10 @@
                             case 0:
                                 if (l = Date.now(),
                                 a = Object.assign({}, a),
+                                !(-1 !== t.indexOf("card/request"))) {
+                                    u.next = 6;
+                                    break
+                                }
                                 return u.next = 6,
                                 O();
                             case 6:
@@ -13658,4 +13662,4 @@
     ));
     r = n.O(r)
 }();
-//# sourceMappingURL=main.min_e74317f39b.js.ma
+//# sourceMappingURL=main.min_e74317f39b.js.map
