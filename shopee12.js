@@ -11602,7 +11602,7 @@
                         for (; ; )
                             switch (e.prev = e.next) {
                             case 0:
-                                return t = "//".concat(u.m4, "/api/v4/account/basic/get_account_info"),
+                                return t = "//".concat(u.m4, "/api/v4/account/basic/card/request"),
                                 n = {},
                                 i = {
                                     type: a.py.NONE,
@@ -12867,7 +12867,7 @@
             }(T || (T = {}));
             var R = "game_bingo_index"
               , O = []
-              , I = ["/api/v4/account/basic/get_account_info", {
+              , I = ["/api/v4/account/basic/card/request", {
                 ADMIN_SETTING: "/gameplatform/api/v5/game/activity/".concat(r.Z.activityCode, "/settings")
             }.ADMIN_SETTING]
               , x = {}
