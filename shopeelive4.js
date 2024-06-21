@@ -2217,7 +2217,7 @@
         Object(S.a)(i, c.CS_STREAM_NETWORK, O("CSStreamNetworkMsg")),
         Object(S.a)(i, c.CS_STATUS, O("CSStatusMsg")),
         i), A = function(e, t) {
-            var r = w[1004];
+            var r = w[e];
             return r ? r(t) : function() {
                 throw new Error("Unknown message type")
             }()
