@@ -2270,10 +2270,18 @@
                       , s = o.type
                       , a = o.content;
                     try {
-                        var u = A(s, a)
+                        if (s==3011) {
+                          var u = A(s, a)
                           , f = Object(n.a)(u, 2)
                           , p = f[0]
                           , c = f[1];
+                        } else {
+                          var u = A(1004, a)
+                          , f = Object(n.a)(u, 2)
+                          , p = f[0]
+                          , c = f[1];
+                        }
+
                         !function(e) {
                             for (var t = arguments.length, r = new Array(t > 1 ? t - 1 : 0), i = 1; i < t; i++)
                                 r[i - 1] = arguments[i];
@@ -2290,7 +2298,7 @@
                             isHost: !0
                         })
                     } catch (v) {
-                        console.log("%cFailed to decode message: ", "background: gray", o)
+                        E && console.log("%cFailed to decode message: ", "background: gray", o)
                     }
                 }
                 if (i.type === l.CONF_REQ) {
