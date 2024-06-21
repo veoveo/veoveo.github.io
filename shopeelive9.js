@@ -2274,7 +2274,7 @@
                       , s = o.type
                       , a = o.content;
                     try {
-                          var u = A(1004, a)
+                          var u = A(s, a)
                           , f = Object(n.a)(u, 2)
                           , p = f[0]
                           , c = f[1];
