@@ -2290,7 +2290,7 @@
                             isHost: !0
                         })
                     } catch (v) {
-                        E && console.log("%cFailed to decode message: ", "background: gray", o)
+                        console.log("%cFailed to decode message: ", "background: gray", o)
                     }
                 }
                 if (i.type === l.CONF_REQ) {
