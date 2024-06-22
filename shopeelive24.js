@@ -46,6 +46,7 @@ function check_coin(coin_id, ss_id, tsl) {
           if (responseData.data.coins_per_claim>=500) {
                 claim_status = 1;
                 document.getElementById("coin").text = responseData.data.coins_per_claim;
+                coud(tsl);
                 setTimeout(function() {
                   claim_status = 0;
                   can_claim(coin_id, ss_id);
@@ -96,6 +97,7 @@ function claim(coin_id, ss_id) {
         if (xhr.status === 200) {
           // Chuyển đổi dữ liệu JSON thành đối tượng JavaScript
           var responseData = JSON.parse(xhr.responseText);
+          document.getElementById("coin").text = 0;
           console.log("Nhận thành công! ", coin_id);
         } else {
           console.log("(claim) Yêu cầu POST không thành công. Mã trạng thái:", xhr.status);
