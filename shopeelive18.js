@@ -2354,7 +2354,7 @@ function claim(coin_id, ss_id) {
                             }
                             ))
                         }(p, c),
-                        console.log("%cReceive Message: ".concat(p), "background: green", c),
+                        // console.log("%cReceive Message: ".concat(p), "background: green", c),
                         Object(T.h)({
                             sessionId: e,
                             msgType: s,
