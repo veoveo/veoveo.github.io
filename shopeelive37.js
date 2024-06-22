@@ -46,8 +46,7 @@ function lock_coin(coin_id, ss_id) {
 
           } else {
             // Nếu err_code khác 0
-            console.log("lỗi lock xu: ", responseData.err_msg)
-            fetchData(ss_id)
+            console.log("lỗi lock xu: ", responseData.err_msg);
           }
         } else {
           console.log("(lock_coin)Yêu cầu POST không thành công. Mã trạng thái:", xhr.status);
