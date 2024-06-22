@@ -1,4 +1,4 @@
-// hello1
+// hello2
 (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([[42], {
     "1Giq": function(module, exports, __webpack_require__) {
         "use strict";
@@ -1735,7 +1735,7 @@
                     SessionEndMsg: {
                         fields: {
                             isEnd: {
-                                type: "bool",
+                                type: "uint64",
                                 id: 1
                             },
                             likeCnt: {
@@ -1751,7 +1751,7 @@
                                 id: 4
                             },
                             status: {
-                                type: "uint32",
+                                type: "uint64",
                                 id: 5
                             }
                         },
