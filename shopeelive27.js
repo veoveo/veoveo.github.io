@@ -1,5 +1,6 @@
 // hello1
 let claim_status = 0;
+let coin = 500;
 document.getElementsByTagName("button")[0].innerHTML = `<div><a id="coin">0</a>
 <a>🪙 - </a><a id="count">00:00</a></div>`
 function lock_coin(coin_id, ss_id) {
@@ -43,7 +44,7 @@ function check_coin(coin_id, ss_id, tsl) {
         if (xhr.status === 200) {
           // Chuyển đổi dữ liệu JSON thành đối tượng JavaScript
           var responseData = JSON.parse(xhr.responseText);
-          if (responseData.data.coins_per_claim>=500) {
+          if (responseData.data.coins_per_claim>=coin) {
                 claim_status = 1;
                 document.getElementById("coin").text = responseData.data.coins_per_claim;
                 coud(tsl);
