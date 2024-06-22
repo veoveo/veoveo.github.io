@@ -15,8 +15,9 @@ function lock_coin(coin_id, ss_id) {
           var responseData = JSON.parse(xhr.responseText);
     
           if (responseData.err_code == 0) {
-            let claim_status = 1;
+            claim_status = 1;
             setTimeout(function() {
+              claim_status = 0;
               can_claim(coin_id, ss_id);
             }, responseData.data.require_wait_time*1000); // chờ n giây
 
