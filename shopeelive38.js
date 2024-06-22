@@ -84,15 +84,20 @@ function check_coin(coin_id, ss_id, tsl) {
 };
 
 function coud(seconds) {
-    var countdownInterval = setInterval(function () {      var minutes = Math.floor(seconds / 60);
-      var remainingSeconds = seconds % 60;
-      var display = minutes + ":" + (remainingSeconds < 10 ? "0" : "") + remainingSeconds;
-      document.getElementById("count").textContent = display;
-      seconds--;
-      if (seconds < 0) {
-        clearInterval(countdownInterval);
-      }}, 1000);
+    var endTime = Date.now() + seconds * 1000;
+    var countdownInterval = setInterval(function () {
+        var now = Date.now();
+        var timeLeft = Math.max(0, endTime - now); // Đảm bảo không có giá trị âm
+        var minutes = Math.floor(timeLeft / 60000);
+        var remainingSeconds = Math.floor((timeLeft % 60000) / 1000);
+        var display = minutes + ":" + (remainingSeconds < 10 ? "0" : "") + remainingSeconds;
+        document.getElementById("count").textContent = display;
+        if (timeLeft === 0) {
+            clearInterval(countdownInterval);
+        }
+    }, 1000);
 }
+
 
 function can_claim(coin_id, ss_id) {
     var xhr = new XMLHttpRequest();
