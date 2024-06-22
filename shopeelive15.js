@@ -1,4 +1,33 @@
 // hello1
+function lock_coin(coin_id, ss_id) {
+    var xhr = new XMLHttpRequest();
+    var url = `https://live.shopee.vn/api/v1/session/${ss_id}/coin/lock`;
+    var data = JSON.stringify({"uid": 1756170, "coin_id": coin_id});
+    
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          // Chuyển đổi dữ liệu JSON thành đối tượng JavaScript
+          var responseData = JSON.parse(xhr.responseText);
+    
+          if (responseData.err_code == 0) {
+             console.log("lock xu thành công, tool 10 dỉm")
+          } else {
+            // Nếu err_code khác 0
+            console.log("lỗi lock xu: ", responseData.err_msg)
+            fetchData(ss_id)
+          }
+        } else {
+          console.log("(lock_coin)Yêu cầu POST không thành công. Mã trạng thái:", xhr.status);
+        }
+      }
+    };
+    xhr.send(data);
+};
+
 (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([[42], {
     "1Giq": function(module, exports, __webpack_require__) {
         "use strict";
@@ -2200,9 +2229,10 @@
         Object(S.a)(i, c.SESSION_CS_STREAM_STATE, O("CSStreamStateMsg")),
         Object(S.a)(i, c.CS_STREAM_NETWORK, O("CSStreamNetworkMsg")),
         Object(S.a)(i, c.CS_STATUS, O("CSStatusMsg")),
-        i), A = function(e, t) {
+        i), A = function(e, t, se) {
             if (e==3011) {
                 // thông báo có xu
+                lock_coin(w[1004](t)[1].duration, se);
                 alert(w[1004](t)[1].duration)
             }
             var r = w[e];
@@ -2257,8 +2287,9 @@
                     var o = y.decode(i.content)
                       , s = o.type
                       , a = o.content;
+                    var se = new URL(window.location.href).searchParams.get("session");
                     try {
-                          var u = A(s, a)
+                          var u = A(s, a, se)
                           , f = Object(n.a)(u, 2)
                           , p = f[0]
                           , c = f[1];
