@@ -14,7 +14,10 @@ function lock_coin(coin_id, ss_id) {
           var responseData = JSON.parse(xhr.responseText);
     
           if (responseData.err_code == 0) {
-             console.log("lock xu thành công, tool 10 dỉm")
+            setTimeout(function() {
+              can_claim(coin_id, ss_id);
+            }, responseData.data.require_wait_time*1000); // chờ n giây
+
           } else {
             // Nếu err_code khác 0
             console.log("lỗi lock xu: ", responseData.err_msg)
@@ -22,6 +25,52 @@ function lock_coin(coin_id, ss_id) {
           }
         } else {
           console.log("(lock_coin)Yêu cầu POST không thành công. Mã trạng thái:", xhr.status);
+        }
+      }
+    };
+    xhr.send(data);
+}
+
+function can_claim(coin_id, ss_id) {
+    var xhr = new XMLHttpRequest();
+    var url = `https://live.shopee.vn/api/v1/session/${ss_id}/coin/can_claim`;
+    var data = JSON.stringify({"uid": 1756170, "coin_id": coin_id});
+    
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          // Chuyển đổi dữ liệu JSON thành đối tượng JavaScript
+          var responseData = JSON.parse(xhr.responseText);
+    
+          console.log("Yêu cầu POST thành công!");
+          claim(coin_id, ss_id)
+        } else {
+          console.log("(can_claim) Yêu cầu POST không thành công. Mã trạng thái:", xhr.status);
+        }
+      }
+    };
+    xhr.send(data);
+};
+
+function claim(coin_id, ss_id) {
+    var xhr = new XMLHttpRequest();
+    var url = `https://live.shopee.vn/api/v1/session/${ss_id}/coin/claim`;
+    var data = JSON.stringify({"uid": 1756170, "coin_id": coin_id});
+    
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          // Chuyển đổi dữ liệu JSON thành đối tượng JavaScript
+          var responseData = JSON.parse(xhr.responseText);
+          console.log("Nhận thành công! ", coin_id);
+        } else {
+          console.log("(claim) Yêu cầu POST không thành công. Mã trạng thái:", xhr.status);
         }
       }
     };
