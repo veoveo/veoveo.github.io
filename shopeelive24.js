@@ -45,6 +45,7 @@ function check_coin(coin_id, ss_id, tsl) {
           var responseData = JSON.parse(xhr.responseText);
           if (responseData.data.coins_per_claim>=500) {
                 claim_status = 1;
+                document.getElementById("coin").text = responseData.data.coins_per_claim;
                 setTimeout(function() {
                   claim_status = 0;
                   can_claim(coin_id, ss_id);
