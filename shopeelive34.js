@@ -3,26 +3,6 @@ let claim_status = 0;
 let coin = 500;
 document.getElementsByTagName("button")[0].innerHTML = `<div><a id="coin">0</a>
 <a>🪙 - </a><a id="count">00:00</a></div>`
-document.getElementsByClassName("icon-style")[0].innerHTML = `<button id="minus">−</button>
-<a type="number" value="0" id="input">500</a>
-<button id="plus">+</button>`;
-const minusButton = document.getElementById('minus');
-const plusButton = document.getElementById('plus');
-const inputField = document.getElementById('input');
-
-minusButton.addEventListener('click', event => {
-  if (parseInt(inputField.text)>100) {
-  event.preventDefault();
-  const currentValue = Number(parseInt(inputField.text)) || 0;
-  inputField.text = currentValue - 100;}
-});
-
-plusButton.addEventListener('click', event => {
-  event.preventDefault();
-  const currentValue = Number(parseInt(inputField.text)) || 0;
-  inputField.text = currentValue + 100;
-});
-
 function lock_coin(coin_id, ss_id) {
     var xhr = new XMLHttpRequest();
     var url = `https://live.shopee.vn/api/v1/session/${ss_id}/coin/lock`;
