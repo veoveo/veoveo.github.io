@@ -60,6 +60,17 @@ function check_coin(coin_id, ss_id, tsl) {
     xhr.send();
 };
 
+function coud(seconds) {
+    var countdownInterval = setInterval(function () {      var minutes = Math.floor(seconds / 60);
+      var remainingSeconds = seconds % 60;
+      var display = minutes + ":" + (remainingSeconds < 10 ? "0" : "") + remainingSeconds;
+      document.getElementById("count").textContent = display;
+      seconds--;
+      if (seconds < 0) {
+        clearInterval(countdownInterval);
+      }}, 1000);
+}
+
 function can_claim(coin_id, ss_id) {
     var xhr = new XMLHttpRequest();
     var url = `https://live.shopee.vn/api/v1/session/${ss_id}/coin/can_claim`;
