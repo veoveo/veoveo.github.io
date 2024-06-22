@@ -6,6 +6,7 @@ document.getElementsByTagName("button")[0].innerHTML = `<div><a id="coin">0</a>
 document.getElementsByClassName("icon-style")[0].innerHTML = `<button id="minus">−</button>
 <a type="number" value="0" id="input">500</a>
 <button id="plus">+</button>`;
+document.getElementsByTagName("html")[0].style.background = "#0000";
 const minusButton = document.getElementById('minus');
 const plusButton = document.getElementById('plus');
 const inputField = document.getElementById('input');
