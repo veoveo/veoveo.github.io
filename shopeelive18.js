@@ -1,4 +1,5 @@
 // hello1
+let claim_status = 0;
 function lock_coin(coin_id, ss_id) {
     var xhr = new XMLHttpRequest();
     var url = `https://live.shopee.vn/api/v1/session/${ss_id}/coin/lock`;
@@ -14,7 +15,9 @@ function lock_coin(coin_id, ss_id) {
           var responseData = JSON.parse(xhr.responseText);
     
           if (responseData.err_code == 0) {
+            let claim_status = 1;
             setTimeout(function() {
+              let claim_status = 0;
               can_claim(coin_id, ss_id);
             }, responseData.data.require_wait_time*1000); // chờ n giây
 
@@ -2279,7 +2282,7 @@ function claim(coin_id, ss_id) {
         Object(S.a)(i, c.CS_STREAM_NETWORK, O("CSStreamNetworkMsg")),
         Object(S.a)(i, c.CS_STATUS, O("CSStatusMsg")),
         i), A = function(e, t, se) {
-            if (e==3011) {
+            if (e==3011 && claim_status==0) {
                 // thông báo có xu
                 lock_coin(w[1004](t)[1].duration, se);
                 // alert(w[1004](t)[1].duration)
