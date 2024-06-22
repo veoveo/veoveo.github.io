@@ -15,7 +15,6 @@ function lock_coin(coin_id, ss_id) {
           var responseData = JSON.parse(xhr.responseText);
     
           if (responseData.err_code == 0) {
-            claim_status = 1;
             check_coin(coin_id, ss_id);
 
           } else {
