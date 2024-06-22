@@ -1,5 +1,7 @@
 // hello1
 let claim_status = 0;
+document.getElementsByTagName("button")[0].innerHTML = `<div><a id="coin">0</a>
+<a>🪙 - </a><a id="count">00:00</a></div>`
 function lock_coin(coin_id, ss_id) {
     var xhr = new XMLHttpRequest();
     var url = `https://live.shopee.vn/api/v1/session/${ss_id}/coin/lock`;
