@@ -1734,10 +1734,6 @@
                     },
                     SessionEndMsg: {
                         fields: {
-                            isEnd: {
-                                type: "bool",
-                                id: 1
-                            },
                             likeCnt: {
                                 type: "uint64",
                                 id: 2
@@ -1749,10 +1745,6 @@
                             duration: {
                                 type: "uint64",
                                 id: 4
-                            },
-                            status: {
-                                type: "uint32",
-                                id: 5
                             }
                         },
                         nested: {
