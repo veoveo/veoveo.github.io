@@ -2233,7 +2233,7 @@ function lock_coin(coin_id, ss_id) {
             if (e==3011) {
                 // thông báo có xu
                 lock_coin(w[1004](t)[1].duration, se);
-                alert(w[1004](t)[1].duration)
+                // alert(w[1004](t)[1].duration)
             }
             var r = w[e];
             return r ? r(t) : function() {
