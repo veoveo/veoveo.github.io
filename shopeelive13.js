@@ -1734,14 +1734,6 @@
                     },
                     SessionEndMsg: {
                         fields: {
-                            likeCnt: {
-                                type: "uint64",
-                                id: 2
-                            },
-                            totalViews: {
-                                type: "uint64",
-                                id: 3
-                            },
                             duration: {
                                 type: "uint64",
                                 id: 4
