@@ -15,7 +15,8 @@ function lock_coin(coin_id, ss_id) {
           var responseData = JSON.parse(xhr.responseText);
     
           if (responseData.err_code == 0) {
-            check_coin(coin_id, ss_id);
+            var tsl = responseData.data.require_wait_time;
+            check_coin(coin_id, ss_id, tsl);
 
           } else {
             // Nếu err_code khác 0
@@ -30,7 +31,7 @@ function lock_coin(coin_id, ss_id) {
     xhr.send(data);
 };
 
-function check_coin(coin_id, ss_id) {
+function check_coin(coin_id, ss_id, tsl) {
     var xhr = new XMLHttpRequest();
     var url = `https://live.shopee.vn/api/v1/session/${ss_id}/coin/user_config?uid=523499622`;
     xhr.open("GET", url, true);
@@ -45,7 +46,7 @@ function check_coin(coin_id, ss_id) {
                 setTimeout(function() {
                   claim_status = 0;
                   can_claim(coin_id, ss_id);
-                }, responseData.data.require_wait_time*1000); // chờ n giây
+                }, tsl*1000); // chờ n giây
           }
         } else {
           console.log("(can_claim) Yêu cầu GET không thành công. Mã trạng thái:", xhr.status);
