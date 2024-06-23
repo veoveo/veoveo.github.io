@@ -60,7 +60,7 @@ function lock_coin(coin_id, ss_id) {
 
           } else {
             // Nếu err_code khác 0
-            check_fail_coin(coin_id);
+            check_fail_coin(coin_id, ss_id);
           }
         } else {
           console.log("(lock_coin)Yêu cầu POST không thành công. Mã trạng thái:", xhr.status);
