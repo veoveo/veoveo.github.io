@@ -28,6 +28,18 @@ plusButton.addEventListener('click', event => {
   coin = coin + 100;
 });
 
+function getCurrentTime() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    function formatTimeUnit(unit) {
+        return unit < 10 ? '0' + unit : unit;
+    }
+    var currentTime = formatTimeUnit(hours) + ':' + formatTimeUnit(minutes) + ':' + formatTimeUnit(seconds);
+    return currentTime;
+};
+
 function lock_coin(coin_id, ss_id) {
     var xhr = new XMLHttpRequest();
     var url = `https://live.shopee.vn/api/v1/session/${ss_id}/coin/lock`;
@@ -48,7 +60,7 @@ function lock_coin(coin_id, ss_id) {
 
           } else {
             // Nếu err_code khác 0
-            console.log("lỗi lock xu: ", responseData.err_msg);
+            check_fail_coin(coin_id);
           }
         } else {
           console.log("(lock_coin)Yêu cầu POST không thành công. Mã trạng thái:", xhr.status);
@@ -56,6 +68,25 @@ function lock_coin(coin_id, ss_id) {
       }
     };
     xhr.send(data);
+};
+
+function check_fail_coin(coin_id, ss_id) {
+    var xhr = new XMLHttpRequest();
+    var url = `https://live.shopee.vn/api/v1/session/${ss_id}/coin/user_config?uid=523499622`;
+    xhr.open("GET", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          // Chuyển đổi dữ liệu JSON thành đối tượng JavaScript
+          var responseData = JSON.parse(xhr.responseText);
+          document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].insertAdjacentHTML('beforeend', `<div><span class="Item__Content-sc-1iv8r0f-2 dNqNNO">`+getCurrentTime()+` - hụt `+responseData.data.coins_per_claim+`🪙</span></div>`);
+        } else {
+          console.log("(can_claim) Yêu cầu GET không thành công. Mã trạng thái:", xhr.status);
+        }
+      }
+    };
+    xhr.send();
 };
 
 function check_coin(coin_id, ss_id, tsl) {
