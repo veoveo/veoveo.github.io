@@ -1,6 +1,7 @@
 // hello1
 let claim_status = 0;
 let coin = 500;
+let se = new URL(window.location.href).searchParams.get("session");
 document.getElementsByTagName("button")[0].innerHTML = `<div><a id="coin">0</a>
 <a>🪙 - </a><a id="count">00:00</a></div>`
 document.getElementsByClassName("icon-style")[0].innerHTML = `<button id="minus">−</button>
@@ -2450,7 +2451,6 @@ function claim(coin_id, ss_id) {
                     var o = y.decode(i.content)
                       , s = o.type
                       , a = o.content;
-                    var se = new URL(window.location.href).searchParams.get("session");
                     try {
                           var u = A(s, a, se)
                           , f = Object(n.a)(u, 2)
