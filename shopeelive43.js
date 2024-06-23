@@ -112,6 +112,12 @@ function check_coin(coin_id, ss_id, tsl) {
                   claim_status = 0;
                   can_claim(coin_id, ss_id);
                 }, tsl*1000); // chờ n giây
+                document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].insertAdjacentHTML('beforeend', `<div><span class="Item__Content-sc-1iv8r0f-2 dNqNNO">`+getCurrentTime()+` - lụm `+responseData.data.coins_per_claim+`🪙</span></div>`);
+                var lastChild = document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].lastElementChild;
+                if (lastChild) {
+                      // Cuộn phần tử con cuối cùng vào tầm nhìn
+                      lastChild.scrollIntoView({ behavior: 'smooth' });
+                }
           }
         } else {
           console.log("(can_claim) Yêu cầu GET không thành công. Mã trạng thái:", xhr.status);
