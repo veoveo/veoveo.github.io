@@ -12,6 +12,7 @@ const inputField = document.getElementById('input');
 document.getElementsByClassName("share__StyledBottomArea-wtg3fv-0 kjpteW")[0].style.display = "grid";
 document.getElementsByClassName("share__StyledBottomArea-wtg3fv-0 kjpteW")[0].style["grid-template-columns"] = 'repeat(2, auto)';
 document.getElementsByClassName("Danmaku__DanmakuContainer-sc-1rxc6pa-0 dYsErQ")[0].insertAdjacentHTML('afterend', `<div class="Danmaku__DanmakuContainer-sc-1rxc6pa-0 dYsErQ"><div class="Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY"><div><span class="Item__Content-sc-1iv8r0f-2 dNqNNO">log</span></div></div></div>`);
+document.getElementsByClassName("ProductList__StyledContainer-zzolnk-0 hcTzRn")[0].style.display = "none";
 minusButton.addEventListener('click', event => {
   if (parseInt(inputField.text)>100) {
   event.preventDefault();
