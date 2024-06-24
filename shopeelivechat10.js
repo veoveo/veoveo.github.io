@@ -1019,10 +1019,7 @@ function remove_mess() {
                     ))
                 }
                 ), []);
-                if (n.length>200) {
-                    n.splice(0, 100);
-                    remove_mess();
-                }
+                remove_mess();
                 return [n, i]
             }(2000000000000000000000000000000000000000000000000)
               , u = Object(r.a)(c, 2)
