@@ -1,4 +1,4 @@
-// hello
+// hello1
 (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([[3], {
     "+SFn": function(e, t, i) {
         "use strict";
@@ -31,19 +31,19 @@
         }
         )),
         i.d(t, "k", (function() {
-            return L
-        }
-        )),
-        i.d(t, "d", (function() {
             return T
         }
         )),
+        i.d(t, "d", (function() {
+            return L
+        }
+        )),
         i.d(t, "x", (function() {
-            return C
+            return P
         }
         )),
         i.d(t, "c", (function() {
-            return P
+            return C
         }
         )),
         i.d(t, "r", (function() {
@@ -83,7 +83,7 @@
         }
         )),
         i.d(t, "i", (function() {
-            return j
+            return R
         }
         )),
         i.d(t, "o", (function() {
@@ -91,7 +91,7 @@
         }
         )),
         i.d(t, "j", (function() {
-            return R
+            return j
         }
         ));
         var n = i("rePB")
@@ -313,7 +313,7 @@
             }
             return i
         }
-        function v(e) {
+        function d(e) {
             for (var t = 1; t < arguments.length; t++) {
                 var i = null != arguments[t] ? arguments[t] : {};
                 t % 2 ? u(Object(i), !0).forEach((function(t) {
@@ -339,7 +339,7 @@
             e[e.SaveOnMemory = 0] = "SaveOnMemory",
             e[e.SaveOnDisk = 1] = "SaveOnDisk"
         }(l || (l = {}));
-        var d, f, y = function() {
+        var v, f, y = function() {
             var e = Object(r.a)(a.a.mark((function e(t, i) {
                 return a.a.wrap((function(e) {
                     for (; ; )
@@ -370,7 +370,7 @@
         !function(e) {
             e[e.FAILED = 0] = "FAILED",
             e[e.SUCCESS = 1] = "SUCCESS"
-        }(d || (d = {})),
+        }(v || (v = {})),
         function(e) {
             e[e.ERROR = 0] = "ERROR",
             e[e.SUCCESS = 1] = "SUCCESS"
@@ -573,7 +573,7 @@
                                     n("isInWKWebView");
                                 case 2:
                                     return t = e.sent,
-                                    e.abrupt("return", t.status === d.SUCCESS);
+                                    e.abrupt("return", t.status === v.SUCCESS);
                                 case 4:
                                 case "end":
                                     return e.stop()
@@ -599,7 +599,7 @@
                                     });
                                 case 2:
                                     return i = e.sent,
-                                    e.abrupt("return", i.status === d.SUCCESS);
+                                    e.abrupt("return", i.status === v.SUCCESS);
                                 case 4:
                                 case "end":
                                     return e.stop()
@@ -640,7 +640,7 @@
                             for (; ; )
                                 switch (i.prev = i.next) {
                                 case 0:
-                                    if ("number" !== typeof e.disableResizing || Object(p.p)() !== p.d.Android) {
+                                    if ("number" !== typeof e.disableResizing || Object(p.q)() !== p.d.Android) {
                                         i.next = 5;
                                         break
                                     }
@@ -691,7 +691,7 @@
                                 switch (t.prev = t.next) {
                                 case 0:
                                     return t.next = 2,
-                                    n("navigateAppPath", v({
+                                    n("navigateAppPath", d({
                                         popSelf: !1
                                     }, e));
                                 case 2:
@@ -1220,10 +1220,10 @@
         b.checkVersion)
           , S = b.showToast
           , x = b.popSelf
-          , L = b.isInWKWebView
-          , T = b.caniuse
-          , C = b.trackBIEvent
-          , P = b.addEventListener
+          , T = b.isInWKWebView
+          , L = b.caniuse
+          , P = b.trackBIEvent
+          , C = b.addEventListener
           , O = b.removeEventListener
           , E = b.navigate
           , B = b.navigateAppPath
@@ -1237,9 +1237,9 @@
         b.getServerTime,
         b.showSharePanel)
           , I = b.showShareData
-          , j = b.getData
+          , R = b.getData
           , q = b.navigateAppRL
-          , R = b.getDeviceFingerprint;
+          , j = b.getDeviceFingerprint;
         b.dataStoreSave,
         b.dataStoreLoad,
         b.dataStoreClear,
@@ -1421,11 +1421,11 @@
         }
         )),
         i.d(t, "g", (function() {
-            return v
+            return d
         }
         )),
         i.d(t, "c", (function() {
-            return d
+            return v
         }
         )),
         i.d(t, "b", (function() {
@@ -1457,7 +1457,7 @@
         }
         )),
         i.d(t, "d", (function() {
-            return L
+            return T
         }
         )),
         i.d(t, "E", (function() {
@@ -1465,15 +1465,15 @@
         }
         )),
         i.d(t, "A", (function() {
-            return T
+            return L
         }
         )),
         i.d(t, "w", (function() {
-            return C
+            return P
         }
         )),
         i.d(t, "t", (function() {
-            return P
+            return C
         }
         )),
         i.d(t, "y", (function() {
@@ -1518,18 +1518,18 @@
         }(r.b), s = 864e5, c = 30 * s, l = 180 * s, m = {
             EDUCATION_USER_MESSAGE: "EDUCATION_USER_MESSAGE",
             EDUCATION_LATEST_ID: "EDUCATION_LATEST_ID"
-        }, h = "live", g = "replay", p = "plan", u = 1005, v = 1003, d = 10013, f = 10014, y = 10015, b = 3000058, w = 3000059, k = 20026, S = 7918025, x = 7918026, L = 7918040;
+        }, h = "live", g = "replay", p = "plan", u = 1005, d = 1003, v = 10013, f = 10014, y = 10015, b = 3000058, w = 3000059, k = 20026, S = 7918025, x = 7918026, T = 7918040;
         !function(e) {
             e[e.SESSION_UNSTART = 0] = "SESSION_UNSTART",
             e[e.SESSION_START = 1] = "SESSION_START"
         }(n || (n = {}));
-        var T = {
+        var L = {
             ph: "_PH",
             my: "_MY",
             sg: "_SG"
         }
-          , C = "STORAGE_SESSION"
-          , P = "STORAGE_COVER"
+          , P = "STORAGE_SESSION"
+          , C = "STORAGE_COVER"
           , O = "STORAGE_TITLE"
           , E = "STORAGE_DESCRIPTION"
           , B = "STORAGE_PRODUCTS"
@@ -1541,7 +1541,7 @@
                 }
                 ))
                   , t = e.length > 0 ? e[0].indexOf("=") : -1
-                  , i = Object(a.F)(location.search).host_user_id;
+                  , i = Object(a.G)(location.search).host_user_id;
                 return {
                     account_type: "shopee_account",
                     streamer_id: -1 !== t ? parseInt(e[0].slice(t + 1)) || (i ? parseInt(i) : 0) : 0
@@ -1554,7 +1554,7 @@
                 return !1;
             if (window && window.location) {
                 var e = window.location.pathname;
-                return !(e.includes("share") || e.includes("live-end") && "guest" === Object(a.F)(window.location.search).type)
+                return !(e.includes("share") || e.includes("live-end") && "guest" === Object(a.G)(window.location.search).type)
             }
             return !1
         }
@@ -2140,6 +2140,7 @@
                             live_streaming_import_url__input_limit_quantity: "Ch\u1ec9 \u0111\u01b0\u1ee3c \u0111i\u1ec1n t\u1ed1i \u0111a 100 li\xean k\u1ebft cho 1 l\u1ea7n nh\u1eadp",
                             live_streaming_import_url_clear: "X\xf3a t\u1ea5t c\u1ea3",
                             live_streaming_import_url_default_input: "Ch\u1ec9 h\u1ed7 tr\u1ee3 nh\u1eadp li\xean k\u1ebft c\xe1c s\u1ea3n ph\u1ea9m tr\xean Shopee. M\u1ed7i li\xean k\u1ebft 1 d\xf2ng, t\u1ed1i \u0111a 100 li\xean k\u1ebft.\nV\xed d\u1ee5: https://shopee.vn/product/23 \nhttps://shopee.vn/product/23/?utm_campaign=lk23h2",
+                            live_streaming_import_url_default_input_include_group_link: "Only URLs for Shopee products are supported. Please input 1 product group link or multiple single product link in different lines.\neg:\nhttps://shopee.co.id/product/23\nhttps://shopee.co.id/product/23/?utm_campaign=lk23h2",
                             live_streaming_import_url_draft: "B\u1ea1n c\xf3 mu\u1ed1n l\u01b0u b\u1ea3n nh\xe1p? B\u1ea3n nh\xe1p s\u1ebd t\u1ef1 \u0111\u1ed9ng x\xf3a sau 24H",
                             live_streaming_import_url_draft_no: "Kh\xf4ng",
                             live_streaming_import_url_draft_yes: "C\xf3",
@@ -2153,7 +2154,11 @@
                             live_streaming_import_url_import_inputbox_fail_multi_nonproduct_expired_product_exception: "Please check for non-product link(s), expired link(s) and product exception link(s)",
                             live_streaming_import_url_import_inputbox_fail_multi_nonproduct_product_exception: "Please check for non-product link(s) and product exception link(s)",
                             live_streaming_import_url_import_inputbox_fail_nonproduct: "H\xe3y ki\u1ec3m tra l\u1ea1i c\xe1c li\xean k\u1ebft kh\xf4ng ch\u1ee9a s\u1ea3n ph\u1ea9m",
+                            live_streaming_import_url_import_inputbox_fail_product_exception: "{{abnormal_product_count}} product(s) are failed to be imported, please copy to check",
                             live_streaming_import_url_import_inputbox_fail_product_exception_link: "Please check for product exception link(s)",
+                            live_streaming_import_url_import_inputbox_fail_product_exception_link_copy: "Copy",
+                            live_streaming_import_url_import_inputbox_fail_product_exception_link_copy_fail: "Copy failed",
+                            live_streaming_import_url_import_inputbox_fail_product_exception_link_copy_success: "Copy successfully",
                             live_streaming_import_url_import_inputbox_success_certain_product: "Exist {{abnormal_product_count}} abnormal product(s), including {{abnormal_product_item_id}}",
                             live_streaming_import_url_import_list: "Nh\u1eadp danh s\xe1ch",
                             live_streaming_import_url_import_list_null: "Kh\xf4ng c\xf3 s\u1ea3n ph\u1ea9m",
@@ -2166,6 +2171,7 @@
                             live_streaming_import_url_import_toast_allfail_multi_nonproduct_expired_product_exception: "Fail to import, for non-product link(s), expired link(s) and product exception link(s)",
                             live_streaming_import_url_import_toast_allfail_multi_nonproduct_product_exception: "Fail to import, for non-product link(s) and product exception link(s)",
                             live_streaming_import_url_import_toast_allfail_nonproduct: "Nh\u1eadp th\u1ea5t b\u1ea1i do c\xf3 li\xean k\u1ebft kh\xf4ng ch\u1ee9a s\u1ea3n ph\u1ea9m",
+                            live_streaming_import_url_import_toast_allfail_product_exception: "Fail to import, for product exception",
                             live_streaming_import_url_import_toast_allfail_product_exception_link: "Fail to import, for product exception link(s)",
                             live_streaming_import_url_import_toast_allsuccess: "Nh\u1eadp th\xe0nh c\xf4ng",
                             live_streaming_import_url_import_toast_certain_fail_expired_link: "Nh\u1eadp th\xe0nh c\xf4ng {{success_quantity}} li\xean k\u1ebft, nh\u01b0ng c\xf3 {{fail_quantity}} li\xean k\u1ebft th\u1ea5t b\u1ea1i do (c\xe1c) li\xean k\u1ebft \u0111\xf3 \u0111\xe3 h\u1ebft h\u1ea1n",
@@ -2174,6 +2180,7 @@
                             live_streaming_import_url_import_toast_certain_fail_multi_nonproduct_expired_product_exception: "Import {{success_quantity}} link(s) successfully, but {{fail_quantity}} link(s) failed, for non-product link(s), expired link(s) and product exception link(s)",
                             live_streaming_import_url_import_toast_certain_fail_multi_nonproduct_product_exception: "Import {{success_quantity}} link(s) successfully, but {{fail_quantity}} link(s) failed, for non-product link(s) and product exception link(s)",
                             live_streaming_import_url_import_toast_certain_fail_nonproduct: "Nh\u1eadp th\xe0nh c\xf4ng {{success_quantity}} li\xean k\u1ebft nh\u01b0ng {{fail_quantity}} li\xean k\u1ebft th\u1ea5t b\u1ea1i do (c\xe1c) li\xean k\u1ebft \u0111\xf3 kh\xf4ng ch\u1ee9a s\u1ea3n ph\u1ea9m",
+                            live_streaming_import_url_import_toast_certain_fail_product_exception: "Import successfully, but {{abnormal_product_count}} product(s) failed, for product exception",
                             live_streaming_import_url_import_toast_certain_fail_product_exception_link: "Import {{success_quantity}} link(s) successfully, but {{fail_quantity}} link(s) failed, for product exception link(s)",
                             live_streaming_import_url_import_toast_fail_specification_exception: "Please input 1 product group link or multiple single product link in different lines",
                             live_streaming_import_url_import_toast_success_certain_product: "Import successfully, but {{abnormal_product_count}} product(s) failed, for product",
@@ -2276,6 +2283,9 @@
                             live_streaming_livegame_PC_end: "T\xfai Qu\xe0 t\u1eeb Shopee \u0111\xe3 k\u1ebft th\xfac.",
                             live_streaming_livegame_PC_start: "T\xfai Qu\xe0 t\u1eeb Shopee \u0111ang di\u1ec5n ra.",
                             live_streaming_livegame_PC_upcoming: "T\xfai Qu\xe0 t\u1eeb Shopee s\u1ebd b\u1eaft \u0111\u1ea7u trong {countdown} ph\xfat.",
+                            live_streaming_livegame_luckyrain: "T\xfai Qu\xe0",
+                            live_streaming_livegame_luckyrain_conflict_luckydraw: "Not available right now. Lucky Draw is in progress.",
+                            live_streaming_livegame_luckyrain_conflict_luckyrain: "Not available right now. Lucky Rain is in progress.",
                             live_streaming_lp_coins_max_value: "L\xean \u0111\u1ebfn {{coins_max_value}}",
                             live_streaming_lp_tab_empty: "Nhi\u1ec1u video livestream kh\xe1c \u0111ang trong th\u1eddi gian chu\u1ea9n b\u1ecb.",
                             live_streaming_lp_tabname_all: "T\u1ea5t C\u1ea3",
@@ -2398,27 +2408,27 @@
                             live_streaming_price_end_in: "K\u1ebft th\xfac sau {timer}",
                             live_streaming_price_exclusive_expiration_tips: "Gi\xe1 ch\u1ec9 \xe1p d\u1ee5ng khi ng\u01b0\u1eddi mua th\xeam v\xe0o gi\u1ecf h\xe0ng v\xe0 mua ngay trong livestream",
                             live_streaming_price_expiration_tips: "H\u1ebft h\u1ea1n khi livestream k\u1ebft th\xfac",
-                            live_streaming_price_expiration_tips_MY: "Livestream Sale will be expired when the stream ends",
+                            live_streaming_price_expiration_tips_MY: "Streaming Price will be expired when the stream ends",
                             live_streaming_price_expiration_tips_PH: "Live Flash Sale will be expired when the stream ends",
-                            live_streaming_price_expiration_tips_SG: "Livestream Sale will be expired when the stream ends",
+                            live_streaming_price_expiration_tips_SG: "Streaming Price will be expired when the stream ends",
                             live_streaming_price_fail_to_set_tip: "Ng\u01b0\u1eddi b\xe1n kh\xf4ng th\u1ec3 thi\u1ebft l\u1eadp gi\xe1 ph\xe1t tr\u1ef1c ti\u1ebfp khi s\u1ea3n ph\u1ea9m \u0111ang tham gia Flash Sale/ Khuy\u1ebfn m\xe3i c\u1ee7a Shopee/ Gi\xe1 \u0111\u1ed9c quy\u1ec1n/ Khuy\u1ebfn m\xe3i c\u1ee7a ng\u01b0\u1eddi b\xe1n",
-                            live_streaming_price_fail_to_set_tip_MY: "Products with Flash Sale/Promotion/Exclusive price/other seller discount can't be set as Livestream Sale.",
+                            live_streaming_price_fail_to_set_tip_MY: "Products with Flash Sale/Promotion/Exclusive price/other seller discount can't be set as Streaming Price.",
                             live_streaming_price_fail_to_set_tip_PH: "Products with Flash Sale/Promotion/Exclusive price/other seller discount can't be set as Live Flash Sale.",
-                            live_streaming_price_fail_to_set_tip_SG: "Products with Flash Sale/Promotion/Exclusive price/other seller discount can't be set as Livestream Sale.",
+                            live_streaming_price_fail_to_set_tip_SG: "Products with Flash Sale/Promotion/Exclusive price/other seller discount can't be set as Streaming Price.",
                             live_streaming_price_got_it: "\u0110\xe3 hi\u1ec3u",
                             live_streaming_price_host_category_violation_dialog_button_cancel: "H\u1ee7y",
                             live_streaming_price_host_category_violation_dialog_button_learn_more: "Xem th\xeam",
                             live_streaming_price_host_category_violation_dialog_msg: "S\u1ea3n ph\u1ea9m thu\u1ed9c ng\xe0nh h\xe0ng c\u1ea5m kh\xf4ng th\u1ec3 thi\u1ebft l\u1eadp ch\u01b0\u01a1ng tr\xecnh \u01b0u \u0111\xe3i",
                             live_streaming_price_host_edit_price_button: "Ch\u1ec9nh s\u1eeda gi\xe1",
                             live_streaming_price_host_entrance_tips: "T\u1ea1o gi\xe1 live v\xe0 thi\u1ebft l\u1eadp kho h\xe0ng \u1edf \u0111\xe2y",
-                            live_streaming_price_host_entrance_tips_MY: "Add\xa0Livestream Sale here",
+                            live_streaming_price_host_entrance_tips_MY: "Add\xa0Streaming Price here",
                             live_streaming_price_host_entrance_tips_PH: "Add\xa0Live Flash Sale here",
-                            live_streaming_price_host_entrance_tips_SG: "Add\xa0Livestream Sale here",
+                            live_streaming_price_host_entrance_tips_SG: "Add\xa0Streaming Price here",
                             live_streaming_price_host_keyboard_done: "Ho\xe0n t\u1ea5t",
                             live_streaming_price_host_management_page_title: "Qu\u1ea3n l\xfd gi\xe1 ch\u1ec9 c\xf3 tr\xean Live",
-                            live_streaming_price_host_management_page_title_MY: "Livestream Sale\xa0Management",
+                            live_streaming_price_host_management_page_title_MY: "Streaming Price\xa0Management",
                             live_streaming_price_host_management_page_title_PH: "Live Flash Sale\xa0Management",
-                            live_streaming_price_host_management_page_title_SG: "Livestream Sale\xa0Management",
+                            live_streaming_price_host_management_page_title_SG: "Streaming Price\xa0Management",
                             live_streaming_price_host_operation_failed: "Thi\u1ebft l\u1eadp th\u1ea5t b\u1ea1i!",
                             live_streaming_price_host_operation_success: "Thi\u1ebft l\u1eadp th\xe0nh c\xf4ng!",
                             live_streaming_price_host_price_restriction_tips_2: "H\xe3y ch\u1eafc ch\u1eafn r\u1eb1ng {lowest_price} <= gi\xe1 < {original_price}",
@@ -2429,29 +2439,29 @@
                             live_streaming_price_host_reserved_stock_restriction_tips: "Vui l\xf2ng \u0111\u1ea3m b\u1ea3o r\u1eb1ng 1 <= h\xe0ng d\u1ef1 tr\u1eef <= t\u1ed5ng s\u1ed1 h\xe0ng",
                             live_streaming_price_host_revert_price_button: "Ho\xe0n v\u1ec1 gi\xe1 ban \u0111\u1ea7u",
                             live_streaming_price_host_revert_price_double_confirm: "Gi\xe1 ph\xe1t tr\u1ef1c ti\u1ebfp s\u1ebd ho\xe0n v\u1ec1 gi\xe1 ban \u0111\u1ea7u ngay l\u1eadp t\u1ee9c, h\xe3y x\xe1c nh\u1eadn \u0111\u1ec3 ti\u1ebfp t\u1ee5c?",
-                            live_streaming_price_host_revert_price_double_confirm_MY: "The\xa0Livestream Sale will be revert to the original price immediately, confirm to proceed?",
+                            live_streaming_price_host_revert_price_double_confirm_MY: "The\xa0Streaming Price will be revert to the original price immediately, confirm to proceed?",
                             live_streaming_price_host_revert_price_double_confirm_PH: "The\xa0Live Flash Sale will be revert to the original price immediately, confirm to proceed?",
-                            live_streaming_price_host_revert_price_double_confirm_SG: "The\xa0Livestream Sale will be revert to the original price immediately, confirm to proceed?",
+                            live_streaming_price_host_revert_price_double_confirm_SG: "The\xa0Streaming Price will be revert to the original price immediately, confirm to proceed?",
                             live_streaming_price_host_set_now_hint: "C\xe0i \u0111\u1eb7t ngay",
                             live_streaming_price_host_set_price_button: "C\xe0i \u0111\u1eb7t gi\xe1",
                             live_streaming_price_host_set_price_button_on_panel: "C\xe0i \u0111\u1eb7t gi\xe1",
                             live_streaming_price_host_set_price_double_confirm_1: "Gi\xe1 ph\xe1t tr\u1ef1c ti\u1ebfp s\u1ebd c\xf3 hi\u1ec7u l\u1ef1c ngay l\u1eadp t\u1ee9c v\xe0 h\u1ebft h\u1ea1n khi k\u1ebft th\xfac livestream, h\xe3y x\xe1c nh\u1eadn \u0111\u1ec3 ti\u1ebfp t\u1ee5c?",
-                            live_streaming_price_host_set_price_double_confirm_1_MY: "The\xa0Livestream Sale will take effect immediately, and expired when the stream ends, confirm to proceed?",
+                            live_streaming_price_host_set_price_double_confirm_1_MY: "The\xa0Streaming Price will take effect immediately, and expired when the stream ends, confirm to proceed?",
                             live_streaming_price_host_set_price_double_confirm_1_PH: "The\xa0Live Flash Sale will take effect immediately, and expired when the stream ends, confirm to proceed?",
-                            live_streaming_price_host_set_price_double_confirm_1_SG: "The\xa0Livestream Sale will take effect immediately, and expired when the stream ends, confirm to proceed?",
+                            live_streaming_price_host_set_price_double_confirm_1_SG: "The\xa0Streaming Price will take effect immediately, and expired when the stream ends, confirm to proceed?",
                             live_streaming_price_host_set_price_double_confirm_2: "S\u1ea3n ph\u1ea9m n\xe0y s\u1eafp c\xf3 gi\xe1 Flash Sale / Khuy\u1ebfn m\xe3i c\u1ee7a Shopee / Gi\xe1 \u0111\u1ed9c quy\u1ec1n trong v\xf2ng 2 ng\xe0y, gi\xe1 ph\xe1t tr\u1ef1c ti\u1ebfp s\u1ebd c\xf3 hi\u1ec7u l\u1ef1c sau th\u1eddi \u0111i\u1ec3m \u0111\xf3, h\xe3y x\xe1c nh\u1eadn \u0111\u1ec3 ti\u1ebfp t\u1ee5c?",
-                            live_streaming_price_host_set_price_double_confirm_2_MY: "This product has an upcoming Flash Sale price/Promotion price/Exclusive price within 2 days, the\xa0Livestream Sale will be valid by then, confirm to proceed?",
+                            live_streaming_price_host_set_price_double_confirm_2_MY: "This product has an upcoming Flash Sale price/Promotion price/Exclusive price within 2 days, the\xa0Streaming Price will be valid by then, confirm to proceed?",
                             live_streaming_price_host_set_price_double_confirm_2_PH: "This product has an upcoming Flash Sale price/Promotion price/Exclusive price within 2 days, the\xa0Live Flash Sale will be valid by then, confirm to proceed?",
-                            live_streaming_price_host_set_price_double_confirm_2_SG: "This product has an upcoming Flash Sale price/Promotion price/Exclusive price within 2 days, the\xa0Livestream Sale will be valid by then, confirm to proceed?",
+                            live_streaming_price_host_set_price_double_confirm_2_SG: "This product has an upcoming Flash Sale price/Promotion price/Exclusive price within 2 days, the\xa0Streaming Price will be valid by then, confirm to proceed?",
                             live_streaming_price_host_setting_panel_stock: "Kho h\xe0ng",
                             live_streaming_price_host_streaming_price_expired_tip: "Gi\xe1 ph\xe1t tr\u1ef1c ti\u1ebfp c\u1ee7a s\u1ea3n ph\u1ea9m #{item_count} \u0111\xe3 h\u1ebft h\u1ea1n",
                             live_streaming_price_host_streaming_price_expired_tip2: "Gi\xe1 ph\xe1t tr\u1ef1c ti\u1ebfp c\u1ee7a s\u1ea3n ph\u1ea9m \u0111\xe3 h\u1ebft h\u1ea1n",
-                            live_streaming_price_host_streaming_price_expired_tip2_MY: "The\xa0Livestream Sale of an item is expired",
+                            live_streaming_price_host_streaming_price_expired_tip2_MY: "The\xa0Streaming Price of an item is expired",
                             live_streaming_price_host_streaming_price_expired_tip2_PH: "The\xa0Live Flash Sale of an item is expired",
-                            live_streaming_price_host_streaming_price_expired_tip2_SG: "The\xa0Livestream Sale of an item is expired",
-                            live_streaming_price_host_streaming_price_expired_tip_MY: "The\xa0Livestream Sale of item #{item_count} is expired",
+                            live_streaming_price_host_streaming_price_expired_tip2_SG: "The\xa0Streaming Price of an item is expired",
+                            live_streaming_price_host_streaming_price_expired_tip_MY: "The\xa0Streaming Price of item #{item_count} is expired",
                             live_streaming_price_host_streaming_price_expired_tip_PH: "The\xa0Live Flash Sale of item #{item_count} is expired",
-                            live_streaming_price_host_streaming_price_expired_tip_SG: "The\xa0Livestream Sale of item #{item_count} is expired",
+                            live_streaming_price_host_streaming_price_expired_tip_SG: "The\xa0Streaming Price of item #{item_count} is expired",
                             live_streaming_price_host_timer: "Th\u1eddi gian \xe1p d\u1ee5ng",
                             live_streaming_price_host_timer_default: "\u0110\u1ebfn khi livestream k\u1ebft th\xfac",
                             live_streaming_price_host_timer_error: "\u0110\xe3 h\u1ebft h\u1ea1n \xe1p d\u1ee5ng gi\xe1 ph\xe1t tr\u1ef1c ti\u1ebfp, vui l\xf2ng thi\u1ebft l\u1eadp th\u1eddi gian \xe1p d\u1ee5ng m\u1edbi",
@@ -2473,19 +2483,19 @@
                             live_streaming_price_streamer_set_upcoming_price_double_confirm: "S\u1ea3n ph\u1ea9m n\xe0y s\u1eafp tham gia c\xe1c ch\u01b0\u01a1ng tr\xecnh khuy\u1ebfn m\xe3i kh\xe1c n\xean b\u1ea1n kh\xf4ng th\u1ec3 thi\u1ebft l\u1eadp th\xeam gi\xe1 \u0111\u1ed9c quy\u1ec1n cho bu\u1ed5i live. Gi\xe1 \u0111\u1ed9c quy\u1ec1n m\xe0 b\u1ea1n thi\u1ebft l\u1eadp s\u1ebd kh\xf4ng c\xf3 hi\u1ec7u l\u1ef1c cho \u0111\u1ebfn khi c\xe1c ch\u01b0\u01a1ng tr\xecnh khuy\u1ebfn m\xe3i kh\xe1c k\u1ebft th\xfac. L\u01b0u \xfd: Gi\xe1 hi\u1ec3n th\u1ecb trong livestream s\u1ebd l\xe0 gi\xe1 b\xe1n \u0111\xe3 \u0111\u0103ng k\xfd trong c\xe1c ch\u01b0\u01a1ng tr\xecnh khuy\u1ebfn m\xe3i kh\xe1c",
                             live_streaming_price_streaming_stock: "Kho h\xe0ng ph\xe1t tr\u1ef1c ti\u1ebfp: {streaming_stock}",
                             live_streaming_price_tag: "Gi\xe1 ch\u1ec9 c\xf3 tr\xean Live",
-                            live_streaming_price_tag_MY: "Livestream Sale",
+                            live_streaming_price_tag_MY: "Streaming Price",
                             live_streaming_price_tag_PH: "Live Flash Sale",
-                            live_streaming_price_tag_SG: "Livestream Sale",
+                            live_streaming_price_tag_SG: "Streaming Price",
                             live_streaming_price_title: "Gi\xe1 ch\u1ec9 c\xf3 tr\xean Live",
-                            live_streaming_price_title_MY: "Livestream Sale",
+                            live_streaming_price_title_MY: "Streaming Price",
                             live_streaming_price_title_PH: "Live Flash Sale",
-                            live_streaming_price_title_SG: "Livestream Sale",
+                            live_streaming_price_title_SG: "Streaming Price",
                             live_streaming_price_upcoming: "S\u1eafp c\xf3 gi\xe1 {PSP price}",
                             live_streaming_price_viewer_streaming_price_loading_failed_tip: "\u0110\xe3 x\u1ea3y ra s\u1ef1 c\u1ed1 khi t\u1ea3i, vui l\xf2ng nh\u1ea5n \u0111\u1ec3 th\u1eed l\u1ea1i!",
                             live_streaming_price_viewer_streaming_price_tip: "Mua s\u1ea3n ph\u1ea9m v\u1edbi gi\xe1 ph\xe1t tr\u1ef1c ti\u1ebfp",
-                            live_streaming_price_viewer_streaming_price_tip_MY: "Get products with\xa0Livestream Sale now",
+                            live_streaming_price_viewer_streaming_price_tip_MY: "Get products with\xa0Streaming Price now",
                             live_streaming_price_viewer_streaming_price_tip_PH: "Get products with\xa0Live Flash Sale now",
-                            live_streaming_price_viewer_streaming_price_tip_SG: "Get products with\xa0Livestream Sale now",
+                            live_streaming_price_viewer_streaming_price_tip_SG: "Get products with\xa0Streaming Price now",
                             live_streaming_privacy_setting_pagetitle: "Shopee Live Settings",
                             live_streaming_privacy_setting_prompt: "Enable the option to hide your interactions from all your contact friends.",
                             live_streaming_privacy_setting_toggle: "Hide my interactions to Shopee Live",
@@ -3046,7 +3056,7 @@
               , _ = "vn"
               , a = !1
               , o = (e.env.PROXY_COOKIE,
-            "v_1.0_20240619")
+            "v_1.0_20240624")
               , s = "/multipages"
         }
         ).call(this, i("8oxB"))
@@ -3074,51 +3084,55 @@
                 return p
             }
             )),
-            i.d(t, "s", (function() {
+            i.d(t, "t", (function() {
                 return u
             }
             )),
-            i.d(t, "v", (function() {
-                return v
+            i.d(t, "w", (function() {
+                return d
             }
             )),
             i.d(t, "i", (function() {
                 return y
             }
             )),
-            i.d(t, "D", (function() {
+            i.d(t, "E", (function() {
                 return b
             }
             )),
             i.d(t, "d", (function() {
-                return d
+                return v
             }
             )),
-            i.d(t, "y", (function() {
+            i.d(t, "z", (function() {
                 return k
             }
             )),
-            i.d(t, "w", (function() {
+            i.d(t, "p", (function() {
                 return S
             }
             )),
-            i.d(t, "F", (function() {
+            i.d(t, "x", (function() {
                 return x
             }
             )),
-            i.d(t, "b", (function() {
-                return B
+            i.d(t, "G", (function() {
+                return T
             }
             )),
-            i.d(t, "a", (function() {
+            i.d(t, "b", (function() {
                 return A
             }
             )),
-            i.d(t, "B", (function() {
+            i.d(t, "a", (function() {
+                return N
+            }
+            )),
+            i.d(t, "C", (function() {
                 return f
             }
             )),
-            i.d(t, "p", (function() {
+            i.d(t, "q", (function() {
                 return w
             }
             )),
@@ -3126,84 +3140,84 @@
                 return L
             }
             )),
-            i.d(t, "G", (function() {
+            i.d(t, "H", (function() {
                 return C
             }
             )),
-            i.d(t, "E", (function() {
-                return P
-            }
-            )),
-            i.d(t, "H", (function() {
+            i.d(t, "F", (function() {
                 return O
             }
             )),
-            i.d(t, "r", (function() {
-                return T
-            }
-            )),
-            i.d(t, "x", (function() {
+            i.d(t, "I", (function() {
                 return E
             }
             )),
-            i.d(t, "g", (function() {
-                return N
+            i.d(t, "s", (function() {
+                return P
             }
             )),
-            i.d(t, "C", (function() {
+            i.d(t, "y", (function() {
+                return B
+            }
+            )),
+            i.d(t, "g", (function() {
                 return H
             }
             )),
-            i.d(t, "j", (function() {
+            i.d(t, "D", (function() {
                 return V
             }
             )),
-            i.d(t, "u", (function() {
+            i.d(t, "j", (function() {
                 return D
             }
             )),
-            i.d(t, "m", (function() {
+            i.d(t, "v", (function() {
                 return I
             }
             )),
-            i.d(t, "n", (function() {
-                return j
-            }
-            )),
-            i.d(t, "k", (function() {
-                return q
-            }
-            )),
-            i.d(t, "A", (function() {
+            i.d(t, "m", (function() {
                 return R
             }
             )),
-            i.d(t, "z", (function() {
+            i.d(t, "n", (function() {
+                return q
+            }
+            )),
+            i.d(t, "k", (function() {
+                return j
+            }
+            )),
+            i.d(t, "B", (function() {
                 return G
             }
             )),
-            i.d(t, "f", (function() {
+            i.d(t, "A", (function() {
                 return F
             }
             )),
-            i.d(t, "e", (function() {
-                return M
+            i.d(t, "f", (function() {
+                return K
             }
             )),
-            i.d(t, "t", (function() {
+            i.d(t, "e", (function() {
                 return U
             }
             )),
-            i.d(t, "q", (function() {
+            i.d(t, "u", (function() {
                 return W
             }
             )),
-            i.d(t, "o", (function() {
+            i.d(t, "r", (function() {
                 return Q
             }
             )),
-            i.d(t, "h", (function() {
+            i.d(t, "o", (function() {
                 return J
+            }
+            )),
+            i.d(t, "h", (function() {
+                return Y
             }
             ));
             var n = i("HaE+")
@@ -3240,7 +3254,7 @@
                     id: e
                 }[m.b] || e
             };
-            function v() {
+            function d() {
                 var e = window.visualViewport
                   , t = document.documentElement;
                 return e && navigator.userAgent.includes("Android") ? {
@@ -3255,7 +3269,7 @@
                     height: window.innerHeight || t.clientHeight
                 }
             }
-            var d, f = "undefined" !== typeof window.document, y = ("object" === typeof self && self.constructor && self.constructor.name,
+            var v, f = "undefined" !== typeof window.document, y = ("object" === typeof self && self.constructor && self.constructor.name,
             "undefined" !== typeof e && null != e.versions && e.versions.node,
             function(e) {
                 var t = e.date
@@ -3330,16 +3344,16 @@
             };
             function w() {
                 if (!f)
-                    return d.unknown;
+                    return v.unknown;
                 var e = navigator.userAgent || navigator.vendor || window.opera;
-                return /windows phone/i.test(e) ? d.WindowsPhone : /android/i.test(e) ? d.Android : /iPad|iPhone|iPod/.test(e) && !window.MSStream ? d.iOS : d.unknown
+                return /windows phone/i.test(e) ? v.WindowsPhone : /android/i.test(e) ? v.Android : /iPad|iPhone|iPod/.test(e) && !window.MSStream ? v.iOS : v.unknown
             }
             !function(e) {
                 e.WindowsPhone = "Windows Phone",
                 e.Android = "Android",
                 e.iOS = "iOS",
                 e.unknown = "unknown"
-            }(d || (d = {}));
+            }(v || (v = {}));
             !function() {
                 var e = !1;
                 f && "function" === typeof o.d && Object(o.d)("isInWKWebView").then((function(t) {
@@ -3351,8 +3365,11 @@
                 ))
             }();
             var k = /(\?|&)from_page=seller_assistant_platform(&|$)/.test(window.location.search) || !!(window.navigator && window.navigator.userAgent && window.navigator.userAgent.toLowerCase().includes("sellerapp"))
-              , S = !!(window.navigator && window.navigator.userAgent && window.navigator.userAgent.toLowerCase().includes("beeshop"))
-              , x = function(e) {
+              , S = function() {
+                return k
+            }
+              , x = !!(window.navigator && window.navigator.userAgent && window.navigator.userAgent.toLowerCase().includes("beeshop"))
+              , T = function(e) {
                 if ("string" !== typeof e)
                     return Object.create(null);
                 var t = function(e) {
@@ -3389,7 +3406,7 @@
               , L = function(e) {
                 return e ? "".concat(s.m, "/").concat(e, "_tn") : l.a
             }
-              , T = function(e) {
+              , P = function(e) {
                 var t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
                 return e ? "".concat(s.m, "/").concat(e).concat(t ? "_tn" : "") : ""
             }
@@ -3421,24 +3438,24 @@
                     return e.apply(this, arguments)
                 }
             }();
-            function P(e, t) {
+            function O(e, t) {
                 var i = t || "/"
                   , n = new RegExp("".concat(i, "{1,}"),"g");
                 return e.join(i).replace(n, i)
             }
-            function O(e) {
+            function E(e) {
                 var t = window.location
                   , i = "";
                 f && (i = "".concat(t.protocol, "//").concat(t.host));
                 var n = e.replace(/^(\/{1,})(.*)/, "$2");
                 return n ? "".concat(i, "/").concat(n) : i
             }
-            var E = function() {
+            var B = function() {
                 return /(iphone|android)/.test(navigator.userAgent.toLowerCase()) && document.documentElement.clientWidth > document.documentElement.clientHeight
             }
-              , B = "".concat(window.location.protocol, "//").concat(window.location.host)
-              , A = "/api/v1";
-            function N(e, t) {
+              , A = "".concat(window.location.protocol, "//").concat(window.location.host)
+              , N = "/api/v1";
+            function H(e, t) {
                 var i = e.match(/(\?[^#]*)#*/)
                   , n = i && i[1] ? i[1] : ""
                   , r = "".concat(n).concat(n ? "&" : "?").concat(t);
@@ -3447,7 +3464,7 @@
                 var _ = e.split("#");
                 return _[0].concat(r).concat(_[1] || "")
             }
-            var H = function() {
+            var V = function() {
                 var e = !1;
                 try {
                     var t = {};
@@ -3460,12 +3477,12 @@
                 } catch (i) {}
                 return e
             }
-              , V = function(e) {
+              , D = function(e) {
                 var t = parseInt(e);
                 return isNaN(t) && (t = 0),
                 t
             }
-              , D = function() {
+              , I = function() {
                 for (var e = null, t = document.cookie.split(";"), i = 0; i < t.length; ++i) {
                     var n = t[i];
                     if (n.includes("SPC_U"))
@@ -3476,23 +3493,23 @@
                 }
                 return e
             }
-              , I = function() {
+              , R = function() {
                 switch (w()) {
-                case d.Android:
+                case v.Android:
                     return 0;
-                case d.iOS:
+                case v.iOS:
                     return 1;
                 default:
                     return 2
                 }
             }
-              , j = function() {
+              , q = function() {
                 var e = w()
-                  , t = d.Android === e
-                  , i = d.iOS === e;
-                return t && S ? 5 : i && S ? 6 : t && !S ? 7 : i && !S ? 8 : 9
+                  , t = v.Android === e
+                  , i = v.iOS === e;
+                return t && x ? 5 : i && x ? 6 : t && !x ? 7 : i && !x ? 8 : 9
             }
-              , q = function(e) {
+              , j = function(e) {
                 var t = e.universalLink
                   , i = e.targetLink
                   , n = e.linkSearch
@@ -3505,15 +3522,15 @@
                 ), i) + a;
                 return "https://live.shopee.vn/share?session="+r.id
             }
-              , R = w() === d.Android;
-            function G(e, t) {
+              , G = w() === v.Android;
+            function F(e, t) {
                 return e.includes(t)
             }
-            var F = 29200
-              , K = "undefined" !== typeof navigator ? /rnver=(\d+)/.exec(navigator.userAgent) : null
-              , X = K ? K[1] : ""
-              , M = Number(Object(h.a)("shopee_rn_version")) || Number(X);
-            function U(e) {
+            var K = 29200
+              , X = "undefined" !== typeof navigator ? /rnver=(\d+)/.exec(navigator.userAgent) : null
+              , M = X ? X[1] : ""
+              , U = Number(Object(h.a)("shopee_rn_version")) || Number(M);
+            function W(e) {
                 for (var t = window.location.search.substring(1).split("&"), i = 0; i < t.length; i++) {
                     var n = t[i].split("=");
                     if (n[0] === e)
@@ -3521,15 +3538,15 @@
                 }
                 return !1
             }
-            var W = function() {
-                var e = D()
+            var Q = function() {
+                var e = I()
                   , t = {
                     location: 0,
                     moderator_permissions: {}
                 };
                 try {
-                    var i = decodeURIComponent(U("track") || "{}")
-                      , n = Number(U("host_id")) || 0;
+                    var i = decodeURIComponent(W("track") || "{}")
+                      , n = Number(W("host_id")) || 0;
                     t = JSON.parse(i),
                     n > 0 && (t.streamer_id = n),
                     delete t.location
@@ -3550,13 +3567,13 @@
                     moderator_user_id: e
                 }, t)
             }
-              , Q = function() {
+              , J = function() {
                 try {
-                    return JSON.parse(decodeURIComponent(U("track") || "{}"))
+                    return JSON.parse(decodeURIComponent(W("track") || "{}"))
                 } catch (e) {}
                 return {}
             };
-            function J(e) {
+            function Y(e) {
                 return e.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]|\u203C|\u2049|\u20E3|\u2122|\u2139|\u2194-\u2199|\u21A9-\u21AA|\u231A-\u231B|\u2328|\u23CF|\u23E9-\u23F3|\u23F8-\u23FA|\u24C2|\u25AA-\u25AB|\u25B6|\u25C0|\u25FB-\u25FE|\u2600-\u2604|\u260E|\u2611|\u2614-\u2615|\u2618|\u261D|\u2620|\u2622-\u2623|\u2626|\u262A|\u262E-\u262F|\u2638-\u263A|\u2640|\u2642|\u2648-\u2653|\u2660|\u2663|\u2665-\u2666|\u2668|\u267B|\u267E-\u267F|\u2692-\u2697|\u2699|\u269B-\u269C|\u26A0-\u26A1|\u26AA-\u26AB|\u26B0-\u26B1|\u26BD-\u26BE|\u26C4-\u26C5|\u26C8|\u26CE-\u26CF|\u26D1|\u26D3-\u26D4|\u26E9-\u26EA|\u26F0-\u26F5|\u26F7-\u26FA|\u26FD|\u2702|\u2705|\u2708-\u270D|\u270F|\u2712|\u2714|\u2716|\u271D|\u2721|\u2728|\u2733-\u2734|\u2744|\u2747|\u274C|\u274E|\u2753-\u2755|\u2757|\u2763-\u2764|\u2795-\u2797|\u27A1|\u27B0|\u27BF|\u2934-\u2935|\u2B05-\u2B07|\u2B1B-\u2B1C|\u2B50|\u2B55|\u3030|\u303D|\u3297|\u3299\u200D/g, "")
             }
         }
@@ -3738,7 +3755,7 @@
                   , _ = Object.create(r.prototype)
                   , a = new A(n || []);
                 return o(_, "_invoke", {
-                    value: P(e, i, a)
+                    value: C(e, i, a)
                 }),
                 _
             }
@@ -3757,8 +3774,8 @@
             }
             i.wrap = g;
             var u = "suspendedStart"
-              , v = "executing"
-              , d = "completed"
+              , d = "executing"
+              , v = "completed"
               , f = {};
             function y() {}
             function b() {}
@@ -3771,8 +3788,8 @@
             var S = Object.getPrototypeOf
               , x = S && S(S(N([])));
             x && x !== _ && a.call(x, c) && (k = x);
-            var L = w.prototype = y.prototype = Object.create(k);
-            function T(e) {
+            var T = w.prototype = y.prototype = Object.create(k);
+            function L(e) {
                 ["next", "throw", "return"].forEach((function(t) {
                     h(e, t, (function(e) {
                         return this._invoke(t, e)
@@ -3781,7 +3798,7 @@
                 }
                 ))
             }
-            function C(e, t) {
+            function P(e, t) {
                 function i(r, _, o, s) {
                     var c = p(e[r], e, _);
                     if ("throw" !== c.type) {
@@ -3817,12 +3834,12 @@
                     }
                 })
             }
-            function P(e, i, n) {
+            function C(e, i, n) {
                 var r = u;
                 return function(_, a) {
-                    if (r === v)
+                    if (r === d)
                         throw new Error("Generator is already running");
-                    if (r === d) {
+                    if (r === v) {
                         if ("throw" === _)
                             throw a;
                         return {
@@ -3845,15 +3862,15 @@
                             n.sent = n._sent = n.arg;
                         else if ("throw" === n.method) {
                             if (r === u)
-                                throw r = d,
+                                throw r = v,
                                 n.arg;
                             n.dispatchException(n.arg)
                         } else
                             "return" === n.method && n.abrupt("return", n.arg);
-                        r = v;
+                        r = d;
                         var c = p(e, i, n);
                         if ("normal" === c.type) {
-                            if (r = n.done ? d : "suspendedYield",
+                            if (r = n.done ? v : "suspendedYield",
                             c.arg === f)
                                 continue;
                             return {
@@ -3861,7 +3878,7 @@
                                 done: n.done
                             }
                         }
-                        "throw" === c.type && (r = d,
+                        "throw" === c.type && (r = v,
                         n.method = "throw",
                         n.arg = c.arg)
                     }
@@ -3942,7 +3959,7 @@
                 throw new TypeError(n(e) + " is not iterable")
             }
             return b.prototype = w,
-            o(L, "constructor", {
+            o(T, "constructor", {
                 value: w,
                 configurable: !0
             }),
@@ -3959,7 +3976,7 @@
             i.mark = function(e) {
                 return Object.setPrototypeOf ? Object.setPrototypeOf(e, w) : (e.__proto__ = w,
                 h(e, m, "GeneratorFunction")),
-                e.prototype = Object.create(L),
+                e.prototype = Object.create(T),
                 e
             }
             ,
@@ -3969,28 +3986,28 @@
                 }
             }
             ,
-            T(C.prototype),
-            h(C.prototype, l, (function() {
+            L(P.prototype),
+            h(P.prototype, l, (function() {
                 return this
             }
             )),
-            i.AsyncIterator = C,
+            i.AsyncIterator = P,
             i.async = function(e, t, n, r, _) {
                 void 0 === _ && (_ = Promise);
-                var a = new C(g(e, t, n, r),_);
+                var a = new P(g(e, t, n, r),_);
                 return i.isGeneratorFunction(t) ? a : a.next().then((function(e) {
                     return e.done ? e.value : a.next()
                 }
                 ))
             }
             ,
-            T(L),
-            h(L, m, "Generator"),
-            h(L, c, (function() {
+            L(T),
+            h(T, m, "Generator"),
+            h(T, c, (function() {
                 return this
             }
             )),
-            h(L, "toString", (function() {
+            h(T, "toString", (function() {
                 return "[object Generator]"
             }
             )),
@@ -4140,7 +4157,7 @@
         "use strict";
         var n = i("cBaE");
         t.a = function(e) {
-            if (!n.B)
+            if (!n.C)
                 return "";
             for (var t = e + "=", i = document.cookie.split(";"), r = 0; r < i.length; r++) {
                 var _ = i[r].trim();
@@ -4225,4 +4242,4 @@
         }
     }
 }]);
-//# db5e8076bafaf42fcf92587dd17e0696da542050.96fbcaced0b579a54b50.js.map
+//# db5e8076bafaf42fcf92587dd17e0696da542050.625645a2504bd7da60d1.js.map
