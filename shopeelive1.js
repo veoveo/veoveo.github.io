@@ -183,6 +183,12 @@ function claim(coin_id, ss_id) {
           // Chuyển đổi dữ liệu JSON thành đối tượng JavaScript
           var responseData = JSON.parse(xhr.responseText);
           document.getElementById("coin").text = 0;
+          document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].insertAdjacentHTML('beforeend', `<div><span class="Item__Content-sc-1iv8r0f-2" style="color: #fff;">Còn `+responseData.data.claim_times_left+` lượt nhận 🪙</span></div>`);
+          var lastChild = document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].lastElementChild;
+          if (lastChild) {
+              // Cuộn phần tử con cuối cùng vào tầm nhìn
+              lastChild.scrollIntoView({ behavior: 'smooth' });
+          }
           console.log("Nhận thành công! ", coin_id);
         } else {
           console.log("(claim) Yêu cầu POST không thành công. Mã trạng thái:", xhr.status);
