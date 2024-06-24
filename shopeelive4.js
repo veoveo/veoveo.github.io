@@ -110,9 +110,9 @@ function refresh_coin(ss_id) {
         if (xhr.status === 200) {
           // Chuyển đổi dữ liệu JSON thành đối tượng JavaScript
           var responseData = JSON.parse(xhr.responseText);
-          console.log(responseData)
           if (responseData.data.has_another_device) {
-              console.log("lỗi do có thiết bị khác")
+              document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].insertAdjacentHTML('beforeend', `<div><span class="Item__Content-sc-1iv8r0f-2" style="color: #fff;">`+getCurrentTime()+` - hụt `+responseData.data.coins_per_claim+`🪙</span></div>`);
+              remove_log();
           } else {
                 if (responseData.data.coins_per_claim>=coin && responseData.data.remain_locks>1 && claim_status == 0) {
                         lock_coin(responseData.data.coin_id, se);
