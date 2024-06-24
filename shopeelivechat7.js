@@ -1,4 +1,5 @@
 // hello
+let parentElement = 0;
 (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([[32], {
     "+3Vl": function(t, e) {
         t.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAwCAYAAADUxsC8AAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA/SURBVHgB7ck7DQAgDEXRllQJAwmCEIeFooaJDQMkWICFT6cq6J3eycPAecGJko93A9Y53uNAZDDoIO7towhspDQL1YhIZIMAAAAASUVORK5CYII="
