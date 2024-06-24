@@ -30,6 +30,27 @@ plusButton.addEventListener('click', event => {
   coin = coin + 100;
 });
 
+function remove_log() {
+              try {
+                                    parentElement = document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1];
+                                    if (parentElement) {
+                                        // Get all child elements of the parent element
+                                        childElements = parentElement.children;
+                                        // Check if the number of child elements is greater than or equal to 200
+                                        if (childElements.length >= 6) {
+                                            // Loop to remove the first 20 child elements
+                                            for (let i = 0; i < 1; i++) {
+                                                if (childElements[0]) {
+                                                    childElements[0].remove();
+                                                }
+                                            }
+                                        }
+                                    };
+                } catch (error) {
+                    console.log("lỗi")
+                }
+};
+
 function getCurrentTime() {
     var now = new Date();
     var hours = now.getHours();
@@ -83,11 +104,7 @@ function check_fail_coin(coin_id, ss_id) {
           // Chuyển đổi dữ liệu JSON thành đối tượng JavaScript
           var responseData = JSON.parse(xhr.responseText);
           document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].insertAdjacentHTML('beforeend', `<div><span class="Item__Content-sc-1iv8r0f-2" style="color: #fff;">`+getCurrentTime()+` - hụt `+responseData.data.coins_per_claim+`🪙</span></div>`);
-          var lastChild = document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].lastElementChild;
-          if (lastChild) {
-              // Cuộn phần tử con cuối cùng vào tầm nhìn
-              lastChild.scrollIntoView({ behavior: 'smooth' });
-          }
+          remove_log();
         } else {
           console.log("(can_claim) Yêu cầu GET không thành công. Mã trạng thái:", xhr.status);
         }
@@ -115,11 +132,7 @@ function check_coin(coin_id, ss_id, tsl) {
                   can_claim(coin_id, ss_id);
                 }, tsl*1000); // chờ n giây
                 document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].insertAdjacentHTML('beforeend', `<div><span class="Item__Content-sc-1iv8r0f-2" style="color: #fff;">`+getCurrentTime()+` - lụm `+responseData.data.coins_per_claim+`🪙</span></div>`);
-                var lastChild = document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].lastElementChild;
-                if (lastChild) {
-                      // Cuộn phần tử con cuối cùng vào tầm nhìn
-                      lastChild.scrollIntoView({ behavior: 'smooth' });
-                }
+                remove_log();
           }
         } else {
           console.log("(can_claim) Yêu cầu GET không thành công. Mã trạng thái:", xhr.status);
@@ -185,10 +198,7 @@ function claim(coin_id, ss_id) {
           document.getElementById("coin").text = 0;
           document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].insertAdjacentHTML('beforeend', `<div><span class="Item__Content-sc-1iv8r0f-2" style="color: #fff;">Còn `+responseData.data.claim_times_left+` lượt nhận 🪙</span></div>`);
           var lastChild = document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].lastElementChild;
-          if (lastChild) {
-              // Cuộn phần tử con cuối cùng vào tầm nhìn
-              lastChild.scrollIntoView({ behavior: 'smooth' });
-          }
+          remove_log();
           console.log("Nhận thành công! ", coin_id);
         } else {
           console.log("(claim) Yêu cầu POST không thành công. Mã trạng thái:", xhr.status);
