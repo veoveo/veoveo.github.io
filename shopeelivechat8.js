@@ -1,5 +1,25 @@
 // hello
-let parentElement = 0;
+function remove_mess() {
+              try {
+                                    parentElement = document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[0];
+                                    if (parentElement) {
+                                        // Get all child elements of the parent element
+                                        childElements = parentElement.children;
+                                        // Check if the number of child elements is greater than or equal to 200
+                                        if (childElements.length >= 200) {
+                                            // Loop to remove the first 20 child elements
+                                            for (let i = 0; i < 100; i++) {
+                                                if (childElements[0]) {
+                                                    childElements[0].remove();
+                                                }
+                                            }
+                                        }
+                                    };
+                } catch (error) {
+                    console.log("lỗi")
+                }
+};
+
 (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([[32], {
     "+3Vl": function(t, e) {
         t.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAwCAYAAADUxsC8AAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA/SURBVHgB7ck7DQAgDEXRllQJAwmCEIeFooaJDQMkWICFT6cq6J3eycPAecGJko93A9Y53uNAZDDoIO7towhspDQL1YhIZIMAAAAASUVORK5CYII="
@@ -999,24 +1019,7 @@ let parentElement = 0;
                     ))
                 }
                 ), []);
-                try {
-                                    parentElement = document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[0];
-                                    if (parentElement) {
-                                        // Get all child elements of the parent element
-                                        childElements = parentElement.children;
-                                        // Check if the number of child elements is greater than or equal to 200
-                                        if (childElements.length >= 200) {
-                                            // Loop to remove the first 20 child elements
-                                            for (let i = 0; i < 100; i++) {
-                                                if (childElements[0]) {
-                                                    childElements[0].remove();
-                                                }
-                                            }
-                                        }
-                                    };
-                } catch (error) {
-                    console.log("lỗi")
-                }
+                remove_mess();
                 return [n, i]
             }(2000000000000000000000000000000000000000000000000)
               , u = Object(r.a)(c, 2)
