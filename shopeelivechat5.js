@@ -998,7 +998,7 @@
                     ))
                 }
                 ), []);
-                if (n.length>10) {
+                if (n.length>10000000000) {
                     parentElement = document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[0];
                     if (parentElement) {
                         // Get all child elements of the parent element
