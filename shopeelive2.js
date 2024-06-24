@@ -5,7 +5,7 @@ let se = new URL(window.location.href).searchParams.get("session");
 document.getElementsByClassName("app-wrapper")[0].innerHTML = `<div class="icon-style" style="
     margin-right: 10px;
 "><button id="minus">−</button>
-<a type="number" value="0" id="input">100</a>
+<a type="number" value="0" id="input">500</a>
 <button id="plus">+</button></div>
 <button style="height:28px;background-color:#ee4d2d;border-radius:4px;font-weight:600;font-size:13px;color:#ffffff;border:0px" class="Button__StyledButton-d958no-0 fWGRcm"><div><a id="coin">0</a>
 <a>🪙 - </a><a id="count">00:00</a></div></button>
