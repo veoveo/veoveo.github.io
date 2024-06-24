@@ -2,11 +2,17 @@
 let claim_status = 0;
 let coin = 500;
 let se = new URL(window.location.href).searchParams.get("session");
-document.getElementsByTagName("button")[0].innerHTML = `<div><a id="coin">0</a>
-<a>🪙 - </a><a id="count">00:00</a></div>`
-document.getElementsByClassName("icon-style")[0].innerHTML = `<button id="minus">−</button>
-<a type="number" value="0" id="input">500</a>
-<button id="plus">+</button>`;
+document.getElementsByClassName("app-wrapper")[0].innerHTML = `<div class="icon-style" style="
+    margin-right: 10px;
+"><button id="minus">−</button>
+<a type="number" value="0" id="input">100</a>
+<button id="plus">+</button></div>
+<button style="height:28px;background-color:#ee4d2d;border-radius:4px;font-weight:600;font-size:13px;color:#ffffff;border:0px" class="Button__StyledButton-d958no-0 fWGRcm"><div><a id="coin">0</a>
+<a>🪙 - </a><a id="count">00:00</a></div></button>
+<button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+  <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"></path>
+  <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"></path>
+</svg></button>`
 const minusButton = document.getElementById('minus');
 const plusButton = document.getElementById('plus');
 const inputField = document.getElementById('input');
