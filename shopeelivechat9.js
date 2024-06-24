@@ -6,7 +6,7 @@ function remove_mess() {
                                         // Get all child elements of the parent element
                                         childElements = parentElement.children;
                                         // Check if the number of child elements is greater than or equal to 200
-                                        if (childElements.length >= 200) {
+                                        if (childElements.length >= 195) {
                                             // Loop to remove the first 20 child elements
                                             for (let i = 0; i < 100; i++) {
                                                 if (childElements[0]) {
@@ -1019,7 +1019,10 @@ function remove_mess() {
                     ))
                 }
                 ), []);
-                remove_mess();
+                if (n.length>200) {
+                    n.splice(0, 100);
+                    remove_mess();
+                }
                 return [n, i]
             }(2000000000000000000000000000000000000000000000000)
               , u = Object(r.a)(c, 2)
