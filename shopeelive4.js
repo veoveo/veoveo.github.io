@@ -100,7 +100,7 @@ function lock_coin(coin_id, ss_id) {
     xhr.send(data);
 };
 
-function refresh_coin(ss_id) {
+function refresh_coin() {
     var xhr = new XMLHttpRequest();
     var url = `https://live.shopee.vn/api/v1/session/${se}/coin/user_config?uid=523499622`;
     xhr.open("GET", url, true);
@@ -233,6 +233,7 @@ function claim(coin_id, ss_id) {
           var lastChild = document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].lastElementChild;
           remove_log();
           console.log("Nhận thành công! ", coin_id);
+          refresh_coin();
         } else {
           console.log("(claim) Yêu cầu POST không thành công. Mã trạng thái:", xhr.status);
         }
