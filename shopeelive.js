@@ -12,7 +12,7 @@ const plusButton = document.getElementById('plus');
 const inputField = document.getElementById('input');
 document.getElementsByClassName("share__StyledBottomArea-wtg3fv-0 kjpteW")[0].style.display = "grid";
 document.getElementsByClassName("share__StyledBottomArea-wtg3fv-0 kjpteW")[0].style["grid-template-columns"] = 'repeat(2, auto)';
-document.getElementsByClassName("Danmaku__DanmakuContainer-sc-1rxc6pa-0 dYsErQ")[0].insertAdjacentHTML('afterend', `<div class="Danmaku__DanmakuContainer-sc-1rxc6pa-0 dYsErQ"><div class="Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY"><div><span class="Item__Content-sc-1iv8r0f-2 dNqNNO">log</span></div></div></div>`);
+document.getElementsByClassName("Danmaku__DanmakuContainer-sc-1rxc6pa-0 dYsErQ")[0].insertAdjacentHTML('afterend', `<div class="Danmaku__DanmakuContainer-sc-1rxc6pa-0 dYsErQ"><div class="Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY"><div><span class="Item__Content-sc-1iv8r0f-2" style="color: #fff;">log</span></div></div></div>`);
 document.getElementsByClassName("ProductList__StyledContainer-zzolnk-0 hcTzRn")[0].style.display = "none";
 minusButton.addEventListener('click', event => {
   if (parseInt(inputField.text)>100) {
@@ -82,7 +82,7 @@ function check_fail_coin(coin_id, ss_id) {
         if (xhr.status === 200) {
           // Chuyển đổi dữ liệu JSON thành đối tượng JavaScript
           var responseData = JSON.parse(xhr.responseText);
-          document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].insertAdjacentHTML('beforeend', `<div><span class="Item__Content-sc-1iv8r0f-2 dNqNNO">`+getCurrentTime()+` - hụt `+responseData.data.coins_per_claim+`🪙</span></div>`);
+          document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].insertAdjacentHTML('beforeend', `<div><span class="Item__Content-sc-1iv8r0f-2" style="color: #fff;">`+getCurrentTime()+` - hụt `+responseData.data.coins_per_claim+`🪙</span></div>`);
           var lastChild = document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].lastElementChild;
           if (lastChild) {
               // Cuộn phần tử con cuối cùng vào tầm nhìn
@@ -114,7 +114,7 @@ function check_coin(coin_id, ss_id, tsl) {
                   claim_status = 0;
                   can_claim(coin_id, ss_id);
                 }, tsl*1000); // chờ n giây
-                document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].insertAdjacentHTML('beforeend', `<div><span class="Item__Content-sc-1iv8r0f-2 dNqNNO">`+getCurrentTime()+` - lụm `+responseData.data.coins_per_claim+`🪙</span></div>`);
+                document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].insertAdjacentHTML('beforeend', `<div><span class="Item__Content-sc-1iv8r0f-2" style="color: #fff;">`+getCurrentTime()+` - lụm `+responseData.data.coins_per_claim+`🪙</span></div>`);
                 var lastChild = document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[1].lastElementChild;
                 if (lastChild) {
                       // Cuộn phần tử con cuối cùng vào tầm nhìn
