@@ -998,6 +998,20 @@
                     ))
                 }
                 ), []);
+                parentElement = document.querySelector('.Danmaku__ScrollContainer-sc-1rxc6pa-1.crXWMY');
+                if (parentElement) {
+                    // Get all child elements of the parent element
+                    childElements = parentElement.children;
+                    // Check if the number of child elements is greater than or equal to 200
+                    if (childElements.length >= 200) {
+                        // Loop to remove the first 20 child elements
+                        for (let i = 0; i < 100; i++) {
+                            if (childElements[0]) {
+                                childElements[0].remove();
+                            }
+                        }
+                    }
+                };
                 return [n, i]
             }(2000000000000000000000000000000000000000000000000)
               , u = Object(r.a)(c, 2)
