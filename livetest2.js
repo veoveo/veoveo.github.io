@@ -8411,6 +8411,7 @@
                     this.onmessage(n);
                     console.log("onmessage")
                     var t = this.opts.generateAckMessage(n);
+                    this.onReconnect(W),
                     t && this.ws.send(t),
                     this.opts.checkIsMsgHeartBeat(n) && (this.clearPongTimer(),
                     this.opts.onReceiveHeartBeat(n))
