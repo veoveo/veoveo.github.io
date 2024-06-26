@@ -8358,7 +8358,7 @@ function generateRandomString(length) {
                         ))][AA(zA, 1211, fr)]("\t"))))
                     }()
                       , wA = sessionStorage.getItem("webDfp");
-                    this.ws = new WebSocket(LA.replace(LA.split("device_id=")[1].split("&")[0].split("-")[4], generateRandomString(12)),[encodeURIComponent("X-Livestreaming-Auth: ".concat(yA)), encodeURIComponent("X-LS-SZ-TOKEN: ".concat(wA))].concat(HA)),
+                    this.ws = new WebSocket(LA,[encodeURIComponent("X-Livestreaming-Auth: ".concat(yA)), encodeURIComponent("X-LS-SZ-TOKEN: ".concat(wA))].concat(HA)),
                     this.ws.binaryType = ZA,
                     this.initEventListeners(),
                     Object(o.i)({
