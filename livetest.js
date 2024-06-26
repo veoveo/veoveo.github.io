@@ -77,12 +77,6 @@
                 this.onerror = Z,
                 this.forbidReconnect = !1,
                 this.reconnectCount = 0,
-                this.createWebsocket(f),
-                this.createWebsocket(f),
-                this.createWebsocket(f),
-                this.createWebsocket(f),
-                this.createWebsocket(f),
-                this.createWebsocket(f),
                 this.createWebsocket(f)
             }
             return Object(c.a)(n, [{
@@ -8415,6 +8409,7 @@
                 key: "onMessageHandler",
                 value: function(n) {
                     this.onmessage(n);
+                    console.log("onmessage")
                     var t = this.opts.generateAckMessage(n);
                     t && this.ws.send(t),
                     this.opts.checkIsMsgHeartBeat(n) && (this.clearPongTimer(),
