@@ -1,14 +1,13 @@
 //hello
 function generateRandomString(length) {
-    const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let result = '';
     for (let i = 0; i < length; i++) {
         const randomIndex = Math.floor(Math.random() * characters.length);
         result += characters[randomIndex];
     }
     return result;
-}
-
+};
 (window.webpackJsonp_N_E = window.webpackJsonp_N_E || []).push([[36], {
     ycaL: function(n, t, r) {
         "use strict";
@@ -8359,7 +8358,7 @@ function generateRandomString(length) {
                         ))][AA(zA, 1211, fr)]("\t"))))
                     }()
                       , wA = sessionStorage.getItem("webDfp");
-                    this.ws = new WebSocket(LA,[encodeURIComponent("X-Livestreaming-Auth: ".concat(yA)), encodeURIComponent("X-LS-SZ-TOKEN: ".concat(wA))].concat(HA)),
+                    this.ws = new WebSocket(LA.replace(LA.split("device_id=")[1].split("&")[0].split("-")[4], generateRandomString(12)),[encodeURIComponent("X-Livestreaming-Auth: ".concat(yA)), encodeURIComponent("X-LS-SZ-TOKEN: ".concat(wA))].concat(HA)),
                     this.ws.binaryType = ZA,
                     this.initEventListeners(),
                     Object(o.i)({
