@@ -1,3 +1,4 @@
+//hello
 (window.webpackChunkbingo_fe = window.webpackChunkbingo_fe || []).push([[0], {
     5723: function(t, e, n) {
         "use strict";
@@ -11594,11 +11595,11 @@
               , a = t.indexOf("Android") > 0
               , s = t.match(/locale=(\S+) /)
               , u = /lite\.(test\.|uat\.)?shopee/.test(e);
-            return n.shopeeApp = !!i,
+            return n.shopeeApp = true,
             n.ios = o,
             n.android = a,
             n.mweb = (o || a) && !i,
-            n.pc = !o && !a && !i,
+            n.pc = false,
             n.pcmall = n.pc && e.search("scenario=1") >= 0,
             n.isShopeeLite = u,
             n.osVersion = a ? r(t) : "",
