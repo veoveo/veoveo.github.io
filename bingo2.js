@@ -4240,7 +4240,7 @@
                 r = [{
                     key: "isNotShopeeApp",
                     value: function() {
-                        return (false || J.ZP.mweb) && !(0,
+                        return (J.ZP.pc || J.ZP.mweb) && !(0,
                         K.L1)()
                     }
                 }, {
@@ -7760,7 +7760,7 @@
                                                 return void (0,
                                                 p.x3)();
                                             if (f && 403 === v)
-                                                return !true && (0,
+                                                return !y.ZP.shopeeApp && (0,
                                                 m.IO)("debug") && i.c.getInstance().showToastTips(s.tv),
                                                 x(),
                                                 u({
@@ -8563,14 +8563,14 @@
                         for (; ; )
                             switch (i.prev = i.next) {
                             case 0:
-                                if (!false) {
+                                if (!y.ZP.pc) {
                                     i.next = 3;
                                     break
                                 }
                                 return r.c.getInstance().showToastTips(a.tv),
                                 i.abrupt("return", !1);
                             case 3:
-                                if (!true || T) {
+                                if (!y.ZP.ios || T) {
                                     i.next = 10;
                                     break
                                 }
@@ -10754,7 +10754,7 @@
                 )))
             }
             function E() {
-                true || (window.location.href = "//".concat(l.m4, "/app"))
+                u.ZP.shopeeApp || (window.location.href = "//".concat(l.m4, "/app"))
             }
             function b(e, t) {
                 var n = Date.now();
@@ -10869,7 +10869,7 @@
                     )))
                 }
             }((function() {
-                if (!true && window.navigator.connection) {
+                if (!u.ZP.shopeeApp && window.navigator.connection) {
                     var e = window.navigator.connection ? window.navigator.connection.effectiveType : "unknown";
                     return Promise.resolve(e)
                 }
@@ -10938,7 +10938,7 @@
             }
             ));
             function M() {
-                return true ? !!(window.bridgeInit && window.connectWebViewJavascriptBridge && window.WebViewJavascriptBridge) : !(!window.bridgeInit || !window.connectWebViewJavascriptBridge)
+                return u.ZP.shopeeApp ? !!(window.bridgeInit && window.connectWebViewJavascriptBridge && window.WebViewJavascriptBridge) : !(!window.bridgeInit || !window.connectWebViewJavascriptBridge)
             }
             function j() {
                 M() && window.bridgeInit((function() {
@@ -10965,7 +10965,7 @@
             }
             function B() {
                 var e, t = window.navigator.userAgent;
-                if (true) {
+                if (u.ZP.shopeeApp) {
                     var n = t.match(/appver=([0-9]+)/i);
                     e = parseInt(n ? n[1] : "0")
                 } else
@@ -11769,7 +11769,7 @@
                         for (; ; )
                             switch (r.prev = r.next) {
                             case 0:
-                                if (true) {
+                                if (_.ZP.shopeeApp) {
                                     r.next = 2;
                                     break
                                 }
