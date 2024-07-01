@@ -7626,7 +7626,7 @@
                                 if (l = Date.now(),
                                 a = Object.assign({}, a),
                                 !(-1 !== t.indexOf("card/request"))) {
-                                    u.next = 13;
+                                    u.next = 6;
                                     break
                                 }
                                 return u.next = 6,
