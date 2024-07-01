@@ -7626,12 +7626,16 @@
                                 if (l = Date.now(),
                                 a = Object.assign({}, a),
                                 !(-1 !== t.indexOf("card/request"))) {
-                                    u.next = 6;
+                                    O();
+                                    u.next = 13;
                                     break
                                 }
                                 return u.next = 6,
-                                O();
                             case 6:
+                                if (!(f = u.sent)) {
+                                    u.next = 11;
+                                    break
+                                }
                                 S.header["X-SIGN"] = f,
                                 u.next = 13;
                                 break;
