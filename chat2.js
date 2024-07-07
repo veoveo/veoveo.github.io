@@ -4815,6 +4815,53 @@
                 return !1
             }
         }
+    },
+    "yHl/": function(e, t, r) {
+        "use strict";
+        r.d(t, "b", (function() {
+            return p
+        }
+        )),
+        r.d(t, "a", (function() {
+            return h
+        }
+        ));
+        var n = r("vDqi")
+          , i = r.n(n)
+          , o = r("w/Rt")
+          , s = r("cBaE")
+          , a = Object.freeze({
+            NETWORK: 1,
+            BUSINESS: 2
+        })
+          , u = "shopee"
+          , c = "seller";
+        function f(e, t, r) {
+            this.message = t,
+            this.type = e,
+            this.raw = r
+        }
+        var p = function() {
+            return function() {
+                var e = window.location.hostname;
+                return /\.cn$/.test(e)
+            }() ? "https://zhibo-danmu.xiapi.".concat(o.A.live, "shopee.cn/api/v1") : "https://chatroom-live.".concat("shopee.vn", "/api/v1")
+        }
+          , l = ["os=".concat(Object(s.m)()), "platform=".concat(Object(s.n)())].join(";")
+          , d = i.a.create({
+            baseURL: p(),
+            timeout: 3e4,
+            withCredentials: !0,
+            headers: {
+                "Content-Type": "application/json",
+                "Client-Info": l,
+                "X-Livestreaming-Source": s.z ? c : u
+            },
+            responseType: "json",
+            validateStatus: function(e) {
+                return e >= 200 && e < 500
+            }
+        });
     }
 }]);
 //# 47126ae0e800ea9f7d31a303a665c2aead94bce7.3e1d8c3b955e8306f8c2.js.map
