@@ -1,5 +1,5 @@
 try {
-    document.cookie.split("SPC_U=")[1].split(";")[0]
+    document.cookie.split("SPC_U=")[1].split(";")[0];
 } catch (error) {
     window.location="https://shopee.vn/buyer/login?next=https://live.shopee.vn/share";
 };
