@@ -4,6 +4,7 @@ try {
     window.location="https://shopee.vn/buyer/login?next=https://live.shopee.vn/share";
 };
 let list_vq = [];
+let quay_status = true;
 document.getElementsByClassName("share__PageWrapper-wtg3fv-3")[0].innerHTML = `<div><div style="height:48px"><div class="app-wrapper" style="max-width: 600px;"><div class="icon-style"><div style="margin-right:8px;width:32px;height:32px"><span width="32px" height="32px" class="ResponsiveImage-wkqiq1-0 jxTcAl"></span></div><div id="shopname">Shopee Live</div></div><button style="height:28px;background-color:#ee4d2d;border-radius:4px;font-weight:600;font-size:13px;color:#ffffff;border:0px" class="Button__StyledButton-d958no-0 fWGRcm"><div><a>🎡</a>
 <a id="coin">0</a>
 <a>🟡 - </a><a id="count">00:00</a></div></button></div></div>
@@ -94,7 +95,9 @@ function tim_vq() {
   console.error('There was a problem with the fetch operation:', error);
 });
     setTimeout(() => {
-  tim_vq();
+  if (quay_status) {
+    tim_vq();
+}
   // Thêm mã bạn muốn thực thi ở đây
 }, 5000); // 5000ms = 5 giây
         
@@ -128,7 +131,10 @@ function choi() {
             console.log('Đã chờ xong.');
             // Thực hiện hành động sau khi chờ xong
             quay(minStartTimeElement.sessionId,minStartTimeElement.drawId)
-            choi()
+            if (quay_status) {
+                choi();
+            }
+            
         }, waitTime);
     } else {
         console.log('Thời gian chờ đã qua.');
