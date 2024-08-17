@@ -59,7 +59,11 @@ function quay(se,id) {
   };
   if (data.err_code==0) {
       document.getElementsByClassName("Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY")[0].insertAdjacentHTML('afterend', `<div><span class="Item__Content-sc-1iv8r0f-2">`+getCurrentTime()+` - quay được `+data.data.prize.amount.replace(".000000","")+`🟡</span></div>`);
-  }
+  };
+  if (data.err_code==7917030) {
+      document.getElementById("shopname").innerHTML = "Bạn đã hết lượt quay hôm nay, quay lại sau 23:00.";
+      document.getElementById("coin").innerHTML = "0";
+  };
 
 })
 .catch(error => {
