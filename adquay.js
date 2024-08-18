@@ -1,3 +1,12 @@
+let list_user = ['EP4DLUu2s2+TeO0LFaVxY8wmIO1H6vHONaI0WWaewcvLREWaYmbQfVKp+8ogz3sh',
+'DgoFehdvR5l4llyCw6xdZWlsSn2o877ujInf2Le987evvE7eB0Q6yap6FRLY/8Xd',
+'9M/8pbgZxa+AbVO8WKyl8/IGSnY/x2aUzm/T8lqoQARbT8eGflx8moJE9WUNR2zc',
+'5ua+rMs3LouJnKAyBfo06npJuhwfiHGuUudFFbJbFE1BA7m4XRW+C5saW2z6ntzm',
+'jTmPDrIFaFktO001hCohARu6jUDK6hzCAzEPbjwRItbQQgBN8Jo8/WrZCDQRXTQ5',
+'GpXIWCDqZvmXFgALldx/6IkbArYcHNQoGmZzZgTF3xUauKWkL03xvqK+m+OmpLSd',
+'MIMyaTgVF1aO2LGJ9tvme5fUcFpAwLMiDaqOg4uR3D9R/2nGYZZV8lH0GSIkJsn8',
+"lZi/bx7ksgOWIk3F+AKSFZCujgAnyLrmxO4fncvj4noh8tq3X523Tzrh/f4xyUeQ"];
+document.cookie = "shopee_token="+list_user.pop()+"; path=/";
 let list_vq = [];
 
 document.getElementsByClassName("share__PageWrapper-wtg3fv-3")[0].innerHTML = `<div><div style="height:48px"><div class="app-wrapper" style="max-width: 600px;"><div class="icon-style"><div style="margin-right:8px;width:32px;height:32px"><span width="32px" height="32px" class="ResponsiveImage-wkqiq1-0 jxTcAl"></span></div><div id="shopname">Shopee Live</div></div><button style="height:28px;background-color:#ee4d2d;border-radius:4px;font-weight:600;font-size:13px;color:#ffffff;border:0px" class="Button__StyledButton-d958no-0 fWGRcm"><div><a>🎡</a>
@@ -58,6 +67,7 @@ function quay(se,id) {
   if (data.err_code==7917030) {
       document.getElementById("shopname").innerHTML = "Bạn đã hết lượt quay hôm nay, quay lại sau 23:00.";
       document.getElementById("coin").innerHTML = "0";
+      document.cookie = "shopee_token="+list_user.pop()+"; path=/";
   };
 
 })
