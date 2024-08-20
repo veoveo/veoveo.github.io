@@ -156,17 +156,17 @@ function choi() {
             // }
             
         }, waitTime);
+    } else {
+        console.log('Thời gian chờ đã qua.');
+        console.log('Danh sách còn lại:', list_vq);
+        //choi();
+    } };
         setTimeout(() => {
             if (quay_status) {
                 choi();
             }
             
         }, 2000);
-    } else {
-        console.log('Thời gian chờ đã qua.');
-        console.log('Danh sách còn lại:', list_vq);
-        choi();
-    } };
 }
 tim_vq();
         setTimeout(() => {
