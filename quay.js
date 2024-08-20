@@ -127,7 +127,7 @@ function choi() {
     minStartTimeElement1 = list_vq.reduce((minElement, currentElement) => {
         return new Date(currentElement.startTime) < new Date(minElement.startTime) ? currentElement : minElement;
     });
-    if (new Date(minStartTimeElement.startTime) > new Date(minStartTimeElement1.startTime) || minStartTimeElement1.drawId == minStartTimeElement.drawId || minStartTimeElement==0) {
+    if (new Date(minStartTimeElement.startTime) > new Date(minStartTimeElement1.startTime) || document.getElementById("count").text == '0:00' || minStartTimeElement==0) {
     minStartTimeElement = minStartTimeElement1;
     const indexToRemove = list_vq.findIndex(element => element._id === minStartTimeElement._id);
     if (indexToRemove !== -1) {
