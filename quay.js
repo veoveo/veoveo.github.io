@@ -11,7 +11,8 @@ document.getElementsByClassName("share__PageWrapper-wtg3fv-3")[0].innerHTML = `<
 <div class="Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY" style="
     padding: 12px;
 "><div><span class="Item__Username-sc-1iv8r0f-1 cvQTnw">log:</span><span class="Item__Content-sc-1iv8r0f-2 dNqNNO"> </span></div></div></div>`
-function coud(seconds) {
+
+function coud(seconds, shopname) {
     var endTime = Date.now() + seconds;
     var countdownInterval = setInterval(function () {
         var now = Date.now();
@@ -19,12 +20,19 @@ function coud(seconds) {
         var minutes = Math.floor(timeLeft / 60000);
         var remainingSeconds = Math.floor((timeLeft % 60000) / 1000);
         var display = minutes + ":" + (remainingSeconds < 10 ? "0" : "") + remainingSeconds;
-        document.getElementById("count").textContent = display;
+        
+        // Chỉ cập nhật nếu đây là đếm ngược ngắn hơn hoặc duy nhất
+        if (activeTimer === null || timeLeft < activeTimer) {
+            activeTimer = timeLeft; // Cập nhật bộ đếm ngược đang hiển thị
+            document.getElementById("count").textContent = display;
+        }
         if (timeLeft === 0) {
             clearInterval(countdownInterval);
+            activeTimer = null; // Bộ đếm ngược này đã kết thúc
         }
     }, 1000);
-};
+}
+
 function getCurrentTime() {
     var now = new Date();
     var hours = now.getHours();
@@ -127,20 +135,27 @@ function choi() {
         console.log(`${minStartTimeElement.shopName} - Chờ trong ${waitTime} ms...`);
         if (minStartTimeElement.shopName == null) {
             document.getElementById("shopname").innerHTML = minStartTimeElement.userName;
+            coud(waitTime, minStartTimeElement.userName);
         } else {
             document.getElementById("shopname").innerHTML = minStartTimeElement.shopName;
+            coud(waitTime, minStartTimeElement.shopName);
         }
         document.getElementById("coin").innerHTML = minStartTimeElement.maxcoin;
-        coud(waitTime);
         setTimeout(() => {
             console.log('Đã chờ xong.');
             // Thực hiện hành động sau khi chờ xong
             quay(minStartTimeElement.sessionId,minStartTimeElement.drawId)
+            // if (quay_status) {
+            //     choi();
+            // }
+            
+        }, waitTime);
+        setTimeout(() => {
             if (quay_status) {
                 choi();
             }
             
-        }, waitTime);
+        }, 2000);
     } else {
         console.log('Thời gian chờ đã qua.');
         console.log('Danh sách còn lại:', list_vq);
