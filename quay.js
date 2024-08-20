@@ -11,7 +11,7 @@ let minStartTimeElement = 0;
 var activeTimer = null; // Biến lưu trữ đếm ngược hiện tại
 document.getElementsByClassName("share__PageWrapper-wtg3fv-3")[0].innerHTML = `<div><div style="height:48px"><div class="app-wrapper" style="max-width: 600px;"><div class="icon-style"><div style="margin-right:8px;width:32px;height:32px"><span width="32px" height="32px" class="ResponsiveImage-wkqiq1-0 jxTcAl"></span></div><div id="shopname">Shopee Live</div></div><button style="height:28px;background-color:#ee4d2d;border-radius:4px;font-weight:600;font-size:13px;color:#ffffff;border:0px" class="Button__StyledButton-d958no-0 fWGRcm"><div><a>🎡</a>
 <a id="coin">0</a>
-<a>🟡 - </a><a id="count">00:00</a></div></button></div></div>
+<a>🟡 - </a><a id="count">0:00</a></div></button></div></div>
 <div class="Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY" style="
     padding: 12px;
 "><div><span class="Item__Username-sc-1iv8r0f-1 cvQTnw">log:</span><span class="Item__Content-sc-1iv8r0f-2 dNqNNO"> </span></div></div></div>`
