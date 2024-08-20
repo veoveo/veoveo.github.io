@@ -4,19 +4,14 @@ try {
     window.location="https://shopee.vn/buyer/login?next=https://live.shopee.vn/share";
 };
 let list_vq = [];
-let list_vq_ed = [];
 let quay_status = true;
-let minStartTimeElement1 = 0;
-let minStartTimeElement = 0;
-var activeTimer = null; // Biến lưu trữ đếm ngược hiện tại
 document.getElementsByClassName("share__PageWrapper-wtg3fv-3")[0].innerHTML = `<div><div style="height:48px"><div class="app-wrapper" style="max-width: 600px;"><div class="icon-style"><div style="margin-right:8px;width:32px;height:32px"><span width="32px" height="32px" class="ResponsiveImage-wkqiq1-0 jxTcAl"></span></div><div id="shopname">Shopee Live</div></div><button style="height:28px;background-color:#ee4d2d;border-radius:4px;font-weight:600;font-size:13px;color:#ffffff;border:0px" class="Button__StyledButton-d958no-0 fWGRcm"><div><a>🎡</a>
 <a id="coin">0</a>
-<a>🟡 - </a><a id="count">0:00</a></div></button></div></div>
+<a>🟡 - </a><a id="count">00:00</a></div></button></div></div>
 <div class="Danmaku__ScrollContainer-sc-1rxc6pa-1 crXWMY" style="
     padding: 12px;
 "><div><span class="Item__Username-sc-1iv8r0f-1 cvQTnw">log:</span><span class="Item__Content-sc-1iv8r0f-2 dNqNNO"> </span></div></div></div>`
-
-function coud(seconds, shopname) {
+function coud(seconds) {
     var endTime = Date.now() + seconds;
     var countdownInterval = setInterval(function () {
         var now = Date.now();
@@ -24,19 +19,12 @@ function coud(seconds, shopname) {
         var minutes = Math.floor(timeLeft / 60000);
         var remainingSeconds = Math.floor((timeLeft % 60000) / 1000);
         var display = minutes + ":" + (remainingSeconds < 10 ? "0" : "") + remainingSeconds;
-        
-        // Chỉ cập nhật nếu đây là đếm ngược ngắn hơn hoặc duy nhất
-        if (activeTimer === null || timeLeft < activeTimer) {
-            activeTimer = timeLeft; // Cập nhật bộ đếm ngược đang hiển thị
-            document.getElementById("count").textContent = display;
-        }
+        document.getElementById("count").textContent = display;
         if (timeLeft === 0) {
             clearInterval(countdownInterval);
-            activeTimer = null; // Bộ đếm ngược này đã kết thúc
         }
     }, 1000);
-}
-
+};
 function getCurrentTime() {
     var now = new Date();
     var hours = now.getHours();
@@ -124,11 +112,9 @@ function tim_vq() {
 }
 
 function choi() {
-    minStartTimeElement1 = list_vq.reduce((minElement, currentElement) => {
+    let minStartTimeElement = list_vq.reduce((minElement, currentElement) => {
         return new Date(currentElement.startTime) < new Date(minElement.startTime) ? currentElement : minElement;
     });
-    if (new Date(minStartTimeElement.startTime) > new Date(minStartTimeElement1.startTime) || document.getElementById("count").text == '0:00' || minStartTimeElement==0) {
-    minStartTimeElement = minStartTimeElement1;
     const indexToRemove = list_vq.findIndex(element => element._id === minStartTimeElement._id);
     if (indexToRemove !== -1) {
         list_vq.splice(indexToRemove, 1);
@@ -141,32 +127,25 @@ function choi() {
         console.log(`${minStartTimeElement.shopName} - Chờ trong ${waitTime} ms...`);
         if (minStartTimeElement.shopName == null) {
             document.getElementById("shopname").innerHTML = minStartTimeElement.userName;
-            coud(waitTime, minStartTimeElement.userName);
         } else {
             document.getElementById("shopname").innerHTML = minStartTimeElement.shopName;
-            coud(waitTime, minStartTimeElement.shopName);
         }
         document.getElementById("coin").innerHTML = minStartTimeElement.maxcoin;
+        coud(waitTime);
         setTimeout(() => {
             console.log('Đã chờ xong.');
             // Thực hiện hành động sau khi chờ xong
             quay(minStartTimeElement.sessionId,minStartTimeElement.drawId)
-            // if (quay_status) {
-            //     choi();
-            // }
+            if (quay_status) {
+                choi();
+            }
             
         }, waitTime);
     } else {
         console.log('Thời gian chờ đã qua.');
         console.log('Danh sách còn lại:', list_vq);
-        //choi();
-    } };
-        setTimeout(() => {
-            if (quay_status) {
-                choi();
-            }
-            
-        }, 500);
+        choi();
+    }
 }
 tim_vq();
         setTimeout(() => {
