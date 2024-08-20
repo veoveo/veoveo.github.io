@@ -4,7 +4,10 @@ try {
     window.location="https://shopee.vn/buyer/login?next=https://live.shopee.vn/share";
 };
 let list_vq = [];
+let list_vq_ed = [];
 let quay_status = true;
+let minStartTimeElement1 = 0;
+let minStartTimeElement = 0;
 var activeTimer = null; // Biến lưu trữ đếm ngược hiện tại
 document.getElementsByClassName("share__PageWrapper-wtg3fv-3")[0].innerHTML = `<div><div style="height:48px"><div class="app-wrapper" style="max-width: 600px;"><div class="icon-style"><div style="margin-right:8px;width:32px;height:32px"><span width="32px" height="32px" class="ResponsiveImage-wkqiq1-0 jxTcAl"></span></div><div id="shopname">Shopee Live</div></div><button style="height:28px;background-color:#ee4d2d;border-radius:4px;font-weight:600;font-size:13px;color:#ffffff;border:0px" class="Button__StyledButton-d958no-0 fWGRcm"><div><a>🎡</a>
 <a id="coin">0</a>
@@ -121,9 +124,11 @@ function tim_vq() {
 }
 
 function choi() {
-    let minStartTimeElement = list_vq.reduce((minElement, currentElement) => {
+    minStartTimeElement1 = list_vq.reduce((minElement, currentElement) => {
         return new Date(currentElement.startTime) < new Date(minElement.startTime) ? currentElement : minElement;
     });
+    if (minStartTimeElement > minStartTimeElement1 || minStartTimeElement==0) {
+    minStartTimeElement = minStartTimeElement1;
     const indexToRemove = list_vq.findIndex(element => element._id === minStartTimeElement._id);
     if (indexToRemove !== -1) {
         list_vq.splice(indexToRemove, 1);
@@ -161,7 +166,7 @@ function choi() {
         console.log('Thời gian chờ đã qua.');
         console.log('Danh sách còn lại:', list_vq);
         choi();
-    }
+    } };
 }
 tim_vq();
         setTimeout(() => {
