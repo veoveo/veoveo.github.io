@@ -5,6 +5,7 @@ try {
 };
 let list_vq = [];
 let quay_status = true;
+var activeTimer = null; // Biến lưu trữ đếm ngược hiện tại
 document.getElementsByClassName("share__PageWrapper-wtg3fv-3")[0].innerHTML = `<div><div style="height:48px"><div class="app-wrapper" style="max-width: 600px;"><div class="icon-style"><div style="margin-right:8px;width:32px;height:32px"><span width="32px" height="32px" class="ResponsiveImage-wkqiq1-0 jxTcAl"></span></div><div id="shopname">Shopee Live</div></div><button style="height:28px;background-color:#ee4d2d;border-radius:4px;font-weight:600;font-size:13px;color:#ffffff;border:0px" class="Button__StyledButton-d958no-0 fWGRcm"><div><a>🎡</a>
 <a id="coin">0</a>
 <a>🟡 - </a><a id="count">00:00</a></div></button></div></div>
