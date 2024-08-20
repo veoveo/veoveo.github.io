@@ -166,7 +166,7 @@ function choi() {
                 choi();
             }
             
-        }, 2000);
+        }, 500);
 }
 tim_vq();
         setTimeout(() => {
