@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Mở Địa Chỉ Website</h1>
+
+<form>
+  <label for="url">Nhập địa chỉ website:</label><br><br>
+  <input type="text" id="url" name="url" placeholder="Nhập URL website"><br><br>
+  <button type="button" onclick="openWebsite()">Mở Website</button>
+</form>
+
+<script>
+function openWebsite() {
+  // Lấy giá trị của ô nhập địa chỉ
+  let url = document.getElementById("url").value;
+  
+  // Kiểm tra nếu URL không rỗng
+  if (url) {
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+      url = "https://vn.shp.ee/" + url;
+    }
+    // Mở một cửa sổ mới với URL đã nhập
+    window.open(url, "", "width=350, height=420, top=100, left=100");
+  } else {
+    alert("Vui lòng nhập URL!");
+  }
+}
+</script>
+
+</body>
+</html>
