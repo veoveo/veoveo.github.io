@@ -118,9 +118,11 @@ function check() {
     if (document.getElementsByTagName("input")[0].value==ans[1]) {
         alert("đúng")
         document.getElementsByClassName("option disabled")[1].style.display = "block";
+        document.getElementsByClassName("timer_sec")[0].textContent = parseInt(document.getElementsByClassName("timer_sec")[0].textContent) +1
     } else {
         alert("sai")
         document.getElementsByClassName("option disabled")[0].style.display = "block";
+        document.getElementsByClassName("timer_sec")[1].textContent = parseInt(document.getElementsByClassName("timer_sec")[1].textContent) +1
     }
 };
 function next() {
