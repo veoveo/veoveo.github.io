@@ -121,6 +121,7 @@ function check() {
     } else {
         document.getElementsByClassName("option disabled")[0].style.display = "block";
         document.getElementsByClassName("option disabled")[0].getElementsByTagName("span")[1].textContent = "đáp án: " + ans[1];
+        alert("SAI!");
         document.getElementsByClassName("timer_sec")[1].textContent = parseInt(document.getElementsByClassName("timer_sec")[1].textContent) +1
     }
 };
