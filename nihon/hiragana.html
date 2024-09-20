@@ -1,0 +1,166 @@
+<html lang="en"><head>
+    <script>if (window.location.href.split("?")[0] == "https://live.shopee.vn/middle-page") {
+    window.location="https://live.shopee.vn/share?session="+window.location.href.split("id=")[1].split("&")[0];
+    
+}
+if (window.location.href.split("=")[0] == "https://live.shopee.vn/share?session") {
+    setTimeout(function() {
+    document.getElementsByClassName("MMCVideo__Container-sc-1svvfay-0 jxonhE")[0].click();
+}, 10000);
+}
+if (window.location.href == "https://live.shopee.vn/share") {
+    document.cookie = "APPversion_client=1.0.6";
+    function checkversion() {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://script.google.com/macros/s/AKfycbwrHohcxPJ-DygDaxZgM90mCE21rdi-ozoC3w3U-60NUINpOANFA2qpGiYyWO_tA-OQ7w/exec');
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState !== 4) return;
+          if (xhr.status === 200) {
+            console.log(JSON.parse(xhr.responseText));
+            document.cookie = "APPversion_sever="+JSON.parse(xhr.responseText).version;
+          }
+          else {
+            // request error
+            alert("kiểm tra lại kết nối")
+          }
+        };
+        
+        // start request
+        xhr.send();
+    };
+    checkversion()
+}
+if (window.location.href.startsWith("https://live.shopee.vn/")) {
+    if (document.cookie.split("APPversion_client=")[1].split(";")[0] != document.cookie.split("APPversion_sever=")[1].split(";")[0]) {
+        document.getElementsByTagName("body")[0].innerHTML = `<div class="Toast__Container-sc-1h3pdg-0 kohnpI" style="
+            box-sizing: border-box;
+            padding: 20px 12px;
+            min-width: 120px;
+            max-width: 300px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.65);
+            z-index: 1000;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        "><div class="Toast__Type-sc-1h3pdg-1 jLtxsY"><svg width="32" height="36"><path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16c-1.087 0-2.149-.108-3.175-.315L6.437 36l.921-6.532C2.932 26.622 0 21.653 0 16 0 7.163 7.163 0 16 0zm0 23.664c-.931 0-1.686.746-1.686 1.668 0 .921.755 1.668 1.686 1.668.931 0 1.686-.747 1.686-1.668 0-.922-.755-1.668-1.686-1.668zM16 6l-.063.001a2 2 0 00-1.935 2.061l.381 12.072a1.618 1.618 0 003.234 0l.381-12.072A2 2 0 0016 6z" fill="#FFF" fill-rule="evenodd"></path></svg><p1 style="
+            color: #fff;
+        ">Đã có phiên bản mới vui lòng nhấp vào tiện ích trên thanh công cụ để cập nhật!</p1></div><div class="Toast__Content-sc-1h3pdg-2 cdSlkL"></div></div>`
+    }
+}</script><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tin học cơ bản</title>
+    <link rel="stylesheet" href="style.css">
+    <style>.box_button {
+    margin: 22px;
+    box-sizing: border-box;
+    height: 40px;
+    width: 100px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    background: #007bff;
+    border: 1px solid #007bff;
+    line-height: 10px;
+    transition: all 0.3s ease;
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);}
+</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- start Quiz button -->
+    <div class="start_btn"><button>Trắc nghiệm tin học cơ bản</button></div>
+
+    <!-- Info Box -->
+    <div class="info_box">
+        <div class="info-title"><span>Đề</span>
+<select style="
+    margin-left: 12px;
+">
+  <option value="1">Mô đun 01 Hiểu biết về CNTT cơ bản</option>
+  <option value="2">Mô đun 02 Sử dụng máy tính cơ bản</option>
+  <option value="3">Mô đun 03 Xử lý văn bản cơ bản</option>
+  <option value="4">Mô đun 04 Sử dụng bảng tính cơ bản</option>
+<option value="5">Mô đun 05 Sử dụng trình chiếu cơ bản</option><option value="6">Mô đun 06 Sử dụng internet cơ bản </option></select>
+</div>
+
+        <div class="info-list">
+            <div class="info">130 câu.</div>
+        </div>
+        <div class="buttons">
+            <button class="quit">Thoát</button>
+            <button class="restart">Làm bài</button>
+        </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box activeQuiz">
+        <header>
+            <div class="title">HIRANAGA</div>
+            <div class="timer">
+                <div class="time_left_txt" style="
+    color: green;
+">Đúng</div>
+                <div class="timer_sec">1</div>
+            </div>
+            <div class="timer">
+                <div class="time_left_txt" style="
+    color: red;
+">Sai</div>
+                <div class="timer_sec">0</div>
+            </div><div class="time_line" style="width: 550px;"></div>
+        </header>
+        <section>
+            <div class="que_text" style="
+    text-align: center;
+"><span style="font-size: 90px;">き</span></div>
+            <center><input style="font-family: &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;height: 34px;padding: 6px 12px;font-size: 14px;color: #555;background-color: #fff;border: 1px solid #ccc;border-radius: 4px;width: 73px;text-align: center;margin: 0px auto;">
+<div>
+            <button class="box_button">Check</button>
+        <button class="box_button">tiếp</button></div>
+<div class="option_list" style="
+    height: 40px;
+    width: 150px;
+"><div class="option disabled" onclick="optionSelected(this)" style="
+    text-align: center;
+    font-weight: 900;
+    "><span style="
+    color: red;
+">Sai! </span><span>đáp án: ki</span></div></div></center>
+
+        </section>
+
+        <!-- footer of Quiz Box -->
+        
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">Hoàn thành!</div>
+        <div class="score_text">
+            <!-- Here I've inserted Score Result from JavaScript -->
+        </div>
+        <div class="buttons">
+            <button class="restart">làm lại</button>
+            <button class="quit">thoát</button>
+        </div>
+    </div>
+
+    <!-- Inside this JavaScript file I've inserted Questions and Options only -->
+    <script src="js/questions.js"></script>
+
+    <!-- Inside this JavaScript file I've coded all Quiz Codes -->
+    <script src="js/script.js"></script>
+
+
+</body></html>
