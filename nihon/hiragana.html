@@ -123,7 +123,11 @@ document.getElementsByTagName("input")[0].addEventListener("keyup", function(eve
         document.getElementsByClassName("box_button")[1].focus()
     }
 });
-
+function new_ans(params) {
+    ans = hi[Math.floor(Math.random()*hi.length)];
+    document.getElementsByTagName("span")[1].textContent = ans[0]
+};
+new_ans();
     </script>
 
 
