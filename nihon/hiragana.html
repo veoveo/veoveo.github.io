@@ -108,6 +108,11 @@
     <script>
 function check() {
     document.getElementsByClassName("box_button")[1].focus()
+    if (document.getElementsByTagName("input")[0].value==ans[1]) {
+        alert("đúng")
+    } else {
+        alert("sai")
+    }
 };
 function next() {
     document.getElementsByTagName("input")[0].value = "";
@@ -120,7 +125,7 @@ let hi = [['か', 'ka'], ['き', 'ki'], ['く', 'ku'], ['け', 'ke'], ['こ', 'k
 let ans = []
 document.getElementsByTagName("input")[0].addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
-        document.getElementsByClassName("box_button")[1].focus()
+        check();
     }
 });
 function new_ans(params) {
