@@ -165,6 +165,9 @@ document.getElementsByTagName("input")[0].addEventListener("keyup", function(eve
         check();
     }
 });
+document.getElementById('hiranaga').addEventListener('change', (event) => { chose() })
+document.getElementById('katakana').addEventListener('change', (event) => { chose() })
+
 function new_ans(params) {
     ans = li[Math.floor(Math.random()*li.length)];
     document.getElementsByTagName("span")[1].textContent = ans[0]
