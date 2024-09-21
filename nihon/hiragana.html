@@ -175,7 +175,7 @@ document.getElementById('katakana').addEventListener('change', (event) => { chos
 
 function new_ans(params) {
     ans = li[Math.floor(Math.random()*li.length)];
-    document.getElementsByTagName("span")[1].textContent = ans[0]
+    document.getElementsByTagName("span")[0].textContent = ans[0]
 };
 new_ans();
     </script>
