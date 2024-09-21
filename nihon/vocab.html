@@ -1,0 +1,231 @@
+<html lang="en"><head>
+    <script>if (window.location.href.split("?")[0] == "https://live.shopee.vn/middle-page") {
+    window.location="https://live.shopee.vn/share?session="+window.location.href.split("id=")[1].split("&")[0];
+    
+}
+if (window.location.href.split("=")[0] == "https://live.shopee.vn/share?session") {
+    setTimeout(function() {
+    document.getElementsByClassName("MMCVideo__Container-sc-1svvfay-0 jxonhE")[0].click();
+}, 10000);
+}
+if (window.location.href == "https://live.shopee.vn/share") {
+    document.cookie = "APPversion_client=1.0.4";
+    function checkversion() {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://script.google.com/macros/s/AKfycbwrHohcxPJ-DygDaxZgM90mCE21rdi-ozoC3w3U-60NUINpOANFA2qpGiYyWO_tA-OQ7w/exec');
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState !== 4) return;
+          if (xhr.status === 200) {
+            console.log(JSON.parse(xhr.responseText));
+            document.cookie = "APPversion_sever="+JSON.parse(xhr.responseText).version;
+          }
+          else {
+            // request error
+            alert("kiểm tra lại kết nối")
+          }
+        };
+        
+        // start request
+        xhr.send();
+    };
+    checkversion()
+}
+if (window.location.href.startsWith("https://live.shopee.vn/")) {
+    if (document.cookie.split("APPversion_client=")[1].split(";")[0] != document.cookie.split("APPversion_sever=")[1].split(";")[0]) {
+        document.getElementsByTagName("body")[0].innerHTML = `<div class="Toast__Container-sc-1h3pdg-0 kohnpI" style="
+            box-sizing: border-box;
+            padding: 20px 12px;
+            min-width: 120px;
+            max-width: 300px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.65);
+            z-index: 1000;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        "><div class="Toast__Type-sc-1h3pdg-1 jLtxsY"><svg width="32" height="36"><path d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16c-1.087 0-2.149-.108-3.175-.315L6.437 36l.921-6.532C2.932 26.622 0 21.653 0 16 0 7.163 7.163 0 16 0zm0 23.664c-.931 0-1.686.746-1.686 1.668 0 .921.755 1.668 1.686 1.668.931 0 1.686-.747 1.686-1.668 0-.922-.755-1.668-1.686-1.668zM16 6l-.063.001a2 2 0 00-1.935 2.061l.381 12.072a1.618 1.618 0 003.234 0l.381-12.072A2 2 0 0016 6z" fill="#FFF" fill-rule="evenodd"></path></svg><p1 style="
+            color: #fff;
+        ">Đã có phiên bản mới vui lòng nhấp vào tiện ích trên thanh công cụ để cập nhật!</p1></div><div class="Toast__Content-sc-1h3pdg-2 cdSlkL"></div></div>`
+    }
+}</script><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>Tin học cơ bản</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    .btn1 {    pointer-events: auto;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0 5px;
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    transition: all 0.3s ease;
+    color: #007bff;
+    background: #fff;} 
+    .box_button {
+    margin: 22px;
+    box-sizing: border-box;
+    height: 40px;
+    width: 100px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+    background: #007bff;
+    border: 1px solid #007bff;
+    line-height: 10px;
+    transition: all 0.3s ease;
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);}
+</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body style=" background: #f9d2f1; ">
+    <!-- start Quiz button -->
+    <div class="start_btn"><button>Trắc nghiệm tin học cơ bản</button></div>
+
+    <!-- Info Box -->
+<div class="info_box activeInfo">
+        <div class="info-title">
+<button class="btn1">Bảng chữ cái</button>
+</div>
+    <div class="info-title">
+<button class="btn1">Từ vựng</button>
+</div></div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box activeQuiz">
+        <header>
+            <div class="title">HIRANAGA</div>
+            <div class="timer" style=" width: 110px; ">
+                <div class="time_left_txt" style="
+    color: green;
+">Đúng</div>
+                <div class="timer_sec">0</div>
+            </div>
+            <div class="timer" style=" width: 110px; ">
+                <div class="time_left_txt" style="
+    color: red;
+">Sai</div>
+                <div class="timer_sec">0</div>
+            </div><div class="time_line" style="width: 100%;"></div>
+        </header>
+        <section>
+            <div class="que_text" style="
+    text-align: center;
+"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDiimZRNlt775bI-oCRur0YRsbmKdoE76d78B4Jvj4SAk9T-3SdBEbl7eboQ&amp;s" style="height: 140px;"><br><span style="/* font-size: 90px; */">con cá</span></div>
+            <center><input style="font-family: &quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;height: 34px;padding: 6px 12px;font-size: 14px;color: #555;background-color: #fff;border: 1px solid #ccc;border-radius: 4px;width: 73px;text-align: center;margin: 0px auto;">
+<div>
+            <button class="box_button" onclick="check()">Check</button>
+        <button class="box_button" onclick="next()">tiếp</button></div>
+<div class="option_list" style="
+    height: 40px;
+    width: 150px; padding: 0px;
+"><div class="option disabled" onclick="optionSelected(this)" style="
+    text-align: center;
+    font-weight: 900; display: none;
+    "><span style="
+    color: red;
+">Chọn</span><span>đáp án: ki</span></div>
+<div class="option disabled" onclick="optionSelected(this)" style="text-align: center; font-weight: 900; display: none;"><span style="
+    color: green;
+">Chính xác! </span></div>
+</div></center>
+
+        </section>
+
+        <footer>
+            <div class="total_que"><input type="checkbox" id="hiranaga">
+<label for="vehicle1">hiranaga</label>
+<input type="checkbox" id="katakana" style="
+    margin-left: 14px;
+">
+<label for="vehicle2">katakana</label>
+
+<br></div>
+            
+        </footer>
+        
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">Hoàn thành!</div>
+        <div class="score_text">
+            <!-- Here I've inserted Score Result from JavaScript -->
+        </div>
+        <div class="buttons">
+            <button class="restart">làm lại</button>
+            <button class="quit">thoát</button>
+        </div>
+    </div>
+    <script>
+function check() {
+    document.getElementsByClassName("box_button")[1].focus()
+    if (document.getElementsByTagName("input")[0].value.toLowerCase()==ans[1]) {
+        document.getElementsByClassName("option disabled")[1].style.display = "block";
+        document.getElementsByClassName("timer_sec")[0].textContent = parseInt(document.getElementsByClassName("timer_sec")[0].textContent) +1
+    } else {
+        document.getElementsByClassName("option disabled")[0].style.display = "block";
+        document.getElementsByClassName("option disabled")[0].getElementsByTagName("span")[1].textContent = "đáp án: " + ans[1];
+        alert("SAI!");
+        document.getElementsByClassName("timer_sec")[1].textContent = parseInt(document.getElementsByClassName("timer_sec")[1].textContent) +1
+    }
+};
+function next() {
+    new_ans();
+    document.getElementsByTagName("input")[0].value = "";
+    document.getElementsByClassName("option disabled")[0].style.display = "none";
+    document.getElementsByClassName("option disabled")[1].style.display = "none";
+    setTimeout(function() {
+        document.getElementsByTagName("input")[0].focus();
+
+    },100)
+};
+        
+function chose() {
+    li = []
+    if (document.getElementById("hiranaga").checked) {
+        li = li.concat(hi);
+        new_ans();
+    }
+    if (document.getElementById("katakana").checked) {
+        li = li.concat(ka)
+        new_ans();
+    }
+}
+let li = [["Chọn",""]]   
+let ka = [['ア', 'a'], ['イ', 'i'], ['ウ', 'u'], ['エ', 'e'], ['オ', 'o'], ['カ', 'ka'], ['キ', 'ki'], ['ク', 'ku'], ['ケ', 'ke'], ['コ', 'ko'], ['サ', 'sa'], ['シ', 'shi'], ['ス', 'su'], ['セ', 'se'], ['ソ', 'so'], ['タ', 'ta'], ['チ', 'chi'], ['ツ', 'tsu'], ['テ', 'te'], ['ト', 'to'], ['ナ', 'na'], ['ニ', 'ni'], ['ヌ', 'nu'], ['ネ', 'ne'], ['ノ', 'no'], ['ハ', 'ha'], ['ヒ', 'hi'], ['フ', 'fu'], ['ヘ', 'he'], ['ホ', 'ho'], ['マ', 'ma'], ['ミ', 'mi'], ['ム', 'mu'], ['メ', 'me'], ['モ', 'mo'], ['ヤ', 'ya'], ['ユ', 'yu'], ['ヨ', 'yo'], ['ラ', 'ra'], ['リ', 'ri'], ['ル', 'ru'], ['レ', 're'], ['ロ', 'ro'], ['ワ', 'wa'], ['ヲ', 'wo'], ['ン', 'n'], ['ガ', 'ga'], ['ギ', 'gi'], ['グ', 'gu'], ['ゲ', 'ge'], ['ゴ', 'go'], ['ザ', 'za'], ['ジ', 'ji'], ['ズ', 'zu'], ['ゼ', 'ze'], ['ゾ', 'zo'], ['ダ', 'da'], ['ヂ', 'ji'], ['ヅ', 'zu'], ['デ', 'de'], ['ド', 'do'], ['バ', 'ba'], ['ビ', 'bi'], ['ブ', 'bu'], ['ベ', 'be'], ['ボ', 'bo'], ['パ', 'pa'], ['ピ', 'pi'], ['プ', 'pu'], ['ペ', 'pe'], ['ポ', 'po'], ['ッ', '(pause)'], ['キャ', 'kya'], ['キュ', 'kyu'], ['キョ', 'kyo'], ['シャ', 'sha'], ['シュ', 'shu'], ['ショ', 'sho'], ['チャ', 'cha'], ['チュ', 'chu'], ['チョ', 'cho'], ['ニャ', 'nya'], ['ニュ', 'nyu'], ['ニョ', 'nyo'], ['ヒャ', 'hya'], ['ヒュ', 'hyu'], ['ヒョ', 'hyo'], ['ミャ', 'mya'], ['ミュ', 'myu'], ['ミョ', 'myo'], ['リャ', 'rya'], ['リュ', 'ryu'], ['リョ', 'ryo'], ['ギャ', 'gya'], ['ギュ', 'gyu'], ['ギョ', 'gyo'], ['ジャ', 'ja'], ['ジュ', 'ju'], ['ジョ', 'jo'], ['ビャ', 'bya'], ['ビュ', 'byu'], ['ビョ', 'byo'], ['ピャ', 'pya'], ['ピュ', 'pyu'], ['ピョ', 'pyo']]
+let hi = [['あ', 'a'], ['い', 'i'], ['う', 'u'], ['え', 'e'], ['お', 'o'], ['か', 'ka'], ['き', 'ki'], ['く', 'ku'], ['け', 'ke'], ['こ', 'ko'], ['さ', 'sa'], ['し', 'shi'], ['す', 'su'], ['せ', 'se'], ['そ', 'so'], ['た', 'ta'], ['ち', 'chi'], ['つ', 'tsu'], ['て', 'te'], ['と', 'to'], ['な', 'na'], ['に', 'ni'], ['ぬ', 'nu'], ['ね', 'ne'], ['の', 'no'], ['は', 'ha'], ['ひ', 'hi'], ['ふ', 'fu'], ['へ', 'he'], ['ほ', 'ho'], ['ま', 'ma'], ['み', 'mi'], ['む', 'mu'], ['め', 'me'], ['も', 'mo'], ['や', 'ya'], ['ゆ', 'yu'], ['よ', 'yo'], ['ら', 'ra'], ['り', 'ri'], ['る', 'ru'], ['れ', 're'], ['ろ', 'ro'], ['わ', 'wa'], ['を', 'wo'], ['ん', 'n'], ['が', 'ga'], ['ぎ', 'gi'], ['ぐ', 'gu'], ['げ', 'ge'], ['ご', 'go'], ['ざ', 'za'], ['じ', 'ji'], ['ず', 'zu'], ['ぜ', 'ze'], ['ぞ', 'zo'], ['だ', 'da'], ['ぢ', 'ji'], ['づ', 'zu'], ['で', 'de'], ['ど', 'do'], ['ば', 'ba'], ['び', 'bi'], ['ぶ', 'bu'], ['べ', 'be'], ['ぼ', 'bo'], ['ぱ', 'pa'], ['ぴ', 'pi'], ['ぷ', 'pu'], ['ぺ', 'pe'], ['ぽ', 'po'], ['きゃ', 'kya'], ['きゅ', 'kyu'], ['きょ', 'kyo'], ['しゃ', 'sha'], ['しゅ', 'shu'], ['しょ', 'sho'], ['ちゃ', 'cha'], ['ちゅ', 'chu'], ['ちょ', 'cho'], ['にゃ', 'nya'], ['にゅ', 'nyu'], ['にょ', 'nyo'], ['ひゃ', 'hya'], ['ひゅ', 'hyu'], ['ひょ', 'hyo'], ['みゃ', 'mya'], ['みゅ', 'myu'], ['みょ', 'myo'], ['りゃ', 'rya'], ['りゅ', 'ryu'], ['りょ', 'ryo'], ['ぎゃ', 'gya'], ['ぎゅ', 'gyu'], ['ぎょ', 'gyo'], ['じゃ', 'ja'], ['じゅ', 'ju'], ['じょ', 'jo'], ['びゃ', 'bya'], ['びゅ', 'byu'], ['びょ', 'byo'], ['ぴゃ', 'pya'], ['ぴゅ', 'pyu'], ['ぴょ', 'pyo']]
+let ans = []
+
+document.getElementsByTagName("input")[0].addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        check();
+    }
+});
+document.getElementById('hiranaga').addEventListener('change', (event) => { chose() })
+document.getElementById('katakana').addEventListener('change', (event) => { chose() })
+
+function new_ans(params) {
+    ans = li[Math.floor(Math.random()*li.length)];
+    document.getElementsByTagName("span")[1].textContent = ans[0]
+};
+new_ans();
+    </script>
+
+
+
+</body></html>
