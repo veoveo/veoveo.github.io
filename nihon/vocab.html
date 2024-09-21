@@ -163,11 +163,16 @@ if (window.location.href.startsWith("https://live.shopee.vn/")) {
 function check() {
     document.getElementsByClassName("box_button")[1].focus()
     if (document.getElementsByTagName("input")[0].value.toLowerCase()==ans[1]) {
+        //đúng
         document.getElementsByClassName("option disabled")[1].style.display = "block";
-        document.getElementsByClassName("timer_sec")[0].textContent = parseInt(document.getElementsByClassName("timer_sec")[0].textContent) +1
+        document.getElementsByClassName("timer_sec")[0].textContent = parseInt(document.getElementsByClassName("timer_sec")[0].textContent) +1;
+        document.getElementsByClassName("option disabled")[0].getElementsByTagName("span")[2].textContent = ans[2];
+        document.getElementsByClassName("option disabled")[0].getElementsByTagName("span")[3].textContent = "(" +ans[1]+")";
     } else {
+        //sai
         document.getElementsByClassName("option disabled")[0].style.display = "block";
-        document.getElementsByClassName("option disabled")[0].getElementsByTagName("span")[1].textContent = "đáp án: " + ans[1];
+        document.getElementsByClassName("option disabled")[0].getElementsByTagName("span")[2].textContent = ans[2];
+        document.getElementsByClassName("option disabled")[0].getElementsByTagName("span")[3].textContent = "(" +ans[1]+")";
         alert("SAI!");
         document.getElementsByClassName("timer_sec")[1].textContent = parseInt(document.getElementsByClassName("timer_sec")[1].textContent) +1
     }
