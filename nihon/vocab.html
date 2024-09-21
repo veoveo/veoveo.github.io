@@ -135,10 +135,10 @@ if (window.location.href.startsWith("https://live.shopee.vn/")) {
     font-weight: 900; display: none;
     "><span style="
     color: red;
-">Sai! </span><span>đáp án:</span><br><span></span><br><span></span></div>
+">Sai! </span><span>đáp án:</span><br><span style=" font-size: 30px; "></span><br><span style=" font-size: 20px; "></span></div>
 <div class="option disabled" onclick="optionSelected(this)" style="text-align: center; font-weight: 900; display: none;"><span style="
     color: green;
-">Chính xác! </span><span>đáp án:</span><br><span></span><br><span></span></div>
+">Chính xác! </span><span>đáp án:</span><br><span style=" font-size: 30px; "></span><br><span style=" font-size: 20px; "></span></div>
 </div></center>
 
         </section>
@@ -184,7 +184,6 @@ function next() {
     document.getElementsByClassName("option disabled")[1].style.display = "none";
     setTimeout(function() {
         document.getElementsByTagName("input")[0].focus();
-
     },100)
 };
         
