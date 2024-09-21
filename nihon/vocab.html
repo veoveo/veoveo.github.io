@@ -166,8 +166,8 @@ function check() {
         //đúng
         document.getElementsByClassName("option disabled")[1].style.display = "block";
         document.getElementsByClassName("timer_sec")[0].textContent = parseInt(document.getElementsByClassName("timer_sec")[0].textContent) +1;
-        document.getElementsByClassName("option disabled")[0].getElementsByTagName("span")[2].textContent = ans[2];
-        document.getElementsByClassName("option disabled")[0].getElementsByTagName("span")[3].textContent = "(" +ans[1]+")";
+        document.getElementsByClassName("option disabled")[1].getElementsByTagName("span")[2].textContent = ans[2];
+        document.getElementsByClassName("option disabled")[1].getElementsByTagName("span")[3].textContent = "(" +ans[1]+")";
     } else {
         //sai
         document.getElementsByClassName("option disabled")[0].style.display = "block";
@@ -229,8 +229,6 @@ document.getElementsByTagName("input")[0].addEventListener("keyup", function(eve
         check();
     }
 });
-document.getElementById('hiranaga').addEventListener('change', (event) => { chose() })
-document.getElementById('katakana').addEventListener('change', (event) => { chose() })
     </script>
 
 
