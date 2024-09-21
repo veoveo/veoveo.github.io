@@ -3,7 +3,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>Tin học cơ bản</title>
     <link rel="stylesheet" href="style.css">
-    <style>.box_button {
+    <style>
+    .btn1 {    pointer-events: auto;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0 5px;
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    transition: all 0.3s ease;
+    color: #007bff;
+    background: #fff;} 
+    .box_button {
     margin: 22px;
     box-sizing: border-box;
     height: 40px;
@@ -29,26 +45,13 @@
     <div class="start_btn"><button>Trắc nghiệm tin học cơ bản</button></div>
 
     <!-- Info Box -->
-    <div class="info_box">
-        <div class="info-title"><span>Đề</span>
-<select style="
-    margin-left: 12px;
-">
-  <option value="1">Mô đun 01 Hiểu biết về CNTT cơ bản</option>
-  <option value="2">Mô đun 02 Sử dụng máy tính cơ bản</option>
-  <option value="3">Mô đun 03 Xử lý văn bản cơ bản</option>
-  <option value="4">Mô đun 04 Sử dụng bảng tính cơ bản</option>
-<option value="5">Mô đun 05 Sử dụng trình chiếu cơ bản</option><option value="6">Mô đun 06 Sử dụng internet cơ bản </option></select>
+<div class="info_box activeInfo">
+        <div class="info-title">
+<button class="btn1">Bảng chữ cái</button>
 </div>
-
-        <div class="info-list">
-            <div class="info">130 câu.</div>
-        </div>
-        <div class="buttons">
-            <button class="quit">Thoát</button>
-            <button class="restart">Làm bài</button>
-        </div>
-    </div>
+    <div class="info-title">
+<button class="btn1">Từ vựng</button>
+</div></div>
 
     <!-- Quiz Box -->
     <div class="quiz_box activeQuiz">
