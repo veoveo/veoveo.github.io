@@ -149,10 +149,12 @@ function next() {
 function chose() {
     li = []
     if (document.getElementById("hiranaga").checked) {
-        li = li.concat(hi)
+        li = li.concat(hi);
+        new_ans();
     }
     if (document.getElementById("katakana").checked) {
         li = li.concat(ka)
+        new_ans();
     }
 }
 let li = [["Chọn",""]]   
