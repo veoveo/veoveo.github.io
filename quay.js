@@ -81,37 +81,33 @@ function quay(se,id) {
 function tim_vq() {
     try {
         fetch("https://script.google.com/macros/s/AKfycbyobr7LWkEQjy0Kvu-_eRoTgTG-aWEPC8Lk81l6pIYar85KIz1BoZfYijcp3zjghvYhPA/exec", {
-            "headers": {
+            method: "GET",
+            headers: {
                 "accept": "application/json, text/plain, */*",
-            },
-            "method": "GET",
+            }
         })
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json(); // Chuyển đổi phản hồi thành JSON
+            if (!response.ok) throw new Error('Lỗi khi fetch: ' + response.statusText);
+            return response.json();
         })
         .then(data => {
             data.forEach(item2 => {
                 const exists = list_vq.some(item1 => item1.sessionId === item2.sessionId);
                 if (!exists) {
+                    // Nếu startTime là số (timestamp), thì chuyển sang Date ISO string nếu cần
+                    item2.startTime = new Date(item2.startTime).toISOString();
                     list_vq.push(item2);
                 }
             });
         })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
+        .catch(error => console.error("Fetch thất bại:", error));
 
         setTimeout(() => {
-            if (quay_status) {
-                tim_vq();
-            }
-        }, 5000); // Lặp lại sau 5 giây
+            if (quay_status) tim_vq();
+        }, 5000);
 
     } catch (error) {
-        console.error('Unexpected error in tim_vq:', error);
+        console.error('Lỗi bất ngờ trong tim_vq:', error);
     }
 };
 
