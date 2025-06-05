@@ -80,42 +80,40 @@ function quay(se,id) {
 
 function tim_vq() {
     try {
-    fetch("https://api.chietkhau.pro/api/v1/shopeexu/all_spinner?limit=20&startTime[gte]="+Math.floor(Date.now()), {
-  "headers": {
-    "accept": "application/json, text/plain, */*",
-  },
-  "method": "GET",
-})
-.then(response => {
-  if (!response.ok) {
-    throw new Error('Network response was not ok ' + response.statusText);
-  }
-  return response.json(); // Chuyển đổi phản hồi thành JSON
-})
-.then(data => {
-  //console.log(data.data.allSpinner); // Xử lý dữ liệu trả về
-    data.data.allSpinner.forEach(item2 => {
-        const exists = list_vq.some(item1 => item1._id === item2._id);
-        if (!exists) {
-            list_vq.push(item2);
-        }
-    });
+        fetch("https://script.google.com/macros/s/AKfycbyobr7LWkEQjy0Kvu-_eRoTgTG-aWEPC8Lk81l6pIYar85KIz1BoZfYijcp3zjghvYhPA/exec", {
+            "headers": {
+                "accept": "application/json, text/plain, */*",
+            },
+            "method": "GET",
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json(); // Chuyển đổi phản hồi thành JSON
+        })
+        .then(data => {
+            data.forEach(item2 => {
+                const exists = list_vq.some(item1 => item1.sessionId === item2.sessionId);
+                if (!exists) {
+                    list_vq.push(item2);
+                }
+            });
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
 
-})
-.catch(error => {
-  console.error('There was a problem with the fetch operation:', error);
-});
-    setTimeout(() => {
-  if (quay_status) {
-    tim_vq();
-}
-  // Thêm mã bạn muốn thực thi ở đây
-}, 5000); // 5000ms = 5 giây
-        
+        setTimeout(() => {
+            if (quay_status) {
+                tim_vq();
+            }
+        }, 5000); // Lặp lại sau 5 giây
+
     } catch (error) {
-        
+        console.error('Unexpected error in tim_vq:', error);
     }
-}
+};
 
 function choi() {
     let minStartTimeElement = list_vq.reduce((minElement, currentElement) => {
