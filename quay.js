@@ -150,4 +150,4 @@ function choi() {
 tim_vq();
         setTimeout(() => {
             choi();
-        }, 3000);
+        }, 8000);
