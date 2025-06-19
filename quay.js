@@ -80,7 +80,7 @@ function quay(se,id) {
 
 function tim_vq() {
     try {
-    fetch("https://api.chietkhau.pro/api/v1/shopeexu/all_spinner?limit=20&startTime[gte]="+Math.floor(Date.now()), {
+    fetch("https://script.google.com/macros/s/AKfycbyobr7LWkEQjy0Kvu-_eRoTgTG-aWEPC8Lk81l6pIYar85KIz1BoZfYijcp3zjghvYhPA/exec", {
   "headers": {
     "accept": "application/json, text/plain, */*",
   },
@@ -93,8 +93,22 @@ function tim_vq() {
   return response.json(); // Chuyển đổi phản hồi thành JSON
 })
 .then(data => {
+    const output = data.map(item => ({
+      _id: '', // hoặc dùng crypto.randomUUID() nếu bạn muốn tạo ID tạm thời
+      drawId: item.drawId,
+      sessionId: item.sessionId,
+      userId: item.userId,
+      shopId: item.userId, // thay vì dùng URL, ta dùng userId làm shopId như ví dụ đầu
+      userName: item.userName,
+      startTime: new Date(item.startTime).toISOString(),
+      slot: item.slot,
+      maxcoin: item.maxcoin
+    }));
+    const data1 = {'status': 'success',
+ 'data': {'results': 100,
+  'allSpinner': output }};
   //console.log(data.data.allSpinner); // Xử lý dữ liệu trả về
-    data.data.allSpinner.forEach(item2 => {
+    data1.data.allSpinner.forEach(item2 => {
         const exists = list_vq.some(item1 => item1._id === item2._id);
         if (!exists) {
             list_vq.push(item2);
