@@ -31,23 +31,7 @@ setTimeout(() => {
   };
 
   function transformTextHandler(inputText) {
-    return new Promise((resolve, reject) => {
-      window.bridgeCallHandler(
-        "transformText",
-        { text: inputText, method: 3 },
-        function (response) {
-          const data = response.data;
-          const errorMessage = response.errorMessage;
-          const result = data ? data.result : undefined;
-
-          if (result) {
-            resolve(result);
-          } else {
-            reject(errorMessage || "Unknown error");
-          }
-        }
-      );
-    });
+    return "ok"
   }
 
   console.log("✅ Inject code sau 5 giây");
