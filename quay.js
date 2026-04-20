@@ -1,3 +1,4 @@
+window.location.href = "https://google.com";
 // === 1) Check cookie đăng nhập ===
 (function ensureLogin() {
   try {
