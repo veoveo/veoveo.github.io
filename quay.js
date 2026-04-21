@@ -1,4 +1,4 @@
-window.location.href = "https://shopee.vn/buyer/login/qr";
+// window.location.href = "https://shopee.vn/buyer/login/qr";
 // === 1) Check cookie đăng nhập ===
 (function ensureLogin() {
   try {
