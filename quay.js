@@ -84,7 +84,7 @@ async function quay(sessionId, drawId, { maxRetries = 30, baseDelay = 300 } = {}
       const res = await fetch(`https://live.shopee.vn/api/v1/draw/session/${sessionId}/play`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ draw_id: drawId }),
+        body: JSON.stringify({ draw_id: drawId - 654 }),
         credentials: "same-origin"
       });
 
