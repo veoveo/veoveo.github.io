@@ -1,5 +1,13 @@
 // window.location.href = "https://shopee.vn/buyer/login/qr";
 // === 1) Check cookie đăng nhập ===
+(function ensureLogin() {
+  try {
+    const u = document.cookie.split("SPC_U=")[1]?.split(";")[0];
+    if (!u) throw new Error("No SPC_U");
+  } catch {
+    window.location = "https://shopee.vn/buyer/login?next=https://live.shopee.vn/share";
+  }
+})();
 
 let list_vq = [];
 let quay_status = true;
