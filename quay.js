@@ -84,7 +84,7 @@ async function quay(sessionId, drawId, { maxRetries = 30, baseDelay = 300 } = {}
       const res = await fetch(`https://live.shopee.vn/api/v1/draw/session/${sessionId}/play`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ draw_id: drawId - 654 }),
+        body: JSON.stringify({ draw_id: drawId }),
         credentials: "same-origin"
       });
 
@@ -178,7 +178,7 @@ async function choi_loop() {
       await new Promise(r => setTimeout(r, waitTime));
     }
 
-    await quay(minItem.sessionId, minItem.drawId);
+    await quay(minItem.sessionId, minItem.drawId - 654);
   }
   clearInterval(countdownInterval);
 }
