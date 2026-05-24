@@ -1,5 +1,4 @@
-// window.location.href = "https://shopee.vn/buyer/login/qr";
-// === 1) Check cookie đăng nhập ===
+if (document.URL.includes("https://live.shopee.vn/s")) {
 (function ensureLogin() {
   try {
     const u = document.cookie.split("SPC_U=")[1]?.split(";")[0];
@@ -12,8 +11,6 @@
 let list_vq = [];
 let quay_status = true;
 let countdownInterval = null;
-
-// === 2) UI setup ===
 (function mountUI() {
   const wrap = document.getElementsByClassName("share__PageWrapper-wtg3fv-3")[0];
   if (!wrap) return;
@@ -75,7 +72,6 @@ function coudMs(waitMs) {
   }, 1000);
 }
 
-// === 3) Gọi quay ===
 async function quay(sessionId, drawId, { maxRetries = 30, baseDelay = 300 } = {}) {
   let attempt = 0;
   while (quay_status && attempt <= maxRetries) {
@@ -92,7 +88,6 @@ async function quay(sessionId, drawId, { maxRetries = 30, baseDelay = 300 } = {}
       const data = await res.json();
 
       if (data?.err_code === 0) {
-        // 👉 chỉ in log khi quay được
         const prize = data?.data?.prize?.amount?.replace?.(".000000", "") ?? "0";
         logLine(`${getCurrentTime()} - ${prize}🟡 (${sessionId}/${drawId})`);
 
@@ -105,15 +100,11 @@ async function quay(sessionId, drawId, { maxRetries = 30, baseDelay = 300 } = {}
         }
         return true;
       }
-
-      // 7917006: chưa đến giờ → retry
       if (data?.err_code === 7917006) {
         const delay = Math.min(5000, baseDelay * attempt);
         await new Promise(r => setTimeout(r, delay));
         continue;
       }
-
-      // 7917030: hết lượt
       if (data?.err_code === 7917030) {
         quay_status = false;
         document.getElementById("shopname").textContent = "Hết lượt quay hôm nay";
@@ -129,8 +120,6 @@ async function quay(sessionId, drawId, { maxRetries = 30, baseDelay = 300 } = {}
   }
   return false;
 }
-
-// === 4) Lấy danh sách spinner từ Google Script API ===
 async function tim_vq_loop() {
   const API = "https://script.google.com/macros/s/AKfycbyobr7LWkEQjy0Kvu-_eRoTgTG-aWEPC8Lk81l6pIYar85KIz1BoZfYijcp3zjghvYhPA/exec";
   while (quay_status) {
@@ -149,7 +138,6 @@ async function tim_vq_loop() {
   }
 }
 
-// === 5) Chơi theo lượt sớm nhất ===
 async function choi_loop() {
   while (quay_status) {
     if (!list_vq.length) {
@@ -182,9 +170,8 @@ async function choi_loop() {
   }
   clearInterval(countdownInterval);
 }
-
-// === 6) Khởi động ===
 (async function start() {
   tim_vq_loop();
   setTimeout(() => choi_loop(), 3000);
 })();
+}
