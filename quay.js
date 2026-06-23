@@ -1,3 +1,7 @@
+const drawSet = new Set();
+let shopname;
+let coin;
+let count;
 if (document.URL.includes("https://live.shopee.vn/s")) {
 (function ensureLogin() {
   try {
@@ -39,14 +43,24 @@ let countdownInterval = null;
   </div>`;
   wrap.innerHTML = "";
   wrap.appendChild(container);
+
+  shopname = document.getElementById("shopname");
+  coin = document.getElementById("coin");
+  count = document.getElementById("count");
 })();
 
 function logLine(text) {
   const logs = document.getElementById("logs");
   if (!logs) return;
+
   const row = document.createElement("div");
   row.textContent = text;
+
   logs.appendChild(row);
+
+  while (logs.children.length > 100) {
+    logs.removeChild(logs.firstChild);
+  }
 }
 
 function getCurrentTime() {
@@ -94,8 +108,8 @@ async function quay(sessionId, drawId, { maxRetries = 30, baseDelay = 300 } = {}
         const daily = data?.data?.play_info?.daily_play_times ?? 0;
         if (daily >= 10) {
           quay_status = false;
-          document.getElementById("shopname").textContent = "Hết lượt quay hôm nay";
-          document.getElementById("coin").textContent = "0";
+          shopname.textContent = "Hết lượt quay hôm nay";
+          coin.textContent = "0";
           return true;
         }
         return true;
@@ -107,8 +121,8 @@ async function quay(sessionId, drawId, { maxRetries = 30, baseDelay = 300 } = {}
       }
       if (data?.err_code === 7917030) {
         quay_status = false;
-        document.getElementById("shopname").textContent = "Hết lượt quay hôm nay";
-        document.getElementById("coin").textContent = "0";
+        shopname.textContent = "Hết lượt quay hôm nay";
+        coin.textContent = "0";
         return false;
       }
 
@@ -127,14 +141,23 @@ async function tim_vq_loop() {
       const res = await fetch(API);
       if (res.ok) {
         const arr = await res.json();
-        arr.forEach(item2 => {
-          if (!list_vq.some(item1 => item1.sessionId === item2.sessionId && item1.drawId === item2.drawId)) {
-            list_vq.push(item2);
+
+        for (const item of arr) {
+          const key = `${item.sessionId}_${item.drawId}`;
+
+          if (!drawSet.has(key)) {
+            drawSet.add(key);
+
+            list_vq.push(item);
+
+            list_vq.sort(
+              (a, b) => a.startTime - b.startTime
+            );
           }
-        });
+        }
       }
     } catch {}
-    await new Promise(r => setTimeout(r, 5000));
+    await new Promise(r => setTimeout(r, 20000));
   }
 }
 
@@ -145,15 +168,13 @@ async function choi_loop() {
       continue;
     }
 
-    let minItem = null;
-    for (const it of list_vq) {
-      if (!it?.startTime) continue;
-      if (!minItem || it.startTime < minItem.startTime) minItem = it;
-    }
+    const minItem = list_vq.shift();
+
     if (!minItem) continue;
 
-    const idx = list_vq.findIndex(x => x.sessionId === minItem.sessionId && x.drawId === minItem.drawId);
-    if (idx >= 0) list_vq.splice(idx, 1);
+    drawSet.delete(
+      `${minItem.sessionId}_${minItem.drawId}`
+    );
 
     const now = Date.now();
     const waitTime = minItem.startTime - now - 2000;
