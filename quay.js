@@ -86,7 +86,7 @@ function coudMs(waitMs) {
   }, 1000);
 }
 
-async function quay(sessionId, drawId, { maxRetries = 30, baseDelay = 300 } = {}) {
+async function quay(sessionId, drawId, { maxRetries = 30, baseDelay = 10 } = {}) {
   let attempt = 0;
   while (quay_status && attempt <= maxRetries) {
     attempt++;
