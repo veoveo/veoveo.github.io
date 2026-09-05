@@ -2478,7 +2478,7 @@ let bssDFP =
                     }
                     this.currentBlock = d.block,
                     yield this.handleBlockPlacement(d.cells);
-                    if (this.gameModel.score>10000) {
+                    if (this.gameModel.score>32000) {
                         document.getElementById("autoplay-stop").click();
                     };
                     this.currentBlock = null,
