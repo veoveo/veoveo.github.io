@@ -64,12 +64,12 @@ document.documentElement.innerHTML =  `<html><head>
                 background-color: #4ac672
             }
 
-            #Cocos3dGameContainer,#GameDiv {
-                width: 50%;
-                height: 50%
+            #GameDiv {
+                width: 80%;
+                height: 80%
             }
             
-            #GameCanvas {
+            #GameCanvas, #Cocos3dGameContainer {
                 width: 100%;
                 height: 100%
             }
