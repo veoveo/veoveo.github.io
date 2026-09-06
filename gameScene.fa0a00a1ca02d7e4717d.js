@@ -1458,7 +1458,7 @@ let bssDFP =
                     }
                     ).start(),
                     this.text.active = !1,
-                    this.db.node.active = !0
+                    this.db.node.active = !0)
                 })
             }
         }
