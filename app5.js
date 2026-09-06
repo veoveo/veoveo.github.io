@@ -1,3 +1,4 @@
+s=document.createElement('script');s.type='text/javascript';s.src='https://games.deo.shopeemobile.com/shopee/shopee-sharefile-live-xx/js/dll/3.5.1-3-9/prod/ccDll.3.5.1-3-9.89a29ba6248b26042fb1.js';document.head.appendChild(s);
 document.documentElement.innerHTML =  `<html><head>
         <meta charset="utf-8">
         <title></title>
@@ -338,7 +339,6 @@ document.documentElement.innerHTML =  `<html><head>
     );
 })();
 
-s=document.createElement('script');s.type='text/javascript';s.src='https://games.deo.shopeemobile.com/shopee/shopee-sharefile-live-xx/js/dll/3.5.1-3-9/prod/ccDll.3.5.1-3-9.89a29ba6248b26042fb1.js';document.head.appendChild(s);
 s=document.createElement('script');s.type='text/javascript';s.src='https://games.deo.shopeemobile.com/shopee/shopee-sharefile-live-xx/js/dll/3.5.1-3-9/prod/ccDll.3.5.1-3-9.89a29ba6248b26042fb1.js';document.head.appendChild(s);
 s1=document.createElement('script');s1.type='text/javascript';s1.src='https://games.deo.shopeemobile.com/shopee/shopee-blockgame-live-vn/uuidMap.e2fbf9d846.js';document.head.appendChild(s1);
 s2=document.createElement('script');s2.type='text/javascript';s2.src='https://games.deo.shopeemobile.com/shopee/shopee-blockgame-live-vn/js/vendors.8f10dd92375cf06342f0.js';document.head.appendChild(s2);
