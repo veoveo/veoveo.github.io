@@ -1457,17 +1457,9 @@ let bssDFP =
                         this.showingNewMilestoneIndex = -1
                     }
                     ).start(),
-                    this.text.active = !0,
-                    (0,
-                    r.QxW)(this.text).to(.26, {
-                        scale: (0,
-                        r.v3)(1, 1, 1)
-                    }).delay(0).call( () => {
-                        this.text.active = !1
-                    }
-                    ).start(),
+                    this.text.active = !1,
                     this.db.node.active = !0,
-                    this.db.playAnimation("milestone", 1))
+                    // this.db.playAnimation("milestone", 1))
                 })
             }
         }
@@ -1565,6 +1557,7 @@ let bssDFP =
                 r.QxW)(this.guideFinger).repeatForever(a).start()
             }
             showGuide() {
+                return;
                 this.node.active = !0,
                 0 === this.gameModel.currentUserGuideStep ? (this.currentStep++,
                 this.gameModel.currentUserGuideStep = this.currentStep) : this.currentStep = this.gameModel.currentUserGuideStep,
@@ -1854,6 +1847,7 @@ let bssDFP =
                 })
             }
             playNormalScoreAnimation() {
+                return;
                 return (0,
                 i.sH)(this, void 0, void 0, function*() {
                     this.titleNode.getComponent(r.wFi) && (0,
@@ -2321,6 +2315,7 @@ let bssDFP =
         window.cc._RF.push({}, "e8cce8Z3eFNN5ACdnlDEAfF", "DifficultyWarning", void 0);
         let Ot = class extends r.uAl {
             show() {
+                return;
                 if (this.gameModel.isShowingWarning)
                     return;
                 this.node.active = !0,
