@@ -3289,31 +3289,35 @@
                 return false
             }
             goToScene() {
-                return (0,
-                n.sH)(this, void 0, void 0, function*() {
+                return (0, n.sH)(this, void 0, void 0, function*() {
                     if (this.isOpenDownload())
-                        return (0,
-                        Ct.Pe)({
+                        return (0, Ct.Pe)({
                             entry: St.G0.Download
                         }),
-                        (0,
-                        Ct.Wq)(),
+                        (0, Ct.Wq)(),
                         void (yield y.q.ui.runScene({
                             sceneName: T.P.DownloadScene
                         }));
+            
                     this.startPing();
-                    const t = (0,
-                    at.kG)();
-                    if (!t)
-                        return yt.i.user.userGuide || (0,
-                        h.t_)(yt.i.activityData.slotStartTime, yt.i.activityData.slotEndTime, yt.i.activitySetting.number_event_end) || (0,
-                        mt.jw)(vt._C.ADVENTURE) ? void (yield this.goLanding()) : (this.isEnterLandingScene = !1,
-                        void (yield this.goGame()));
-                    t.coreVersion === CORE_VERSION ? (this.isEnterLandingScene = !1,
-                    yield this.recoverGame(t)) : ((0,
-                    at.yY)(),
-                    yield this.goLanding())
-                })
+            
+                    const t = (0, at.kG)();
+            
+                    // Có session cũ và đúng version → tiếp tục session cũ
+                    if (t && t.coreVersion === CORE_VERSION) {
+                        this.isEnterLandingScene = !1;
+                        yield this.recoverGame(t);
+                        return;
+                    }
+            
+                    // Không có session cũ → bắt đầu game mới
+                    // Có session nhưng version cũ → xóa session rồi bắt đầu mới
+                    if (t)
+                        (0, at.yY)();
+            
+                    this.isEnterLandingScene = !1;
+                    yield this.goGame();
+                });
             }
             parallelFetchEntryData(t, e) {
                 return (0,
