@@ -238,6 +238,9 @@ document.documentElement.innerHTML =  `<html><head>
 
         "https://games.deo.shopeemobile.com/shopee/shopee-blockgame-live-vn/js/gameScene.fa0a00a1ca02d7e4717d.js":
             "https://veoveo.github.io/gameScene.fa0a00a1ca02d7e4717d.js",
+
+        "https://games.deo.shopeemobile.com/shopee/shopee-blockgame-live-vn/js/shared~adventureGameScene~gameScene.a007ba17d8b08f1e9b08.js":
+            "https://veoveo.github.io/shared~adventureGameScene~gameScene.a007ba17d8b08f1e9b08.js",
     };
 
 
