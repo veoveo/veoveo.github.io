@@ -64,9 +64,14 @@ document.documentElement.innerHTML =  `<html><head>
                 background-color: #4ac672
             }
 
-            #Cocos3dGameContainer,#GameCanvas,#GameDiv {
+            #Cocos3dGameContainer {
                 width: 50%;
                 height: 50%
+            }
+            
+            #GameCanvas,#GameDiv {
+                width: 100%;
+                height: 100%
             }
 
             #loading-wrap {
