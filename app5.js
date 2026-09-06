@@ -1,4 +1,3 @@
-s=document.createElement('script');s.type='text/javascript';s.src='https://games.deo.shopeemobile.com/shopee/shopee-sharefile-live-xx/js/dll/3.5.1-3-9/prod/ccDll.3.5.1-3-9.89a29ba6248b26042fb1.js';document.head.appendChild(s);
 document.documentElement.innerHTML =  `<html><head>
         <meta charset="utf-8">
         <title></title>
@@ -340,6 +339,7 @@ document.documentElement.innerHTML =  `<html><head>
 })();
 
 s=document.createElement('script');s.type='text/javascript';s.src='https://games.deo.shopeemobile.com/shopee/shopee-sharefile-live-xx/js/dll/3.5.1-3-9/prod/ccDll.3.5.1-3-9.89a29ba6248b26042fb1.js';document.head.appendChild(s);
+setTimeout(() => {
 s1=document.createElement('script');s1.type='text/javascript';s1.src='https://games.deo.shopeemobile.com/shopee/shopee-blockgame-live-vn/uuidMap.e2fbf9d846.js';document.head.appendChild(s1);
 s2=document.createElement('script');s2.type='text/javascript';s2.src='https://games.deo.shopeemobile.com/shopee/shopee-blockgame-live-vn/js/vendors.8f10dd92375cf06342f0.js';document.head.appendChild(s2);
 s3=document.createElement('script');s3.type='text/javascript';s3.src='https://games.deo.shopeemobile.com/shopee/shopee-blockgame-live-vn/js/app.bfb02a32efc23cd7a2c5.js';document.head.appendChild(s3);
@@ -362,4 +362,4 @@ function getCookie(e){var r;e=new RegExp("(?:^|;+|\\s+)"+e+"=([^;]*)");return((r
 // s6=document.createElement('script');s6.type='text/javascript';s6.src='https://games.deo.shopeemobile.com/shopee/shopee-blockgame-live-vn/js/vendors.8f10dd92375cf06342f0.js';document.head.appendChild(s6);
 // s7=document.createElement('script');s7.type='text/javascript';s7.src='https://games.deo.shopeemobile.com/shopee/shopee-blockgame-live-vn/js/app.bfb02a32efc23cd7a2c5.js';document.head.appendChild(s7);
 // s8=document.createElement('script');s8.type='text/javascript';s8.src='https://games.deo.shopeemobile.com/shopee/shopee-blockgame-live-vn/js/main.9b35204191e56ad21a48.js';document.head.appendChild(s8);
-// }, 5000);
+}, 2000);
