@@ -1425,7 +1425,7 @@ let bssDFP =
                     }).to(.21, {
                         scale: (0,
                         r.v3)(1, 1, 1)
-                    }).delay(1.5).call( () => {
+                    }).delay(0).call( () => {
                         this.backgroundLightDb.node.active = !1,
                         this.backgroundLightDb.armature().animation.gotoAndStopByFrame("milestone2", 0)
                     }
@@ -1462,7 +1462,7 @@ let bssDFP =
                     r.QxW)(this.text).to(.26, {
                         scale: (0,
                         r.v3)(1, 1, 1)
-                    }).delay(2).call( () => {
+                    }).delay(0).call( () => {
                         this.text.active = !1
                     }
                     ).start(),
@@ -1544,6 +1544,7 @@ let bssDFP =
                 this.maskNode.setWorldPosition(e.getWorldPosition())
             }
             showFingerMove() {
+                return;
                 const e = this.targetList[this.currentStep - 1]
                   , t = tt[this.currentStep]
                   , o = this.blockGroup.getComponent(Ve.x).blockPlaceMentArr[t].getWorldPosition()
@@ -1888,6 +1889,7 @@ let bssDFP =
                 })
             }
             playNewScoreAnimation() {
+                return;
                 return (0,
                 i.sH)(this, void 0, void 0, function*() {
                     this.mask.getComponent(r.wFi) && (0,
@@ -1983,6 +1985,7 @@ let bssDFP =
                 window.__bbAutoContinue !== !1 && this.scheduleOnce( () => this._bbAutoContinuePlay(), .15)
             }
             playBtnScaleAnim(e) {
+                return;
                 let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 0;
                 e && (0,
                 r.QxW)(e).set({
@@ -1996,6 +1999,7 @@ let bssDFP =
                 }).start()
             }
             playBtnOpacityAnim(e) {
+                return;
                 let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 0;
                 const o = e.getComponent(r.wFi);
                 o && (e.active = !0,
@@ -2350,7 +2354,7 @@ let bssDFP =
                 (0,
                 r.QxW)(t).to(.42, {
                     opacity: 255
-                }).delay(2.12).to(.29, {
+                }).delay(0).to(.05, {
                     opacity: 0
                 }).call( () => {
                     this.bgNode.active = !1,
