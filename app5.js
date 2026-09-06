@@ -65,8 +65,8 @@ document.documentElement.innerHTML =  `<html><head>
             }
 
             #Cocos3dGameContainer {
-                width: 50%;
-                height: 50%
+                width: 100%;
+                height: 100%
             }
             
             #GameCanvas,#GameDiv {
