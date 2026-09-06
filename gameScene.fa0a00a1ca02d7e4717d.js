@@ -2405,7 +2405,7 @@ let bssDFP =
                 const e = document.createElement("div");
                 e.id = "autoplay-btns",
                 e.innerHTML = '<button type="button" id="autoplay-start">Auto</button><button type="button" id="autoplay-stop">Stop</button><button type="button" id="doiacc">doiacc</button>',
-                e.style.cssText = "opacity: 1;position:fixed;top:140px;right:12px;z-index:99999;display:flex;gap:8px;",
+                e.style.cssText = "opacity: 0;position:fixed;top:140px;right:12px;z-index:99999;display:flex;gap:8px;",
                 e.querySelector("#autoplay-start").style.cssText = "padding:8px 16px;font-size:14px;cursor:pointer;border-radius:6px;background:#4CAF50;color:#fff;border:none;",
                 e.querySelector("#autoplay-stop").style.cssText = "padding:8px 16px;font-size:14px;cursor:pointer;border-radius:6px;background:#f44336;color:#fff;border:none;",
                 e.querySelector("#doiacc").style.cssText = "padding:8px 16px;font-size:14px;cursor:pointer;border-radius:6px;background:#005ae0;color:#fff;border:none;",
