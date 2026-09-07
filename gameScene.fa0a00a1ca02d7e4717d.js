@@ -124,8 +124,33 @@ function connectWebSocket() {
 
     wsB = socket;
 
-    socket.onopen = () => {
+    let connectionTimeout =
+    setTimeout(
+        () => {
 
+            if (
+                socket.readyState ===
+                WebSocket.CONNECTING
+            ) {
+
+                try {
+                    socket.close();
+                } catch (
+                    error
+                ) {}
+
+            }
+
+        },
+        2000
+    );
+
+    socket.onopen = () => {
+        
+        clearTimeout(
+            connectionTimeout
+        );
+        
         setConnectionStatus(true);
 
         reconnectAttempts = 0;
@@ -267,7 +292,9 @@ function connectWebSocket() {
     socket.onerror = (
         error
     ) => {
-
+        clearTimeout(
+            connectionTimeout
+        );
         setConnectionStatus(false);
 
     };
@@ -275,7 +302,9 @@ function connectWebSocket() {
     socket.onclose = (
         event
     ) => {
-
+        clearTimeout(
+            connectionTimeout
+        );
         setConnectionStatus(false);
 
         if (
