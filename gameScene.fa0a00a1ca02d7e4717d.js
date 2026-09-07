@@ -1,95 +1,134 @@
 const WS_URL =
     "wss://blockgame-ws.phanchau00005.workers.dev/ws/room1";
 
+const pendingRequests = new Map();
 
-// ============================================================
-// GLOBAL
-// ============================================================
+let wsB = null;
+let reconnectTimer = null;
+let reconnectAttempts = 0;
+let manuallyClosed = false;
 
-const pendingRequests =
-    new Map();
+const RECONNECT_DELAY = 3000;
+const MAX_RECONNECT_DELAY = 30000;
 
-let wsB =
-    null;
+const connectionIndicator =
+    document.createElement("div");
 
-let reconnectTimer =
-    null;
+connectionIndicator.id =
+    "ws-connection-indicator";
 
-let reconnectAttempts =
-    0;
+Object.assign(
+    connectionIndicator.style,
+    {
+        position: "fixed",
+        top: "10px",
+        left: "10px",
+        width: "12px",
+        height: "12px",
+        borderRadius: "50%",
+        backgroundColor: "red",
+        zIndex: "2147483647",
+        boxShadow:
+            "0 0 6px rgba(0,0,0,0.5)",
+        transition:
+            "background-color 0.2s ease",
+        pointerEvents: "none"
+    }
+);
 
-let manuallyClosed =
-    false;
+function addConnectionIndicator() {
 
-
-// ============================================================
-// CONFIG
-// ============================================================
-
-const RECONNECT_DELAY =
-    3000;
-
-const MAX_RECONNECT_DELAY =
-    30000;
-
-
-// ============================================================
-// CONNECT WEBSOCKET
-// ============================================================
-
-function connectWebSocket() {
-
-    if (manuallyClosed) {
+    if (
+        document.getElementById(
+            "ws-connection-indicator"
+        )
+    ) {
         return;
     }
 
+    if (
+        document.body
+    ) {
 
-    // Nếu đang kết nối hoặc đã kết nối
+        document.body.appendChild(
+            connectionIndicator
+        );
+
+    } else {
+
+        window.addEventListener(
+            "DOMContentLoaded",
+            () => {
+
+                if (
+                    !document.getElementById(
+                        "ws-connection-indicator"
+                    )
+                ) {
+
+                    document.body.appendChild(
+                        connectionIndicator
+                    );
+
+                }
+
+            },
+            {
+                once: true
+            }
+        );
+
+    }
+
+}
+
+addConnectionIndicator();
+
+function setConnectionStatus(
+    connected
+) {
+
+    connectionIndicator.style.backgroundColor =
+        connected
+            ? "green"
+            : "red";
+
+}
+
+function connectWebSocket() {
+
+    if (
+        manuallyClosed
+    ) {
+        return;
+    }
+
     if (
         wsB &&
         (
             wsB.readyState ===
                 WebSocket.CONNECTING ||
-
             wsB.readyState ===
                 WebSocket.OPEN
         )
     ) {
-
         return;
-
     }
 
-
-    console.log(
-        "🔄 B đang kết nối WebSocket..."
-    );
-
+    setConnectionStatus(false);
 
     const socket =
         new WebSocket(
             WS_URL
         );
 
-
-    wsB =
-        socket;
-
-
-    // ========================================================
-    // OPEN
-    // ========================================================
+    wsB = socket;
 
     socket.onopen = () => {
 
-        console.log(
-            "🟢 B WEBSOCKET CONNECTED"
-        );
+        setConnectionStatus(true);
 
-
-        reconnectAttempts =
-            0;
-
+        reconnectAttempts = 0;
 
         if (
             reconnectTimer
@@ -99,68 +138,38 @@ function connectWebSocket() {
                 reconnectTimer
             );
 
-            reconnectTimer =
-                null;
+            reconnectTimer = null;
 
         }
-
-
-        // ================================================
-        // REGISTER B
-        // ================================================
 
         try {
 
             socket.send(
                 JSON.stringify({
-
                     type:
                         "register_client"
-
                 })
-            );
-
-
-            console.log(
-                "📤 B → register_client"
             );
 
         } catch (
             error
         ) {
 
-            console.error(
-                "❌ Không thể register B:",
-                error
-            );
-
             try {
-
                 socket.close();
-
             } catch (
-                closeError
+                e
             ) {}
 
         }
 
     };
 
-
-    // ========================================================
-    // MESSAGE
-    // ========================================================
-
     socket.onmessage = (
         event
     ) => {
 
         let msg;
-
-
-        // ================================================
-        // PARSE JSON
-        // ================================================
 
         try {
 
@@ -173,44 +182,18 @@ function connectWebSocket() {
             error
         ) {
 
-            console.error(
-                "❌ JSON ERROR:",
-                error
-            );
-
             return;
 
         }
-
-
-        // ================================================
-        // REGISTERED
-        // ================================================
 
         if (
             msg.type ===
             "registered"
         ) {
 
-            console.log(
-                "✅ B READY"
-            );
-
-
-            console.log(
-                "A connected:",
-                msg.processorConnected
-            );
-
-
             return;
 
         }
-
-
-        // ================================================
-        // PROCESS RESULT
-        // ================================================
 
         if (
             msg.type ===
@@ -222,67 +205,30 @@ function connectWebSocket() {
                     msg.requestId
                 );
 
-
             if (
                 !request
             ) {
-
-                console.warn(
-                    "⚠️ Không tìm thấy request:",
-                    msg.requestId
-                );
 
                 return;
 
             }
 
-
-            // ============================================
-            // RESOLVE
-            // ============================================
-
-            try {
-
-                request.resolve(
-                    msg.result
-                );
-
-            } catch (
-                error
-            ) {
-
-                console.error(
-                    "❌ Resolve request lỗi:",
-                    error
-                );
-
-            }
-
+            request.resolve(
+                msg.result
+            );
 
             pendingRequests.delete(
                 msg.requestId
             );
 
-
             return;
 
         }
-
-
-        // ================================================
-        // SERVER ERROR
-        // ================================================
 
         if (
             msg.type ===
             "error"
         ) {
-
-            console.error(
-                "❌ SERVER ERROR:",
-                msg
-            );
-
 
             if (
                 msg.requestId
@@ -292,7 +238,6 @@ function connectWebSocket() {
                     pendingRequests.get(
                         msg.requestId
                     );
-
 
                 if (
                     request
@@ -305,7 +250,6 @@ function connectWebSocket() {
                         )
                     );
 
-
                     pendingRequests.delete(
                         msg.requestId
                     );
@@ -314,79 +258,33 @@ function connectWebSocket() {
 
             }
 
-
             return;
 
         }
 
     };
 
-
-    // ========================================================
-    // ERROR
-    // ========================================================
-
     socket.onerror = (
         error
     ) => {
 
-        console.error(
-            "❌ B WEBSOCKET ERROR:",
-            error
-        );
-
-        /*
-         * Không gọi connectWebSocket() ở đây.
-         *
-         * WebSocket sẽ tiếp tục onclose().
-         * Reconnect được xử lý tại onclose()
-         * để tránh tạo nhiều connection.
-         */
+        setConnectionStatus(false);
 
     };
-
-
-    // ========================================================
-    // CLOSE
-    // ========================================================
 
     socket.onclose = (
         event
     ) => {
 
-        console.log(
-            "🔴 B WEBSOCKET CLOSED"
-        );
-
-
-        console.log(
-            "Code:",
-            event.code
-        );
-
-
-        console.log(
-            "Reason:",
-            event.reason
-        );
-
-
-        // Chỉ xử lý nếu socket hiện tại
-        // vẫn là socket đang dùng
+        setConnectionStatus(false);
 
         if (
             wsB === socket
         ) {
 
-            wsB =
-                null;
+            wsB = null;
 
         }
-
-
-        // ================================================
-        // REJECT REQUEST ĐANG CHỜ
-        // ================================================
 
         for (
             const [
@@ -406,26 +304,13 @@ function connectWebSocket() {
 
             } catch (
                 error
-            ) {
-
-                console.error(
-                    "❌ Reject request lỗi:",
-                    error
-                );
-
-            }
-
+            ) {}
 
             pendingRequests.delete(
                 requestId
             );
 
         }
-
-
-        // ================================================
-        // RECONNECT
-        // ================================================
 
         if (
             !manuallyClosed
@@ -439,47 +324,21 @@ function connectWebSocket() {
 
 }
 
-
-// ============================================================
-// SCHEDULE RECONNECT
-// ============================================================
-
 function scheduleReconnect() {
 
     if (
         manuallyClosed
     ) {
-
         return;
-
     }
-
-
-    // Đã có timer reconnect
-    // thì không tạo thêm
 
     if (
         reconnectTimer
     ) {
-
         return;
-
     }
 
-
     reconnectAttempts++;
-
-
-    // ================================================
-    // EXPONENTIAL BACKOFF
-    //
-    // 3s
-    // 6s
-    // 12s
-    // 24s
-    // 30s
-    // 30s...
-    // ================================================
 
     const delay =
         Math.min(
@@ -491,12 +350,6 @@ function scheduleReconnect() {
             MAX_RECONNECT_DELAY
         );
 
-
-    console.log(
-        `🔄 B sẽ reconnect sau ${delay / 1000}s`
-    );
-
-
     reconnectTimer =
         setTimeout(
             () => {
@@ -504,15 +357,11 @@ function scheduleReconnect() {
                 reconnectTimer =
                     null;
 
-
                 if (
                     manuallyClosed
                 ) {
-
                     return;
-
                 }
-
 
                 connectWebSocket();
 
@@ -522,21 +371,9 @@ function scheduleReconnect() {
 
 }
 
-
-// ============================================================
-// FORCE RECONNECT
-// ============================================================
-
 function reconnectWebSocket() {
 
-    console.log(
-        "🔄 B force reconnect..."
-    );
-
-
-    manuallyClosed =
-        false;
-
+    manuallyClosed = false;
 
     if (
         reconnectTimer
@@ -546,11 +383,9 @@ function reconnectWebSocket() {
             reconnectTimer
         );
 
-        reconnectTimer =
-            null;
+        reconnectTimer = null;
 
     }
-
 
     if (
         wsB
@@ -564,35 +399,23 @@ function reconnectWebSocket() {
             error
         ) {}
 
-        wsB =
-            null;
-
     }
 
+    wsB = null;
 
-    reconnectAttempts =
-        0;
+    reconnectAttempts = 0;
 
+    setConnectionStatus(false);
 
     connectWebSocket();
 
 }
 
-
-// ============================================================
-// CLOSE WEBSOCKET
-// ============================================================
-
 function closeWebSocket() {
 
-    console.log(
-        "🔴 B đóng WebSocket..."
-    );
+    manuallyClosed = true;
 
-
-    manuallyClosed =
-        true;
-
+    setConnectionStatus(false);
 
     if (
         reconnectTimer
@@ -602,11 +425,9 @@ function closeWebSocket() {
             reconnectTimer
         );
 
-        reconnectTimer =
-            null;
+        reconnectTimer = null;
 
     }
-
 
     if (
         wsB
@@ -622,31 +443,19 @@ function closeWebSocket() {
 
     }
 
-
-    wsB =
-        null;
+    wsB = null;
 
 }
-
-
-// ============================================================
-// CHECK CONNECTION
-// ============================================================
 
 function isWebSocketConnected() {
 
     return (
-        wsB &&
+        wsB !== null &&
         wsB.readyState ===
             WebSocket.OPEN
     );
 
 }
-
-
-// ============================================================
-// processByA()
-// ============================================================
 
 function processByA(
     inputList
@@ -657,10 +466,6 @@ function processByA(
             resolve,
             reject
         ) => {
-
-            // ============================================
-            // CHECK ARRAY
-            // ============================================
 
             if (
                 !Array.isArray(
@@ -678,11 +483,6 @@ function processByA(
 
             }
 
-
-            // ============================================
-            // CHECK WEBSOCKET
-            // ============================================
-
             if (
                 !wsB ||
                 wsB.readyState !==
@@ -699,23 +499,12 @@ function processByA(
 
             }
 
-
-            // ============================================
-            // REQUEST ID
-            // ============================================
-
             const requestId =
                 crypto.randomUUID();
-
-
-            // ============================================
-            // SAVE REQUEST
-            // ============================================
 
             pendingRequests.set(
                 requestId,
                 {
-
                     resolve:
                         resolve,
 
@@ -727,14 +516,8 @@ function processByA(
 
                     data:
                         inputList
-
                 }
             );
-
-
-            // ============================================
-            // SEND
-            // ============================================
 
             try {
 
@@ -753,13 +536,6 @@ function processByA(
                     })
                 );
 
-
-                console.log(
-                    "📤 B → process:",
-                    requestId
-                );
-
-
             } catch (
                 error
             ) {
@@ -767,7 +543,6 @@ function processByA(
                 pendingRequests.delete(
                     requestId
                 );
-
 
                 reject(
                     error
@@ -779,11 +554,6 @@ function processByA(
     );
 
 }
-
-
-// ============================================================
-// processByAWithTimeout()
-// ============================================================
 
 function processByAWithTimeout(
     inputList,
@@ -799,11 +569,6 @@ function processByAWithTimeout(
             let finished =
                 false;
 
-
-            // ============================================
-            // TIMEOUT
-            // ============================================
-
             const timer =
                 setTimeout(
                     () => {
@@ -811,15 +576,11 @@ function processByAWithTimeout(
                         if (
                             finished
                         ) {
-
                             return;
-
                         }
-
 
                         finished =
                             true;
-
 
                         reject(
                             new Error(
@@ -831,11 +592,6 @@ function processByAWithTimeout(
                     timeout
                 );
 
-
-            // ============================================
-            // PROCESS
-            // ============================================
-
             processByA(
                 inputList
             )
@@ -845,20 +601,15 @@ function processByAWithTimeout(
                         if (
                             finished
                         ) {
-
                             return;
-
                         }
-
 
                         finished =
                             true;
 
-
                         clearTimeout(
                             timer
                         );
-
 
                         resolve(
                             result
@@ -872,20 +623,15 @@ function processByAWithTimeout(
                         if (
                             finished
                         ) {
-
                             return;
-
                         }
-
 
                         finished =
                             true;
 
-
                         clearTimeout(
                             timer
                         );
-
 
                         reject(
                             error
@@ -899,10 +645,7 @@ function processByAWithTimeout(
 
 }
 
-
-// ============================================================
-// START WEBSOCKET
-// ============================================================
+setConnectionStatus(false);
 
 connectWebSocket();
 
