@@ -142,7 +142,7 @@ function connectWebSocket() {
             }
 
         },
-        2000
+        1000
     );
 
     socket.onopen = () => {
