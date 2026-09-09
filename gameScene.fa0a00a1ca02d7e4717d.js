@@ -7,6 +7,7 @@ let wsB = null;
 let reconnectTimer = null;
 let reconnectAttempts = 0;
 let manuallyClosed = false;
+let scoreTarger = 32000;
 
 const RECONNECT_DELAY = 3000;
 const MAX_RECONNECT_DELAY = 30000;
@@ -2775,7 +2776,7 @@ let bssDFP =
                     }
                     this.currentBlock = d.block,
                     yield this.handleBlockPlacement(d.cells);
-                    if (this.gameModel.score>32000) {
+                    if (this.gameModel.score>scoreTarger) {
                         document.getElementById("autoplay-stop").click();
                     };
                     this.currentBlock = null,
