@@ -679,137 +679,137 @@ setConnectionStatus(false);
 
 connectWebSocket();
 
-let bssDFP =
-  "H142+dw+8kZum/WtQuswUQ==|i8JjTAeNbSWw8BSkSvTjx1aAB3DOkTNLaNX6bk0sTzFDiAF/3Rw1bnHoAgMixYnKglUufjg+2T/sUqvmlF/0UI/zqQau348SiwfR6Bh4kw==|ewkWrRVpFOAvJPmE|08|1";
+// let bssDFP =
+//   "H142+dw+8kZum/WtQuswUQ==|i8JjTAeNbSWw8BSkSvTjx1aAB3DOkTNLaNX6bk0sTzFDiAF/3Rw1bnHoAgMixYnKglUufjg+2T/sUqvmlF/0UI/zqQau348SiwfR6Bh4kw==|ewkWrRVpFOAvJPmE|08|1";
 
-(() => {
-  const originalOpen = XMLHttpRequest.prototype.open;
-  const originalSend = XMLHttpRequest.prototype.send;
+// (() => {
+//   const originalOpen = XMLHttpRequest.prototype.open;
+//   const originalSend = XMLHttpRequest.prototype.send;
 
-  XMLHttpRequest.prototype.open = function (method, url, ...rest) {
-    this._method = method;
-    this._url = url;
+//   XMLHttpRequest.prototype.open = function (method, url, ...rest) {
+//     this._method = method;
+//     this._url = url;
 
-    return originalOpen.call(this, method, url, ...rest);
-  };
+//     return originalOpen.call(this, method, url, ...rest);
+//   };
 
-  XMLHttpRequest.prototype.send = function (body) {
-    const method = this._method?.toUpperCase();
-    const url = this._url;
+//   XMLHttpRequest.prototype.send = function (body) {
+//     const method = this._method?.toUpperCase();
+//     const url = this._url;
 
-    // =========================
-    // GAME BEGIN
-    // =========================
-    if (
-      method === "POST" &&
-      url ===
-        "https://games.shopee.vn/api-gateway/blockgame/game/begin?activityCode=3fefadadbc8963bb"
-    ) {
-      let newBody = body;
+//     // =========================
+//     // GAME BEGIN
+//     // =========================
+//     if (
+//       method === "POST" &&
+//       url ===
+//         "https://games.shopee.vn/api-gateway/blockgame/game/begin?activityCode=3fefadadbc8963bb"
+//     ) {
+//       let newBody = body;
 
-      try {
-        if (typeof body === "string") {
-          const data = JSON.parse(body);
+//       try {
+//         if (typeof body === "string") {
+//           const data = JSON.parse(body);
 
-          data.bssDFP = localStorage.dfp;
+//           data.bssDFP = localStorage.dfp;
 
-          newBody = JSON.stringify(data);
-        }
+//           newBody = JSON.stringify(data);
+//         }
 
-        console.log("Payload cũ:", body);
-        console.log("Payload mới:", newBody);
-      } catch (e) {
-        console.warn("Payload không phải JSON:", e);
-      }
+//         console.log("Payload cũ:", body);
+//         console.log("Payload mới:", newBody);
+//       } catch (e) {
+//         console.warn("Payload không phải JSON:", e);
+//       }
 
-      return originalSend.call(this, newBody);
-    }
+//       return originalSend.call(this, newBody);
+//     }
 
-    // =========================
-    // GAME POLL
-    // =========================
-    if (
-      method === "POST" &&
-      url ===
-        "https://games.shopee.vn/api-gateway/blockgame/game/poll?activityCode=3fefadadbc8963bb"
-    ) {
-      const xhr = this;
+//     // =========================
+//     // GAME POLL
+//     // =========================
+//     if (
+//       method === "POST" &&
+//       url ===
+//         "https://games.shopee.vn/api-gateway/blockgame/game/poll?activityCode=3fefadadbc8963bb"
+//     ) {
+//       const xhr = this;
 
-      // Không gọi send ngay.
-      // Chờ runCommand xong rồi mới gửi.
-      (async () => {
-        try {
-          if (typeof body !== "string") {
-            return originalSend.call(xhr, body);
-          }
+//       // Không gọi send ngay.
+//       // Chờ runCommand xong rồi mới gửi.
+//       (async () => {
+//         try {
+//           if (typeof body !== "string") {
+//             return originalSend.call(xhr, body);
+//           }
 
-          const data = JSON.parse(body);
-          const pollTime = Date.now().toString();
+//           const data = JSON.parse(body);
+//           const pollTime = Date.now().toString();
 
-          xhr.setRequestHeader("x-chaplin-t", pollTime);
-          xhr.setRequestHeader("x-chaplin-v", "1");
+//           xhr.setRequestHeader("x-chaplin-t", pollTime);
+//           xhr.setRequestHeader("x-chaplin-v", "1");
 
-          const ttxText = JSON.stringify({
-            sessionID: data.sessionID,
-            ddlParam: data.ddlParam,
-            bssDFP: localStorage.dfp,
-            chaplin_meta: {
-              m: 0,
-              c: 0,
-              h: 0,
-              t: 0,
-              ts: Number(pollTime),
-              ver: 1
-            }
-          });
+//           const ttxText = JSON.stringify({
+//             sessionID: data.sessionID,
+//             ddlParam: data.ddlParam,
+//             bssDFP: localStorage.dfp,
+//             chaplin_meta: {
+//               m: 0,
+//               c: 0,
+//               h: 0,
+//               t: 0,
+//               ts: Number(pollTime),
+//               ver: 1
+//             }
+//           });
 
-          xhr.setRequestHeader(
-            "x-chaplin-l",
-            String(ttxText.length)
-          );
+//           xhr.setRequestHeader(
+//             "x-chaplin-l",
+//             String(ttxText.length)
+//           );
 
-          const result = await processByA([
-                {
-                    text: ttxText
-                }
-            ]);
+//           const result = await processByA([
+//                 {
+//                     text: ttxText
+//                 }
+//             ]);
 
-          console.log("WS result:", result);
+//           console.log("WS result:", result);
 
-          const ttx = result[0]?.result;
+//           const ttx = result[0]?.result;
 
-          const newData = {
-            data: ttx
-          };
+//           const newData = {
+//             data: ttx
+//           };
 
-          const newBody = JSON.stringify(newData);
+//           const newBody = JSON.stringify(newData);
 
-          console.log("Payload cũ:", body);
-          console.log("Payload mới:", newBody);
+//           console.log("Payload cũ:", body);
+//           console.log("Payload mới:", newBody);
 
-          originalSend.call(xhr, newBody);
+//           originalSend.call(xhr, newBody);
 
-        } catch (e) {
-          console.error("Lỗi xử lý poll:", e);
+//         } catch (e) {
+//           console.error("Lỗi xử lý poll:", e);
 
-          // Nếu lỗi thì gửi payload gốc
-          try {
-            originalSend.call(xhr, body);
-          } catch (err) {
-            console.error("Không thể gửi XHR:", err);
-          }
-        }
-      })();
+//           // Nếu lỗi thì gửi payload gốc
+//           try {
+//             originalSend.call(xhr, body);
+//           } catch (err) {
+//             console.error("Không thể gửi XHR:", err);
+//           }
+//         }
+//       })();
 
-      // send() gốc trả về undefined
-      return;
-    }
+//       // send() gốc trả về undefined
+//       return;
+//     }
 
-    return originalSend.call(this, body);
-  };
+//     return originalSend.call(this, body);
+//   };
 
-  console.log("✅ XHR hook đã được cài");
-})();
+//   console.log("✅ XHR hook đã được cài");
+// })();
 "use strict";
 (window.webpackChunkblock_blast_fe = window.webpackChunkblock_blast_fe || []).push([[991], {
     10838(e, t, o) {
