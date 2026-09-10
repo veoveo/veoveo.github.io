@@ -711,7 +711,7 @@ let bssDFP =
         if (typeof body === "string") {
           const data = JSON.parse(body);
 
-          data.bssDFP = bssDFP;
+          data.bssDFP = localStorage.dfp;
 
           newBody = JSON.stringify(data);
         }
@@ -752,7 +752,7 @@ let bssDFP =
           const ttxText = JSON.stringify({
             sessionID: data.sessionID,
             ddlParam: data.ddlParam,
-            bssDFP: bssDFP,
+            bssDFP: localStorage.dfp,
             chaplin_meta: {
               m: 0,
               c: 0,
