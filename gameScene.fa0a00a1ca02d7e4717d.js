@@ -2110,7 +2110,7 @@ connectWebSocket();
                 if (window.__bbAutoContinue === !1 || this.hasClose || this._bbAutoContinued)
                     return;
                 if (this.isPlayingAnimation)
-                    return void this.scheduleOnce( () => this._bbAutoContinuePlay(), .5);
+                    return void this.scheduleOnce( () => this._bbAutoContinuePlay(), 2.5);
                 this._bbAutoContinued = !0,
                 this.onClickTryAgain()
             }
