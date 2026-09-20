@@ -2104,7 +2104,7 @@ connectWebSocket();
                 this.updateTitle(t.isNewRecord),
                 this.updateScore(t.score),
                 this.trackImpression(),
-                window.__bbAutoContinue !== !1 && this.scheduleOnce( () => this._bbAutoContinuePlay(), .15)
+                window.__bbAutoContinue !== !1 && this.scheduleOnce( () => this._bbAutoContinuePlay(), 2.15)
             }
             _bbAutoContinuePlay() {
                 if (window.__bbAutoContinue === !1 || this.hasClose || this._bbAutoContinued)
@@ -2275,7 +2275,7 @@ connectWebSocket();
                 this.playBtnScaleAnim(this.btnClose, .1)) : (!i && this.playBtnOpacityAnim(s),
                 !i && o && this.playBtnOpacityAnim(this.btnShare),
                 this.playBtnOpacityAnim(this.btnClose, .1)),
-                window.__bbAutoContinue !== !1 && this.scheduleOnce( () => this._bbAutoContinuePlay(), .15)
+                window.__bbAutoContinue !== !1 && this.scheduleOnce( () => this._bbAutoContinuePlay(), 2.15)
             }
             playBtnScaleAnim(e) {
                 return;
