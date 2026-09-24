@@ -2775,7 +2775,7 @@ connectWebSocket();
                             return
                     }
                     this.currentBlock = d.block,
-                    yield new Promise(resolve => setTimeout(resolve, window.__bbAutoPlayMoveDelay ?? 100)),
+                    yield new Promise(resolve => setTimeout(resolve, window.__bbAutoPlayMoveDelay ?? 400)),
                     yield this.handleBlockPlacement(d.cells);
                     if (this.gameModel.score>scoreTarger) {
                         document.getElementById("autoplay-stop").click();
